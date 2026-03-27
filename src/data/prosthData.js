@@ -45,7 +45,6 @@ export const PROSTH_MATERIALS = [
     tooth: { etch: "Retentive preps: no etch needed (conventional cement). Non-retentive: selective enamel etch + adhesive.", adh: [{ s: "Conventional cementation (retentive preps)", ex: "Fleck's ZnPO₄, Ketac Cem, FujiCEM Evolve", steps: ["Sandblast intaglio 50μm","Clean fitting surface","Mix cement per IFU","Seat with firm pressure → hold","Remove excess after initial set"], dc: "N/A — chemical set" },{ s: "Adhesive cementation (non-retentive)", ex: "Alloy Primer + Panavia V5", steps: ["Sandblast intaglio 50μm → clean","Apply Alloy Primer (VBATDT+MDP) → 60 sec → air thin","Sel etch enamel → adhesive on tooth (Clearfil UBQ2 or OptiBond FL)","Seat with Panavia V5 → cure → oxyguard"], dc: "Standard DC" }], contam: { saliva: "Re-clean, re-prime if adhesive", tryIn: "Isopropanol clean → re-sandblast if possible", blood: "Clean thoroughly → re-prime" }, refs: ["ozcan-2004-alloy","matsumura-2003"] }
   },
 ];
-];
 
 export const PROVISIONALS = [
   { id: "protemp-plus", name: "Protemp Plus", mfr: "Solventum (3M)", cat: "Provisional — Bis-Acryl", composition: "Bis-acryl composite. Automix cartridge. Chemical cure + optional LC. Shade-matched.", strength: "Flex: ~90 MPa",
