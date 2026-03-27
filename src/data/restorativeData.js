@@ -2,6 +2,7 @@
 // RESTORATIVE DATA — Blocks, Composites, Post & Core, Bonding Agents
 // ═══════════════════════════════════════════════════════════════════
 
+import { APA_INTRAORAL, CURE_INFO } from "./sharedRestProsthData.js";
 export const REST_MATERIALS = [
   { id: "tetric-cad", name: "Tetric CAD", mfr: "Ivoclar", cat: "Resin Nano-Ceramic (RNC)", composition: "UDMA/Bis-GMA + barium glass/SiO₂ nanofillers. E-modulus: ~10–12 GPa (dentin ~18 GPa). Low modulus = stress-absorbing, kind to opposing enamel.", strength: "273 MPa", indications: ["Inlay","Onlay","Veneer","Crown (single)"], notes: "E-mod ~10–12 GPa → absorbs occlusal stress rather than transmitting to tooth/implant. Good for implant restorations where shock absorption protects the osseointegrated interface. No HF — sandblast + silane.",
     surface: { etch: { m: "No HF", d: "HF degrades resin matrix", w: "Contraindicated", refs: ["ifu-tetric","ozcan-2013"] }, abrasion: { m: "Al₂O₃ 50 μm · 1.5–2 bar · 10 sec", refs: ["ozcan-2013","elsaka-2014"] }, clean: ["Ultrasonic × 5 min","Steam","Ivoclean if contaminated"], primer: { best: "2-Bottle Silane", mechanism: "Silane → SiO₂/barium glass filler", conflict: false, refs: ["shen-2004","lung-2012","sattabanasuk-2016"] }, laser: false },
