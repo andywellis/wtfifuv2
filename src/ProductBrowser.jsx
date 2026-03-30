@@ -20,6 +20,7 @@ import { ALL_PEDS_PRODUCTS, pedsGetGroup, PEDS_GROUPS, PEDS_CIT } from "./data/p
 import { ALL_TRAUMA_PRODUCTS, traumaGetGroup, TRAUMA_GROUPS, TRAUMA_CIT } from "./data/traumaData.js";
 import { ALL_PHOTO_PRODUCTS, photoGetGroup, PHOTO_GROUPS, PHOTO_CIT } from "./data/photographyData.js";
 import { ALL_ORALMED_PRODUCTS, oralmedGetGroup, ORALMED_GROUPS, ORALMED_CIT } from "./data/oralMedData.js";
+import PubMedSearch from "./components/PubMedSearch.jsx";
 
 // ── Combine materials from both specialties ──
 const MATERIALS = [...REST_MATERIALS, ...PROSTH_MATERIALS];
@@ -279,6 +280,9 @@ function MatDetail({ mat, onBack }) {
           <SmartText text={mat.notes} color={col.a} />
         </div>}
       </div>
+      <div style={{ marginTop: 12 }}>
+        <PubMedSearch defaultQuery={mat.name.replace(/[—–()\[\]▸]/g, " ").trim().split(" ").slice(0, 4).join(" ")} accentColor={col.a} />
+      </div>
     </div>
   );
 }
@@ -320,6 +324,10 @@ function CemDetail({ cem, onBack }) {
           {cem.special && <><S color="#c084fc">Clinical Pearls</S><p style={{ color: "#d8b4fe", fontSize: 11.5, lineHeight: 1.5, margin: 0 }}>{cem.special}</p></>}
         </div>}
       </div>
+
+      <div style={{ marginTop: 12 }}>
+        <PubMedSearch defaultQuery={cem.name.replace(/[—–()\[\]▸]/g, " ").trim().split(" ").slice(0, 4).join(" ")} accentColor={col.a} />
+      </div>
     </div>
   );
 }
@@ -353,6 +361,10 @@ function CompDetail({ comp, onBack }) {
         {tab === "clinical" && <div>
           {comp.special && <><S color="#c084fc">Clinical Pearls</S><p style={{ color: "#d8b4fe", fontSize: 11.5, lineHeight: 1.5, margin: 0 }}>{comp.special}</p></>}
         </div>}
+      </div>
+
+      <div style={{ marginTop: 12 }}>
+        <PubMedSearch defaultQuery={comp.name.replace(/[—–()\[\]▸]/g, " ").trim().split(" ").slice(0, 4).join(" ")} accentColor={col.a} />
       </div>
     </div>
   );
@@ -395,6 +407,10 @@ function BondDetail({ bond, onBack }) {
           {bond.antibacterial && <><S color="#10b981">Antibacterial</S><p style={{ color: "#a7f3d0", fontSize: 11.5, lineHeight: 1.5, margin: 0 }}>MDPB polymerizes INTO adhesive = permanent contact-kill. Not leaching. Lasts life of restoration. Also useful as decontaminant after try-in.</p></>}
         </div>}
       </div>
+
+      <div style={{ marginTop: 12 }}>
+        <PubMedSearch defaultQuery={bond.name.replace(/[—–()\[\]▸]/g, " ").trim().split(" ").slice(0, 4).join(" ")} accentColor={col.a} />
+      </div>
     </div>
   );
 }
@@ -418,6 +434,10 @@ function SurfaceDetail({ item, onBack }) {
           <ReadMore color={col.a}>{item.notes}</ReadMore>
         </div>}
       </div>
+
+      <div style={{ marginTop: 12 }}>
+        <PubMedSearch defaultQuery={item.name.replace(/[—–()\[\]▸]/g, " ").trim().split(" ").slice(0, 4).join(" ")} accentColor={col.a} />
+      </div>
     </div>
   );
 }
@@ -439,6 +459,10 @@ function PostCoreDetail({ item, onBack }) {
         {tab === "clinical" && <div>
           {item.special && <><S color="#c084fc">Clinical Pearls / Evidence</S><p style={{ color: "#d8b4fe", fontSize: 11.5, lineHeight: 1.5, margin: 0 }}>{item.special}</p></>}
         </div>}
+      </div>
+
+      <div style={{ marginTop: 12 }}>
+        <PubMedSearch defaultQuery={item.name.replace(/[—–()\[\]▸]/g, " ").trim().split(" ").slice(0, 4).join(" ")} accentColor={col.a} />
       </div>
     </div>
   );
@@ -490,6 +514,10 @@ function FinishDetail({ item, onBack }) {
           {item.special && <><S color="#c084fc">Clinical Pearls</S><p style={{ color: "#d8b4fe", fontSize: 11.5, lineHeight: 1.5, margin: 0 }}>{item.special}</p></>}
         </div>}
       </div>
+
+      <div style={{ marginTop: 12 }}>
+        <PubMedSearch defaultQuery={item.name.replace(/[—–()\[\]▸]/g, " ").trim().split(" ").slice(0, 4).join(" ")} accentColor={col.a} />
+      </div>
     </div>
   );
 }
@@ -531,15 +559,16 @@ function ProvDetail({ item, onBack }) {
           {isTempCement && item.disadvantages && <><S color="#ef4444">Disadvantages</S><p style={{ color: "#fca5a5", fontSize: 11.5, lineHeight: 1.6, margin: 0 }}>{item.disadvantages}</p></>}
         </div>}
       </div>
+
+      <div style={{ marginTop: 12 }}>
+        <PubMedSearch defaultQuery={item.name.replace(/[—–()\[\]▸]/g, " ").trim().split(" ").slice(0, 4).join(" ")} accentColor={col.a} />
+      </div>
     </div>
   );
 }
 
 // ═══════════════════════════════════════════════
 // UNIVERSAL TABBED DETAIL VIEW — all specialties
-// Auto-detects tabs from structured fields; falls back to notes
-// ═══════════════════════════════════════════════
-import PubMedSearch from "./components/PubMedSearch.jsx";
 
 // Smart text renderer with syntax highlighting
 function SmartText({ text, color }) {

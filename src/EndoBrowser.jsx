@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { ALL_ENDO, ENDO_GROUPS, ENDO_CIT, endoGetGroup } from "./data/endoData.js";
+import PubMedSearch from "./components/PubMedSearch.jsx";
 
 // ── Evidence Grading (shared) ──
 const EG = {
@@ -250,6 +251,29 @@ function EndoDetail({ item, onBack }) {
             </div>
           </div>
         )}
+
+        {/* Evidence & Outcomes (from structured migration) */}
+        {item.evidence && (
+          <div style={{ background: "#0f172a", borderRadius: 10, padding: "12px 16px", marginTop: 12, border: `1px solid ${accentColor}22` }}>
+            <div style={{ fontSize: 9, fontWeight: 700, color: accentColor, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>Evidence & Outcomes</div>
+            <div style={{ fontSize: 11.5, color: "#cbd5e1", lineHeight: 1.6 }}>
+              {item.evidence.split("\\n").map((line, i) => {
+                const t = line.trim();
+                if (!t) return <div key={i} style={{ height: 6 }} />;
+                if (t.startsWith("⚠") || t.startsWith("❌")) return <div key={i} style={{ color: "#fca5a5", fontWeight: 600, marginTop: 4 }}>{t}</div>;
+                if (t.match(/^Per /i)) return <div key={i} style={{ color: "#93c5fd", marginTop: 3, paddingLeft: 8, borderLeft: "2px solid #3b82f6" }}>{t}</div>;
+                if (t.match(/^[A-Z]{2,}/)) return <div key={i} style={{ color: "#fbbf24", fontWeight: 700, marginTop: 6 }}>{t}</div>;
+                if (t.startsWith("•")) return <div key={i} style={{ color: "#94a3b8", paddingLeft: 12, marginTop: 2 }}>{t}</div>;
+                return <div key={i} style={{ marginTop: 2 }}>{t}</div>;
+              })}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* PubMed Search */}
+      <div style={{ marginTop: 12 }}>
+        <PubMedSearch defaultQuery={item.name.replace(/[—–()\[\]▸]/g, " ").trim().split(" ").slice(0, 4).join(" ") + " endodontic"} accentColor={accentColor} />
       </div>
     </div>
   );
