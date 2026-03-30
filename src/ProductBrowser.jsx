@@ -181,7 +181,13 @@ function MatDetail({ mat, onBack }) {
   const col = gc(mat.cat);
   const [tab, setTab] = useState("surface");
   const s = mat.surface;
-  const tabs = [{ id: "surface", label: "Surface Tx" },{ id: "cement", label: "Cementation" },{ id: "tooth", label: "Tooth Prep" }];
+  const hasOutcomes = mat.notes && mat.notes.includes("CLINICAL OUTCOMES");
+  const tabs = [
+    { id: "surface", label: "Surface Tx" },
+    { id: "cement", label: "Cementation" },
+    { id: "tooth", label: "Tooth Prep" },
+    ...(hasOutcomes ? [{ id: "outcomes", label: "Clinical Outcomes" }] : []),
+  ];
 
   return (
     <div style={{ maxWidth: 820, margin: "0 auto" }}>
@@ -268,6 +274,9 @@ function MatDetail({ mat, onBack }) {
           <R l="Saliva" v={mat.tooth.contam.saliva} c="#ef4444" />
           <R l="Try-in" v={mat.tooth.contam.tryIn} c="#ef4444" />
           <R l="Blood" v={mat.tooth.contam.blood} c="#ef4444" />
+        </div>}
+        {tab === "outcomes" && hasOutcomes && <div>
+          <SmartText text={mat.notes} color={col.a} />
         </div>}
       </div>
     </div>
@@ -527,29 +536,152 @@ function ProvDetail({ item, onBack }) {
 }
 
 // ═══════════════════════════════════════════════
-// GENERIC NOTES-BASED DETAIL VIEW (new specialties)
+// UNIVERSAL TABBED DETAIL VIEW — all specialties
+// Auto-detects tabs from structured fields; falls back to notes
 // ═══════════════════════════════════════════════
 import PubMedSearch from "./components/PubMedSearch.jsx";
 
-function NotesCardDetail({ item, onBack, color, citMap }) {
+// Smart text renderer with syntax highlighting
+function SmartText({ text, color }) {
+  if (!text) return null;
+  return (
+    <div style={{ color: "#cbd5e1", fontSize: 12, lineHeight: 1.7, fontFamily: "'Outfit',system-ui" }}>
+      {text.split("\n").map((line, i) => {
+        const t = line.trim();
+        if (!t) return <div key={i} style={{ height: 8 }} />;
+        if (t.startsWith("⚠") || t.startsWith("❌")) return <div key={i} style={{ color: "#fca5a5", fontWeight: 600, marginTop: 6, padding: "4px 8px", background: "rgba(239,68,68,0.08)", borderRadius: 4, borderLeft: "3px solid #ef4444" }}>{t}</div>;
+        if (t.startsWith("✅")) return <div key={i} style={{ color: "#86efac", fontWeight: 600, marginTop: 4, padding: "4px 8px", background: "rgba(16,185,129,0.08)", borderRadius: 4, borderLeft: "3px solid #10b981" }}>{t}</div>;
+        if (t.match(/^Per /i)) return <div key={i} style={{ color: "#93c5fd", marginTop: 4, paddingLeft: 8, borderLeft: "2px solid #3b82f6", fontSize: 11.5 }}>{t}</div>;
+        if (t.match(/^[A-Z][A-Z\s/&]{3,}[A-Z:]/) || t.match(/^\d+\)\s/) || t.match(/^\d+(ST|ND|RD|TH) LINE/i)) return <div key={i} style={{ color: "#fbbf24", fontWeight: 700, marginTop: 10, fontSize: 12.5, borderBottom: `1px solid ${color || "#fbbf24"}20`, paddingBottom: 3 }}>{t}</div>;
+        if (t.startsWith("•") || t.startsWith("-")) return <div key={i} style={{ color: "#94a3b8", paddingLeft: 14, marginTop: 2, position: "relative" }}><span style={{ position: "absolute", left: 2, color: color || "#94a3b8" }}>•</span>{t.replace(/^[•\-]\s*/, "")}</div>;
+        return <div key={i} style={{ marginTop: 3 }}>{t}</div>;
+      })}
+    </div>
+  );
+}
+
+// Tab content panel
+function TabPanel({ title, content, color }) {
+  if (!content) return null;
+  return (
+    <div style={{ background: "rgba(255,255,255,0.02)", borderRadius: 10, padding: "16px 20px", border: "1px solid #1e293b" }}>
+      {title && <div style={{ color: color || "#475569", fontSize: 9, fontWeight: 800, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 8 }}>{title}</div>}
+      <SmartText text={content} color={color} />
+    </div>
+  );
+}
+
+// Tab configuration by specialty — defines which fields map to which tabs
+const TAB_CONFIG = {
+  // Sedation & Anesthesia
+  sedation: [
+    { id: "pharmacology", label: "Pharmacology", field: "pharmacology" },
+    { id: "dosing", label: "Dosing & Protocol", field: "dosing" },
+    { id: "evidence", label: "Evidence & Safety", field: "evidence" },
+  ],
+  // OFP / TMD
+  ofp: [
+    { id: "description", label: "Description", field: "description_detail" },
+    { id: "protocol", label: "Protocol & Dosing", field: "protocol" },
+    { id: "evidence", label: "Evidence", field: "evidence" },
+  ],
+  // Sleep
+  sleep: [
+    { id: "design", label: "Design & Mechanism", field: "design" },
+    { id: "protocol", label: "Protocol", field: "protocol" },
+    { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
+  ],
+  // Periodontics — uses existing fields: material, steps (→technique), evidence
+  perio: [
+    { id: "material", label: "Material & Composition", field: "material" },
+    { id: "technique", label: "Technique & Protocol", field: "steps" },
+    { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
+  ],
+  // Implantology
+  implants: [
+    { id: "design", label: "Design & Specs", field: "design" },
+    { id: "protocol", label: "Protocol", field: "protocol" },
+    { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
+  ],
+  // Periodontics
+  perio: [
+    { id: "material", label: "Material & Composition", field: "material" },
+    { id: "technique", label: "Technique", field: "technique" },
+    { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
+  ],
+  // Preventive
+  preventive: [
+    { id: "product", label: "Product & Composition", field: "product_detail" },
+    { id: "protocol", label: "Protocol & Application", field: "protocol" },
+    { id: "evidence", label: "Evidence", field: "evidence" },
+  ],
+  // Lasers
+  lasers: [
+    { id: "physics", label: "Physics & Wavelength", field: "physics" },
+    { id: "settings", label: "Settings & Indications", field: "settings" },
+    { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
+  ],
+  // 3D Printing
+  printing: [
+    { id: "composition", label: "Composition & Specs", field: "composition_detail" },
+    { id: "technique", label: "Technique & Post-Processing", field: "technique" },
+    { id: "evidence", label: "Evidence & FDA Status", field: "evidence" },
+  ],
+  // Orthodontics
+  ortho: [
+    { id: "design", label: "Design & Material", field: "design" },
+    { id: "technique", label: "Technique & Protocol", field: "technique" },
+    { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
+  ],
+  // Pediatric
+  pediatric: [
+    { id: "material", label: "Material & Selection", field: "material" },
+    { id: "technique", label: "Technique", field: "technique" },
+    { id: "evidence", label: "Evidence & Guidelines", field: "evidence" },
+  ],
+  // Oral Medicine
+  oralmed: [
+    { id: "diagnosis", label: "Diagnosis & Features", field: "diagnosis" },
+    { id: "management", label: "Management & Protocol", field: "management" },
+    { id: "evidence", label: "Evidence & Guidelines", field: "evidence" },
+  ],
+  // Dental Trauma — 2 tabs only
+  trauma: [
+    { id: "protocol", label: "Immediate Protocol", field: "protocol" },
+    { id: "followup", label: "Follow-Up & Outcomes", field: "followup" },
+  ],
+  // Endodontics (for entries routed through TabbedDetail)
+  endo: [
+    { id: "design", label: "Design & Composition", field: "design" },
+    { id: "protocol", label: "Protocol & Technique", field: "protocol" },
+    { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
+  ],
+  // Photography — single view, no tabs
+  photo: null,
+};
+
+function TabbedDetail({ item, onBack, color, citMap, specialtyId }) {
   const col = { a: color || "#94a3b8", bg: "#0f172a", t: `${color || "#94a3b8"}15` };
-  // Build a search query from item name for PubMed
   const pubmedQuery = (item.name || "").replace(/[—–()\[\]]/g, " ").replace(/\s+/g, " ").trim().split(" ").slice(0, 5).join(" ");
+
+  // Determine available tabs
+  const tabConfig = TAB_CONFIG[specialtyId];
+  const hasTabs = tabConfig && tabConfig.some(t => item[t.field]);
+  const availTabs = hasTabs ? tabConfig.filter(t => item[t.field]) : null;
+  const [activeTab, setActiveTab] = useState(availTabs ? availTabs[0]?.id : null);
 
   return (
     <div style={{ maxWidth: 900, margin: "0 auto", padding: "20px 16px" }}>
       <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
       <button onClick={onBack} style={{ background: "none", border: "none", color: col.a, cursor: "pointer", fontFamily: "'Outfit'", fontSize: 12, fontWeight: 700, padding: "8px 0", marginBottom: 8 }}>← Back to list</button>
 
-      {/* ── Header card ── */}
+      {/* ── Header ── */}
       <div style={{ background: `linear-gradient(135deg, ${col.bg}, #080d19)`, borderRadius: 12, padding: "18px 22px", marginBottom: 12, border: `1px solid ${col.a}22` }}>
         <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 10 }}>
           <div>
             {item.mfr && <div style={{ color: col.a, fontSize: 9, fontWeight: 800, letterSpacing: 2, textTransform: "uppercase", marginBottom: 2 }}>{item.mfr}</div>}
             <h1 style={{ fontFamily: "'Newsreader',Georgia,serif", fontSize: 22, color: "#f1f5f9", margin: "0 0 5px", fontWeight: 700 }}>{item.name}</h1>
-            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-              <span style={{ background: col.t, color: col.a, fontSize: 9, fontWeight: 700, padding: "2px 8px", borderRadius: 16 }}>{item.cat}</span>
-            </div>
+            <span style={{ background: col.t, color: col.a, fontSize: 9, fontWeight: 700, padding: "2px 8px", borderRadius: 16 }}>{item.cat}</span>
           </div>
           {item.strength && <div style={{ textAlign: "right" }}>
             <div style={{ color: "#475569", fontSize: 9, textTransform: "uppercase", letterSpacing: 1 }}>Strength</div>
@@ -562,28 +694,34 @@ function NotesCardDetail({ item, onBack, color, citMap }) {
         </div>}
       </div>
 
-      {/* ── Clinical Notes (main content) ── */}
-      {item.notes && (
-        <div style={{ background: "rgba(255,255,255,0.02)", borderRadius: 10, padding: "16px 20px", border: "1px solid #1e293b", marginBottom: 12 }}>
-          <div style={{ color: "#475569", fontSize: 9, fontWeight: 800, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 8 }}>Clinical Notes</div>
-          <div style={{ color: "#cbd5e1", fontSize: 12, lineHeight: 1.7, fontFamily: "'Outfit',system-ui" }}>
-            {item.notes.split("\n").map((line, i) => {
-              const trimmed = line.trim();
-              if (!trimmed) return <div key={i} style={{ height: 8 }} />;
-              if (trimmed.startsWith("⚠") || trimmed.startsWith("❌")) return <div key={i} style={{ color: "#fca5a5", fontWeight: 600, marginTop: 6, padding: "4px 8px", background: "rgba(239,68,68,0.08)", borderRadius: 4, borderLeft: "3px solid #ef4444" }}>{trimmed}</div>;
-              if (trimmed.startsWith("✅")) return <div key={i} style={{ color: "#86efac", fontWeight: 600, marginTop: 4, padding: "4px 8px", background: "rgba(16,185,129,0.08)", borderRadius: 4, borderLeft: "3px solid #10b981" }}>{trimmed}</div>;
-              if (trimmed.match(/^Per /i)) return <div key={i} style={{ color: "#93c5fd", marginTop: 4, paddingLeft: 8, borderLeft: "2px solid #3b82f6", fontSize: 11.5 }}>{trimmed}</div>;
-              if (trimmed.match(/^[A-Z][A-Z\s/&]{3,}[A-Z:]/) || trimmed.match(/^\d+\)\s/) || trimmed.match(/^\d+(ST|ND|RD|TH) LINE/i)) return <div key={i} style={{ color: "#fbbf24", fontWeight: 700, marginTop: 10, fontSize: 12.5, borderBottom: "1px solid #fbbf2420", paddingBottom: 3 }}>{trimmed}</div>;
-              if (trimmed.startsWith("•") || trimmed.startsWith("-")) return <div key={i} style={{ color: "#94a3b8", paddingLeft: 14, marginTop: 2, position: "relative" }}><span style={{ position: "absolute", left: 2, color: col.a }}>•</span>{trimmed.replace(/^[•\-]\s*/, "")}</div>;
-              return <div key={i} style={{ marginTop: 3 }}>{trimmed}</div>;
-            })}
-          </div>
+      {/* ── Tabs (if structured fields exist) ── */}
+      {availTabs && availTabs.length > 1 && (
+        <div style={{ display: "flex", gap: 3, marginBottom: 12, flexWrap: "wrap" }}>
+          {availTabs.map(t => (
+            <button key={t.id} onClick={() => setActiveTab(t.id)} style={{
+              background: activeTab === t.id ? col.a : "rgba(255,255,255,0.05)",
+              color: activeTab === t.id ? "#080d19" : "#64748b",
+              border: "none", borderRadius: 7, padding: "6px 14px",
+              fontFamily: "'Outfit'", fontSize: 11.5, fontWeight: 700, cursor: "pointer",
+            }}>{t.label}</button>
+          ))}
         </div>
+      )}
+
+      {/* ── Tab Content ── */}
+      {availTabs ? (() => {
+        const activeField = availTabs.find(t => t.id === activeTab)?.field;
+        const rawContent = item[activeField];
+        const textContent = Array.isArray(rawContent) ? rawContent.join("\n• ") : rawContent;
+        return <TabPanel content={textContent} color={col.a} />;
+      })() : (
+        /* Fallback: render notes as single view */
+        item.notes && <TabPanel title="Clinical Notes" content={item.notes} color={col.a} />
       )}
 
       {/* ── References ── */}
       {item.refs?.length > 0 && citMap && (
-        <div style={{ marginTop: 0, marginBottom: 12, padding: "12px 14px", background: "#0c1222", borderRadius: 8, border: "1px solid #1e293b" }}>
+        <div style={{ marginTop: 12, marginBottom: 12, padding: "12px 14px", background: "#0c1222", borderRadius: 8, border: "1px solid #1e293b" }}>
           <div style={{ color: "#475569", fontSize: 9, fontWeight: 800, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 8 }}>References ({item.refs.filter(r => citMap[r]).length})</div>
           {item.refs.filter(r => citMap[r]).map((r, i) => {
             const c = citMap[r];
@@ -709,12 +847,12 @@ export default function ProductBrowser({ specialty, onGoHome }) {
   const goBack = () => { setSel(null); setSelType(null); };
 
   // ── Detail view routing ──
-  // Notes-only items from new specialties
-  if (sel && selType === "notes") return <NotesCardDetail item={sel} onBack={goBack} color={specialty?.color} citMap={reg?.cit} />;
+  // New specialties → TabbedDetail (handles both tabbed + notes-only fallback)
+  if (sel && selType === "notes") return <TabbedDetail item={sel} onBack={goBack} color={specialty?.color} citMap={reg?.cit} specialtyId={specialty?.id} />;
   // Legacy prosth items that are notes-only (impressions, removables, etc.)
-  if (sel && selType === "material" && !sel.surface) return <NotesCardDetail item={sel} onBack={goBack} color={specialty?.color} citMap={null} />;
-  if (sel && selType === "prosth_design") return <NotesCardDetail item={sel} onBack={goBack} color={specialty?.color} citMap={null} />;
-  if (sel && selType === "implant" && !sel.connection) return <NotesCardDetail item={sel} onBack={goBack} color={specialty?.color} citMap={reg?.cit} />;
+  if (sel && selType === "material" && !sel.surface) return <TabbedDetail item={sel} onBack={goBack} color={specialty?.color} citMap={null} specialtyId={specialty?.id} />;
+  if (sel && selType === "prosth_design") return <TabbedDetail item={sel} onBack={goBack} color={specialty?.color} citMap={null} specialtyId={specialty?.id} />;
+  if (sel && selType === "implant" && !sel.connection) return <TabbedDetail item={sel} onBack={goBack} color={specialty?.color} citMap={reg?.cit} specialtyId={specialty?.id} />;
   // Rich detail views for legacy materials
   if (sel && selType === "material") return <MatDetail mat={sel} onBack={goBack} />;
   if (sel && selType === "cement") return <CemDetail cem={sel} onBack={goBack} />;
