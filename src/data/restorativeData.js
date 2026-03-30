@@ -96,6 +96,8 @@ export const REST_MATERIALS = [
     refs: ["ozcan-2015","sundfeld-2018"]
   },
 ];
+
+export const COMPOSITES = [
   { id: "everx-flow", name: "EverX Flow", mfr: "GC", cat: "Fiber-Reinforced Flowable Composite", composition: "Short E-glass fiber + barium glass in Bis-GMA/TEGDMA", strength: "Fracture toughness: 2.6 MPa·m^½ (2–3× conventional)", indications: ["Core build-up base","IDS resin coat","DME base layer","Post/core foundation","Cusp replacement sub"], notes: "NOT a final restorative — fiber sub covered by conventional composite. 'Rebar for your restoration.'",
     steps: ["Apply adhesive per protocol","Dispense EverX Flow in ≤2mm increments as BASE","Adapt with instrument","Cure 20s/2mm (≥800 mW/cm²)","Build to within 1–2mm of final contour","Cover with conventional composite for anatomy + polish"],
     layering: "Base: EverX Flow (fracture resistance) → Top: conventional composite (anatomy/polish)", cureTime: "20s/2mm. Bulk to 4mm with high-intensity.",
