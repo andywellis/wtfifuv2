@@ -104,6 +104,7 @@ function LandingPage({ onSelect }) {
           WTF<span style={{ color: "#22d3ee" }}>IFU</span>
         </h1>
         <p style={{ color: "#64748b", fontSize: 14, maxWidth: 540, margin: "0 auto", lineHeight: 1.6 }}>
+          Where to Find Instructions for Use <br />
           Dental materials &amp; clinical protocols organized by specialty.<br />
           {SPECIALTIES.filter(s => s.ready).length} specialties · 529+ products · 750+ citations
         </p>
