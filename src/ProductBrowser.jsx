@@ -7,7 +7,7 @@ import {
 } from "./data/sharedRestProsthData.js";
 import { REST_MATERIALS, COMPOSITES, POST_CORE, BONDING_AGENTS } from "./data/restorativeData.js";
 import { PROSTH_MATERIALS, PROVISIONALS, PROSTH_DESIGN } from "./data/prosthData.js";
-import { ALL_IMPLANT_PRODUCTS, implantGetGroup, IMPLANT_GROUPS } from "./data/implantData.js";
+import { ALL_IMPLANT_PRODUCTS, implantGetGroup, IMPLANT_GROUPS, IMPLANT_CIT } from "./data/implantData.js";
 import { ALL_PERIO, perioGetGroup, PERIO_GROUPS, PERIO_CIT } from "./data/perioData.js";
 import { ALL_PREVENTIVE_PRODUCTS, prevGetGroup, PREV_GROUPS, PREV_CIT } from "./data/preventiveData.js";
 import { ALL_SEDATION_PRODUCTS, sedGetGroup, SED_GROUPS, SED_CIT } from "./data/sedationData.js";
@@ -582,6 +582,7 @@ function NotesCardDetail({ item, onBack, color, citMap }) {
 // SPECIALTY DATA REGISTRY — maps dataKey → products, groupFn, groups, citations
 // ═══════════════════════════════════════════════
 const SPECIALTY_REGISTRY = {
+  implants:   { products: ALL_IMPLANT_PRODUCTS, groupFn: implantGetGroup, groups: IMPLANT_GROUPS, cit: IMPLANT_CIT },
   perio:      { products: ALL_PERIO, groupFn: perioGetGroup, groups: PERIO_GROUPS, cit: PERIO_CIT },
   preventive: { products: ALL_PREVENTIVE_PRODUCTS, groupFn: prevGetGroup, groups: PREV_GROUPS, cit: PREV_CIT },
   sedation:   { products: ALL_SEDATION_PRODUCTS, groupFn: sedGetGroup, groups: SED_GROUPS, cit: SED_CIT },
