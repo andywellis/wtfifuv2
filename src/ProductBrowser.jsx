@@ -591,11 +591,11 @@ const TAB_CONFIG = {
     { id: "protocol", label: "Protocol", field: "protocol" },
     { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
   ],
-  // Periodontics — uses existing fields: material, steps (→technique), evidence
+  // Periodontics — uses ORIGINAL fields: composition→material, steps→technique, notes+special→evidence
   perio: [
-    { id: "material", label: "Material & Composition", field: "material" },
-    { id: "technique", label: "Technique & Protocol", field: "steps" },
-    { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
+    { id: "material", label: "Material & Composition", field: "composition" },
+    { id: "technique", label: "Technique", field: "steps" },
+    { id: "evidence", label: "Evidence & Outcomes", field: "special" },
   ],
   // Implantology
   implants: [
