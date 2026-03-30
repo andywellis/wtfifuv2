@@ -529,51 +529,84 @@ function ProvDetail({ item, onBack }) {
 // ═══════════════════════════════════════════════
 // GENERIC NOTES-BASED DETAIL VIEW (new specialties)
 // ═══════════════════════════════════════════════
+import PubMedSearch from "./components/PubMedSearch.jsx";
+
 function NotesCardDetail({ item, onBack, color, citMap }) {
   const col = { a: color || "#94a3b8", bg: "#0f172a", t: `${color || "#94a3b8"}15` };
+  // Build a search query from item name for PubMed
+  const pubmedQuery = (item.name || "").replace(/[—–()\[\]]/g, " ").replace(/\s+/g, " ").trim().split(" ").slice(0, 5).join(" ");
+
   return (
     <div style={{ maxWidth: 900, margin: "0 auto", padding: "20px 16px" }}>
       <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
       <button onClick={onBack} style={{ background: "none", border: "none", color: col.a, cursor: "pointer", fontFamily: "'Outfit'", fontSize: 12, fontWeight: 700, padding: "8px 0", marginBottom: 8 }}>← Back to list</button>
+
+      {/* ── Header card ── */}
       <div style={{ background: `linear-gradient(135deg, ${col.bg}, #080d19)`, borderRadius: 12, padding: "18px 22px", marginBottom: 12, border: `1px solid ${col.a}22` }}>
-        {item.mfr && <div style={{ color: col.a, fontSize: 9, fontWeight: 800, letterSpacing: 2, textTransform: "uppercase", marginBottom: 2 }}>{item.mfr}</div>}
-        <h1 style={{ fontFamily: "'Newsreader',Georgia,serif", fontSize: 22, color: "#f1f5f9", margin: "0 0 5px", fontWeight: 700 }}>{item.name}</h1>
-        <span style={{ background: col.t, color: col.a, fontSize: 9, fontWeight: 700, padding: "2px 8px", borderRadius: 16 }}>{item.cat}</span>
-        {item.composition && <p style={{ color: "#64748b", fontSize: 11, marginTop: 8, lineHeight: 1.4 }}>{item.composition}</p>}
+        <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 10 }}>
+          <div>
+            {item.mfr && <div style={{ color: col.a, fontSize: 9, fontWeight: 800, letterSpacing: 2, textTransform: "uppercase", marginBottom: 2 }}>{item.mfr}</div>}
+            <h1 style={{ fontFamily: "'Newsreader',Georgia,serif", fontSize: 22, color: "#f1f5f9", margin: "0 0 5px", fontWeight: 700 }}>{item.name}</h1>
+            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+              <span style={{ background: col.t, color: col.a, fontSize: 9, fontWeight: 700, padding: "2px 8px", borderRadius: 16 }}>{item.cat}</span>
+            </div>
+          </div>
+          {item.strength && <div style={{ textAlign: "right" }}>
+            <div style={{ color: "#475569", fontSize: 9, textTransform: "uppercase", letterSpacing: 1 }}>Strength</div>
+            <div style={{ color: "#f1f5f9", fontSize: 15, fontWeight: 900, fontFamily: "'Outfit'" }}>{item.strength}</div>
+          </div>}
+        </div>
+        {item.composition && <p style={{ color: "#94a3b8", fontSize: 11.5, marginTop: 8, lineHeight: 1.5, borderTop: "1px solid #1e293b", paddingTop: 8 }}>{item.composition}</p>}
+        {item.indications && <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginTop: 8 }}>
+          {item.indications.map(ind => <span key={ind} style={{ background: "rgba(255,255,255,0.06)", color: "#94a3b8", fontSize: 9, padding: "2px 7px", borderRadius: 10 }}>{ind}</span>)}
+        </div>}
       </div>
+
+      {/* ── Clinical Notes (main content) ── */}
       {item.notes && (
-        <div style={{ background: "rgba(255,255,255,0.02)", borderRadius: 10, padding: "16px 20px", border: "1px solid #1e293b" }}>
-          <div style={{ color: "#cbd5e1", fontSize: 12, lineHeight: 1.7, whiteSpace: "pre-wrap", fontFamily: "'Outfit',system-ui" }}>
+        <div style={{ background: "rgba(255,255,255,0.02)", borderRadius: 10, padding: "16px 20px", border: "1px solid #1e293b", marginBottom: 12 }}>
+          <div style={{ color: "#475569", fontSize: 9, fontWeight: 800, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 8 }}>Clinical Notes</div>
+          <div style={{ color: "#cbd5e1", fontSize: 12, lineHeight: 1.7, fontFamily: "'Outfit',system-ui" }}>
             {item.notes.split("\n").map((line, i) => {
-              if (line.startsWith("⚠") || line.startsWith("❌")) return <div key={i} style={{ color: "#fca5a5", fontWeight: 600, marginTop: 6 }}>{line}</div>;
-              if (line.startsWith("✅")) return <div key={i} style={{ color: "#86efac", fontWeight: 600, marginTop: 4 }}>{line}</div>;
-              if (line.startsWith("Per ") || line.startsWith("per ")) return <div key={i} style={{ color: "#93c5fd", marginTop: 4 }}>{line}</div>;
-              if (line.match(/^[A-Z]{2,}/) || line.match(/^\d+\)/)) return <div key={i} style={{ color: "#fbbf24", fontWeight: 700, marginTop: 8 }}>{line}</div>;
-              if (line.startsWith("•")) return <div key={i} style={{ color: "#94a3b8", paddingLeft: 12, marginTop: 2 }}>{line}</div>;
-              if (line.trim() === "") return <div key={i} style={{ height: 6 }} />;
-              return <div key={i} style={{ marginTop: 2 }}>{line}</div>;
+              const trimmed = line.trim();
+              if (!trimmed) return <div key={i} style={{ height: 8 }} />;
+              if (trimmed.startsWith("⚠") || trimmed.startsWith("❌")) return <div key={i} style={{ color: "#fca5a5", fontWeight: 600, marginTop: 6, padding: "4px 8px", background: "rgba(239,68,68,0.08)", borderRadius: 4, borderLeft: "3px solid #ef4444" }}>{trimmed}</div>;
+              if (trimmed.startsWith("✅")) return <div key={i} style={{ color: "#86efac", fontWeight: 600, marginTop: 4, padding: "4px 8px", background: "rgba(16,185,129,0.08)", borderRadius: 4, borderLeft: "3px solid #10b981" }}>{trimmed}</div>;
+              if (trimmed.match(/^Per /i)) return <div key={i} style={{ color: "#93c5fd", marginTop: 4, paddingLeft: 8, borderLeft: "2px solid #3b82f6", fontSize: 11.5 }}>{trimmed}</div>;
+              if (trimmed.match(/^[A-Z][A-Z\s/&]{3,}[A-Z:]/) || trimmed.match(/^\d+\)\s/) || trimmed.match(/^\d+(ST|ND|RD|TH) LINE/i)) return <div key={i} style={{ color: "#fbbf24", fontWeight: 700, marginTop: 10, fontSize: 12.5, borderBottom: "1px solid #fbbf2420", paddingBottom: 3 }}>{trimmed}</div>;
+              if (trimmed.startsWith("•") || trimmed.startsWith("-")) return <div key={i} style={{ color: "#94a3b8", paddingLeft: 14, marginTop: 2, position: "relative" }}><span style={{ position: "absolute", left: 2, color: col.a }}>•</span>{trimmed.replace(/^[•\-]\s*/, "")}</div>;
+              return <div key={i} style={{ marginTop: 3 }}>{trimmed}</div>;
             })}
           </div>
         </div>
       )}
+
+      {/* ── References ── */}
       {item.refs?.length > 0 && citMap && (
-        <div style={{ marginTop: 12, padding: "10px 14px", background: "#0c1222", borderRadius: 8, border: "1px solid #1e293b" }}>
-          <div style={{ color: "#475569", fontSize: 9, fontWeight: 800, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 6 }}>References</div>
+        <div style={{ marginTop: 0, marginBottom: 12, padding: "12px 14px", background: "#0c1222", borderRadius: 8, border: "1px solid #1e293b" }}>
+          <div style={{ color: "#475569", fontSize: 9, fontWeight: 800, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 8 }}>References ({item.refs.filter(r => citMap[r]).length})</div>
           {item.refs.filter(r => citMap[r]).map((r, i) => {
             const c = citMap[r];
             const g = EG[c.grade];
+            const url = c.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${c.pmid}/` : null;
             return (
-              <div key={r} style={{ marginBottom: 5, display: "flex", gap: 5, alignItems: "flex-start" }}>
-                <span style={{ background: g?.bg, color: g?.color, fontSize: 7, fontWeight: 800, padding: "2px 4px", borderRadius: 2, flexShrink: 0, marginTop: 1 }}>{g?.label}</span>
+              <div key={r} style={{ marginBottom: 6, paddingBottom: 5, borderBottom: i < item.refs.length - 1 ? "1px solid #1e293b22" : "none", display: "flex", gap: 6, alignItems: "flex-start" }}>
+                <span style={{ background: g?.bg, color: g?.color, fontSize: 7, fontWeight: 800, padding: "2px 5px", borderRadius: 2, flexShrink: 0, marginTop: 2 }}>{g?.label}</span>
                 <div>
-                  <div style={{ color: "#94a3b8", fontSize: 10, lineHeight: 1.3 }}>{c.title}</div>
-                  <div style={{ color: "#475569", fontSize: 9 }}>{c.authors} · <em>{c.journal}</em> {c.year}</div>
+                  <div style={{ color: "#cbd5e1", fontSize: 10.5, fontWeight: 600, lineHeight: 1.3 }}>{c.title}</div>
+                  <div style={{ color: "#475569", fontSize: 9.5 }}>{c.authors} · <em>{c.journal}</em> {c.year}</div>
+                  {url && <a href={url} target="_blank" rel="noopener noreferrer" style={{ color: "#3b82f6", fontSize: 8.5, textDecoration: "none", fontWeight: 600 }}>PMID:{c.pmid} ↗</a>}
                 </div>
               </div>
             );
           })}
         </div>
       )}
+
+      {/* ── PubMed Search ── */}
+      <div style={{ marginTop: 4 }}>
+        <PubMedSearch defaultQuery={pubmedQuery} accentColor={col.a} />
+      </div>
     </div>
   );
 }
