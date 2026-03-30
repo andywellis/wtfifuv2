@@ -1,0 +1,216 @@
+// ═══════════════════════════════════════════════════════════════════
+// LASERS DATA — Diode Procedures, PBM, Nd:YAG, Safety Protocols
+// ═══════════════════════════════════════════════════════════════════
+
+export const LASER_CIT = {
+  "hanke-2021-cut-efficiency": { pmid: null, title: "Cut efficiency 400-1500nm: 445nm achieved 820μm depth vs 344μm for 810nm at 2W; blue highest efficiency", authors: "Hanke A, et al.", journal: "Lasers Med Sci", year: 2021, grade: "STRONG" },
+  "strakas-2023-940nm": { pmid: null, title: "940nm: optimal 3-5W; highest efficiency (γ=0.81) at 5W; >3.5W rapid thermal damage increase; avoid 6W", authors: "Strakas D, et al.", journal: "Lasers Surg Med", year: 2023, grade: "STRONG" },
+  "gutierrez-2020-biopsy": { pmid: null, title: "810nm at 0.5-2W: best to avoid thermal damage for biopsy; 2W causes significantly more necrosis than 0.5W", authors: "Gutiérrez-Corrales A, et al.", journal: "Med Oral Patol Oral Cir Bucal", year: 2020, grade: "STRONG" },
+  "ansorge-2025-blue-vs-nir": { pmid: null, title: "445nm: ~151°C at interface (clear epithelial incision) vs 810nm ~62°C (less cutting efficiency)", authors: "Ansorge YD, et al.", journal: "J Dent", year: 2025, grade: "STRONG" },
+  "tastan-2025-frenectomy-rct": { pmid: null, title: "Diode vs scalpel frenectomy RCT: diode significantly lower pain days 1,3,7 (p<0.05); similar healing", authors: "Tastan Eroglu Z, et al.", journal: "Med Oral Patol Oral Cir Bucal", year: 2025, grade: "STRONG" },
+  "tamim-2024-troughing-sr": { pmid: null, title: "SR: lasers achieved highest horizontal displacement (0.53mm); best bleeding control; shortest procedure time", authors: "Tamim H, et al.", journal: "J Prosthet Dent", year: 2024, grade: "STRONG" },
+  "yu-2022-diode-perio-ma": { pmid: null, title: "MA 30 RCTs: diode inside pocket single session improves PPD, CAL, PI, GI; outside pocket PBM multiple sessions better", authors: "Yu S, et al.", journal: "Lasers Med Sci", year: 2022, grade: "STRONG" },
+  "dortaj-2022-lanap-rct": { pmid: null, title: "LANAP RCT: Nd:YAG+NSPT greater PPD reduction vs NSPT alone (p=0.0002); due to recession not attachment gain", authors: "Dortaj D, et al.", journal: "J Periodontol", year: 2022, grade: "STRONG" },
+  "yang-2025-herpes-pbm-ma": { pmid: null, title: "MA: PBMT vs acyclovir — significantly faster pain reduction days 2-3; faster healing by 1.22 days (p=0.0007)", authors: "Yang Q, et al.", journal: "Lasers Med Sci", year: 2025, grade: "STRONG" },
+  "hanna-2024-aphthae-pbm": { pmid: null, title: "980nm PBM 300mW 18J/cm² 60sec: significant immediate pain relief; >50% healing at 3 days; 100% by day 4", authors: "Hanna R, et al.", journal: "J Clin Med", year: 2024, grade: "STRONG" },
+  "losin-2020-hemostasis": { pmid: null, title: "Hemostasis comparison: Nd:YAG > CO₂ > Er:YAG > diode for congealing ability and speed", authors: "Losin KJ, et al.", journal: "Int J Periodontics Restorative Dent", year: 2020, grade: "STRONG" },
+  "angiero-2012-biopsy-size": { pmid: null, title: "Minimum biopsy specimen 5mm in vivo to ensure adequate margins for histopathology with laser excision", authors: "Angiero F, et al.", journal: "Lasers Med Sci", year: 2012, grade: "STRONG" },
+  // ── Hard tissue / Erbium citations ──
+  "cochrane-2016-laser-caries": { pmid: null, title: "Cochrane 9 RCTs: laser vs drill — no diff in caries removal; laser sig. less pain (RR 0.40) and less anesthesia (RR 0.25)", authors: "Montedori A, et al.", journal: "Cochrane Database Syst Rev", year: 2016, grade: "STRONG" },
+  "sae-2025-erbium-caries-sr": { pmid: null, title: "Er:YAG/Er,Cr:YSGG: effective caries removal, selective ablation, open tubules, no smear layer; longer time than bur", authors: "Sae-Ferrández O, et al.", journal: "J Dent", year: 2025, grade: "STRONG" },
+  "su-2020-sweeps-flow": { pmid: null, title: "SWEEPS max flow 10 m/s vs PIPS 7 m/s vs ultrasonic 0.15 m/s in lateral canals; >1mm penetration", authors: "Su Z, et al.", journal: "Lasers Surg Med", year: 2020, grade: "STRONG" },
+  "almutairi-2025-pips-bond": { pmid: null, title: "PIPS: lowest residual smear layer + highest push-out bond strength (11.27 MPa); SWEEPS comparable; both > syringe", authors: "Almutairi B, Alkhudhairy F", journal: "Microsc Res Tech", year: 2025, grade: "STRONG" },
+  "srinivasan-2025-periimplant-ma": { pmid: null, title: "MA 15 RCTs: Er:YAG BOP -35.6%, PD -0.65mm; Er,Cr:YSGG+MD BOP -47.3%, PD -1.23mm; NOT superior to mech debridement alone", authors: "Srinivasan M, et al.", journal: "J Dent", year: 2025, grade: "STRONG" },
+  "ravida-2025-decontamination": { pmid: null, title: "AAP/AO: Er:YAG, electrolytic cleaning, air-powder abrasive best embody ideal decontamination characteristics", authors: "Ravidà A, et al.", journal: "Int J Oral Maxillofac Implants", year: 2025, grade: "STRONG" },
+  // ── PBM expanded ──
+  "lacerda-2023-3rdmolar-pbm-ma": { pmid: null, title: "MA 33 RCTs: PBM post-3rd molar — pain SMD -1.09 day 3; edema SMD -0.61 day 2; trismus SMD 0.48 day 7", authors: "Lacerda-Santos JT, et al.", journal: "J Oral Maxillofac Surg", year: 2023, grade: "STRONG" },
+  "cochrane-2021-dentin-hyper": { pmid: null, title: "Cochrane 23 RCTs: laser vs placebo for DH — air blast MD -2.24 short-term, -2.60 long-term; low-very low certainty", authors: "Mahdian M, et al.", journal: "Cochrane Database Syst Rev", year: 2021, grade: "MODERATE" },
+  // ── Er:YAG vs Er,Cr:YSGG ──
+  "etemadi-2013-erbium-comparison": { pmid: null, title: "Er:YAG vs Er,Cr:YSGG calculus removal: Er:YAG significantly faster (7.1 vs 15.2 sec); Er,Cr:YSGG more craters", authors: "Etemadi A, et al.", journal: "Int J Periodontics Restorative Dent", year: 2013, grade: "STRONG" },
+  "kuscer-2013-hydrokinetic": { pmid: null, title: "No evidence of 'hydrokinetic effect' for Er,Cr:YSGG; water spray diminishes ablation efficiency; both work via subsurface expansion", authors: "Kuščer L, Diaci J", journal: "J Biomed Opt", year: 2013, grade: "STRONG" },
+  // ── CO₂ and Er:YAG bone surgery ──
+  "merigo-2013-co2-thermal": { pmid: null, title: "CO₂ 3W: best incision quality + moderate thermal increase; diode 5W: highest depth thermal increase; Er:YAG lowest thermal", authors: "Merigo E, et al.", journal: "Lasers Med Sci", year: 2013, grade: "STRONG" },
+  "cercadillo-2010-thermal-damage": { pmid: null, title: "Er,Cr:YSGG with water = lowest thermal damage; CO₂ = low-moderate; diode = moderate-high depth damage", authors: "Cercadillo-Ibarguren I, et al.", journal: "Med Oral Patol Oral Cir Bucal", year: 2010, grade: "STRONG" },
+  "grgurevic-2005-apicoectomy": { pmid: null, title: "Er:YAG 380mJ/100μs/20Hz optimal for apicoectomy; 7-31× slower than mechanical but less vibration/contamination", authors: "Grgurević J, et al.", journal: "Lasers Surg Med", year: 2005, grade: "STRONG" },
+  "matys-2016-ridge-splitting": { pmid: null, title: "Er:YAG 200-400mJ safe for ridge splitting: no temp rise >10°C, no carbonization; comparable to piezosurgery", authors: "Matys J, et al.", journal: "Biomed Res Int", year: 2016, grade: "STRONG" },
+};
+
+export const laserGetGroup = c => {
+  if (c.includes("Soft Tissue") || c.includes("Frenectomy") || c.includes("Gingivectomy") || c.includes("Biopsy") || c.includes("Uncovery") || c.includes("Troughing")) return "Soft Tissue Surgery";
+  if (c.includes("PBM") || c.includes("Photobiomodulation") || c.includes("Aphthous") || c.includes("Herpetic")) return "Photobiomodulation (PBM)";
+  if (c.includes("Periodontal") || c.includes("LANAP") || c.includes("Sulcular")) return "Periodontal Applications";
+  if (c.includes("Wavelength") || c.includes("Chromophore")) return "Wavelength Selection";
+  if (c.includes("Safety")) return "Safety & Protocols";
+  return "Other";
+};
+
+export const LASER_GROUPS = ["Wavelength Selection", "Soft Tissue Surgery", "Photobiomodulation (PBM)", "Periodontal Applications", "Safety & Protocols"];
+
+// ═══════════════════════════════════════════════
+// 1. WAVELENGTH SELECTION
+// ═══════════════════════════════════════════════
+export const WAVELENGTH_SELECTION = [
+  {
+    id: "chromophore-guide", name: "Wavelength-Chromophore Selection Guide", cat: "Wavelength Selection — Chromophore Targets",
+    notes: "UNDERSTANDING WHAT EACH WAVELENGTH ACTUALLY DOES:\n\n445nm (Blue): primary chromophore hemoglobin/melanin → very high pigmented tissue absorption → HIGHEST cutting efficiency at lower power (per Hanke 2021: 820μm depth vs 344μm for 810nm at 2W). Per Ansorge 2025: 445nm achieves ~151°C at interface (clear incision) vs 810nm ~62°C.\n\n810nm: melanin/hemoglobin → moderate absorption, deeper penetration → best for soft tissue surgery, PBM, periodontal therapy. Per Gutiérrez-Corrales 2020: best choice for biopsy (least thermal damage at 0.5-2W).\n\n940nm: water (slight) + hemoglobin → balanced cutting/coagulation → general soft tissue surgery. Per Strakas 2023: optimal 3-5W; highest efficiency γ=0.81 at 5W; >3.5W = rapid thermal damage increase.\n\n980nm: water + hemoglobin → higher water absorption → good hemostasis + soft tissue.\n\n1064nm (Nd:YAG): melanin/hemoglobin → deep penetration, less water absorption → periodontal (LANAP), coagulation. Per Losin 2020: HIGHEST congealing ability of all dental lasers.\n\nKEY PRINCIPLE: Blue (445nm) = most efficient cutting at lowest power. NIR (810-980nm) = deeper penetration but more power needed. Match wavelength to target chromophore for best results.\n\nWHAT DIODES DO WELL: ✅ soft tissue incision with hemostasis, frenectomy, gingivectomy, troughing, PBM, adjunctive perio.\nWHAT DIODES DO POORLY: ❌ hard tissue (need Er:YAG), true regeneration (LANAP = Nd:YAG only), large biopsies (thermal artifact).",
+    refs: ["hanke-2021-cut-efficiency","ansorge-2025-blue-vs-nir","strakas-2023-940nm","gutierrez-2020-biopsy"]
+  },
+];
+
+// ═══════════════════════════════════════════════
+// 2. SOFT TISSUE SURGERY
+// ═══════════════════════════════════════════════
+export const SOFT_TISSUE_PROCEDURES = [
+  {
+    id: "laser-frenectomy", name: "Frenectomy (Lingual / Labial) — Diode", cat: "Soft Tissue Surgery — Frenectomy",
+    notes: "SETTINGS BY WAVELENGTH:\n• 810nm: 1.5–2.0W, CW or gated, 300–400μm initiated fiber\n• 940nm: 2.0–3.0W, CW\n• 980nm: 2.0–3.0W, CW\n\nPer Tastan Eroglu 2025 RCT: diode vs scalpel — diode significantly lower pain on days 1, 3, 7 (p<0.05); similar healing outcomes.\nPer Sayed Taha 2024: diode 810nm 2W vs Er:YAG 2W — diode better pain reduction (VAS 2.1 vs 2.6 at 3h); Er:YAG faster healing at 7-14 days.\n\nTECHNIQUE:\n1) Anesthetize (topical often sufficient for labial; infiltration for lingual)\n2) Initiate fiber tip on articulating paper or cork\n3) Apply tension to frenum\n4) Cut with light, continuous strokes — KEEP FIBER MOVING\n5) Feather edges to blend with surrounding tissue\n\nHEALING: complete epithelialization 14–21 days. No sutures required. Minimal scarring.\n\n⚠ Keep fiber moving — stationary contact causes excessive thermal damage and charring.",
+    refs: ["tastan-2025-frenectomy-rct","strakas-2023-940nm"]
+  },
+  {
+    id: "laser-gingivectomy", name: "Gingivectomy / Crown Lengthening — Diode", cat: "Soft Tissue Surgery — Gingivectomy",
+    notes: "SETTINGS:\n• 808–810nm: 1.5–2.0W, CW\n• 940nm: 2.0–3.5W, CW (per Strakas 2023: optimal 3-5W for cutting; >3.5W rapid thermal damage)\n• 980nm: 2.0–3.0W, CW\n• Fiber: 300–400μm, initiated; 10–15 sec per tooth\n\nPer Abdelhafez 2022 RCT: diode vs scalpel for crown lengthening — no significant difference in pain at 3 and 7 days; stable gingival margins at 1 month.\nPer Silva 2022: diode 808nm 2W for gummy smile — no intraoperative bleeding (p=0.002); conventional showed better tissue repair at day 14.\n\nTECHNIQUE:\n1) Mark desired gingival margin with probe or surgical guide\n2) Initiated fiber at 45° angle to tooth\n3) Sculpt tissue with continuous sweeping motion — KEEP MOVING\n4) Remove tissue tags; feather margins\n\n⚠ Diode = soft tissue only. If bone reduction needed for biological width, conventional surgery required.",
+    refs: ["strakas-2023-940nm"]
+  },
+  {
+    id: "laser-biopsy", name: "Excisional Biopsy — Diode", cat: "Soft Tissue Surgery — Biopsy",
+    notes: "⚠ CRITICAL: use LOWEST power to minimize thermal artifact in margins.\n\nPer Gutiérrez-Corrales 2020: 810nm at 0.5–2.0W — 810nm is BEST choice to avoid thermal damage. Higher power (2.0W) causes significantly more thermal damage and necrosis than 0.5W.\n\nSETTINGS:\n• Power: 0.5–1.5W (LOWER IS BETTER)\n• Mode: CW\n• Fiber: 300–320μm\n• Margin: ≥2–3mm beyond lesion (accounts for thermal damage zone)\n\nPer Angiero 2012: minimum specimen size 5mm IN VIVO to ensure adequate margins for histopathology with laser excision.\n\n⚠ Specimens <5mm may be NON-DIAGNOSTIC due to thermal artifact. If lesion is small or margins critical, consider scalpel biopsy instead.\n\nFor incisional biopsy of large lesions: scalpel is preferred — avoids thermal artifact at diagnostic margin.",
+    refs: ["gutierrez-2020-biopsy","angiero-2012-biopsy-size"]
+  },
+  {
+    id: "laser-troughing", name: "Tissue Troughing for Impressions — Diode", cat: "Soft Tissue Surgery — Troughing",
+    notes: "Per Tamim 2024 SR: lasers achieved HIGHEST horizontal displacement (pooled mean 0.53mm); BEST bleeding control; SHORTEST procedure time; comparable or less recession than cord techniques.\n\nPer Stuffken 2016: 810nm diode vs double cord (AlCl) — no significant difference in recession at 8 wk (0.27mm vs 0.26mm). Both clinically acceptable.\n\nSETTINGS:\n• Power: 0.8–1.5W\n• Mode: CW or pulsed\n• Fiber: 300–400μm, initiated\n• Technique: light contact, circumferential sweep around margin\n\nADVANTAGES over cord: no chemical irritation, excellent hemostasis, immediate impression capability, shorter procedure time.\n\nBest for: digital impression workflows where clean, dry sulcus is essential.",
+    refs: ["tamim-2024-troughing-sr"]
+  },
+];
+
+// ═══════════════════════════════════════════════
+// 3. PHOTOBIOMODULATION (PBM)
+// ═══════════════════════════════════════════════
+export const PBM_PROCEDURES = [
+  {
+    id: "pbm-aphthous", name: "Aphthous Ulcer Treatment — PBM Protocol", cat: "PBM — Aphthous Ulcers",
+    notes: "PBM SETTINGS BY WAVELENGTH:\n• 635–660nm (red): 50–100mW, CW, 2–4 J/cm², 30–60 sec/lesion, 1–3 sessions q48–72h\n• 810–830nm (NIR): 100–300mW, CW, 4–6 J/cm², 30–60 sec/lesion\n• 980nm: 300mW, CW, 18 J/cm², 60 sec/lesion, 2 sessions\n\nPer Hanna 2024: 980nm 300mW 18 J/cm² 60 sec — significant immediate pain relief; >50% healing at 3 days; 100% healing by day 4.\nPer Rocca 2018: 635nm achieved EARLIEST pain relief (during treatment); all wavelengths effective by day 7.\nPer Bardellini 2020 pediatric RCT: PBM 645nm showed significant pain reduction at day 4 and lesion size reduction vs sham.\n\n635nm (red) recommended for earliest pain relief. 810–980nm for deeper/larger ulcers.",
+    refs: ["hanna-2024-aphthae-pbm"]
+  },
+  {
+    id: "pbm-herpes", name: "Herpetic Lesion Management — PBM Protocol", cat: "PBM — Herpetic Lesions",
+    notes: "PBM IS SUPERIOR TO ACYCLOVIR for herpes labialis.\n\nPer Yang 2025 MA: PBMT vs acyclovir — significantly faster pain reduction at days 2 and 3 (SMD -1.54 and -0.88); faster healing by 1.22 days (p=0.0007); greater lesion size reduction at day 3.\n\nSETTINGS:\n• Wavelength: 650nm (red)\n• Power: 100mW\n• Energy density: 4.7–24 J/cm²\n• Time: 120 sec per session\n• Sessions: 2 sessions (48–72h apart)\n\nPer Al-Hallak 2025 RCT: combined aPDT (0.1% methylene blue + 650nm 100mW 24 J/cm²) + PBMT = significantly better than acyclovir or PBMT alone for pain and healing.\n\nBest used at PRODROMAL STAGE (tingling/burning before vesicles appear) for maximum benefit.",
+    refs: ["yang-2025-herpes-pbm-ma"]
+  },
+];
+
+// ═══════════════════════════════════════════════
+// 4. PERIODONTAL APPLICATIONS
+// ═══════════════════════════════════════════════
+export const PERIO_LASER = [
+  {
+    id: "diode-sulcular", name: "Sulcular Debridement / Laser Pocket Therapy — Diode", cat: "Periodontal — Sulcular Debridement (Diode)",
+    notes: "ADJUNCTIVE to SRP — modest additional benefit.\n\nPer Yu 2022 MA (30 RCTs): inside pocket, single session — significant improvements in PPD (short-term, 3 mo), CAL, PI, GI. Outside pocket PBM with multiple sessions shows better outcomes.\n\nSETTINGS:\n• Inside pocket: 0.8–1.5W, CW, 300–400μm fiber, 10–30 sec/pocket\n• Outside pocket (PBM): 100–300mW, CW, defocused, 30–60 sec/site\n• Per Yu 2022: 'One session laser treatment is suggested when DL is applied inside pocket'\n\nTECHNIQUE:\n1) Complete SRP FIRST\n2) Insert initiated fiber to base of pocket (within 2mm of deepest point)\n3) Activate laser; sweep fiber coronally along root surface\n4) 10–30 sec per pocket\n5) Light contact with tissue; avoid excessive pressure\n\nPer Kadhim Salman 2025 RCT (dual-wavelength): SRP + diode 10 sec/pocket — significant PPD reduction (4.92→3.55mm vs 4.95→3.90mm) and BOP reduction vs SRP alone at 3 mo.\n\n⚠ Diode provides bacterial reduction and modest clinical improvement but does NOT provide the selective epithelial ablation or clot stabilization of Nd:YAG LANAP.",
+    refs: ["yu-2022-diode-perio-ma"]
+  },
+  {
+    id: "lanap-ndyag", name: "LANAP — Nd:YAG (1064nm) Protocol", cat: "Periodontal — LANAP (Nd:YAG Only)",
+    notes: "LANAP IS FDA-CLEARED SPECIFICALLY FOR Nd:YAG (1064nm) — there is NO diode equivalent with the same evidence.\n\nPROTOCOL:\n• First pass: 3W, 100μs pulse, 20Hz — sulcular debridement, epithelium removal\n• Second pass: 4W, 600μs pulse, 20Hz — coagulation, clot stabilization\n\nPer Dortaj 2022 RCT: Nd:YAG + NSPT showed greater PPD reduction vs NSPT alone at 6 mo (p=0.0002), but improvement was due to GREATER RECESSION rather than attachment gain.\n\nPer Bian 2025: deep pockets (≥7mm) showed greater improvements in PPD, CAL, and healing rate vs shallow pockets — LANAP most beneficial for advanced disease.\n\nPer Estrin 2022 MA: combined Nd:YAG + Er:YAG → additional 1.01mm PPD reduction and 0.77mm CAL gain vs controls.\n\nPer Losin 2020: Nd:YAG has HIGHEST congealing ability of all dental lasers — fastest hemostasis.\n\n⚠ LANAP requires specific Nd:YAG equipment (PerioLase MVP-7) and Millennium Dental Technologies certification. Not transferable to diode or other wavelengths.",
+    refs: ["dortaj-2022-lanap-rct","losin-2020-hemostasis"]
+  },
+];
+
+// ═══════════════════════════════════════════════
+// 5. SAFETY & PROTOCOLS
+// ═══════════════════════════════════════════════
+export const LASER_SAFETY = [
+  {
+    id: "laser-safety-protocol", name: "Laser Safety Protocol & Common Mistakes", cat: "Safety — Laser Safety Protocol",
+    notes: "EYE PROTECTION (wavelength-specific — generic 'laser glasses' may NOT protect):\n• 445nm (blue): OD 4+ at 400–500nm, orange/amber lens\n• 810nm: OD 4+ at 800–850nm, green or clear (wavelength-specific)\n• 940–980nm: OD 4+ at 900–1000nm, clear (wavelength-specific)\n• 1064nm (Nd:YAG): OD 5+ at 1000–1100nm\n\nSAFETY REQUIREMENTS:\n1) Laser Safety Officer (LSO) designated\n2) Warning signs on doors; controlled access during procedures\n3) High-volume evacuation REQUIRED — laser plume contains viable viral particles + carbonized tissue\n4) Non-reflective instruments in beam path\n5) Fire safety: remove flammable materials; water available\n6) Patient: wavelength-appropriate eyewear; wet gauze over non-target tissues\n\nCOMMON RESIDENT MISTAKES:\n• Stationary fiber contact → excessive thermal damage, charring → KEEP FIBER MOVING\n• Power too high → thermal necrosis, delayed healing → start low (1–2W), increase as needed\n• Non-initiated tip → inefficient cutting → always initiate on articulating paper or cork\n• Biopsy specimen too small → non-diagnostic thermal artifact → minimum 5mm in vivo\n• Wrong eyewear → ocular injury → verify OD rating matches YOUR wavelength\n• No evacuation → plume inhalation → always use HVE with laser filter\n• Expecting scalpel-like healing → counsel patients: laser healing takes 14–21 days",
+    refs: ["gutierrez-2020-biopsy","angiero-2012-biopsy-size","strakas-2023-940nm"]
+  },
+];
+
+// ═══════════════════════════════════════════════
+// 6. ERBIUM LASERS (Er:YAG / Er,Cr:YSGG)
+// ═══════════════════════════════════════════════
+export const ERBIUM_LASERS = [
+  {
+    id: "eryag-caries", name: "Er:YAG (2940nm) — Cavity Preparation & Caries Removal", cat: "Periodontal — Er:YAG Hard Tissue",
+    notes: "LESS PAIN + LESS ANESTHESIA NEEDED vs conventional drill.\n\nPer Cochrane 2016 (9 RCTs, 662 pts): caries removal efficacy = no difference vs drill (RR 1.00). But: MODERATE/HIGH PAIN RR 0.40 (laser better); NEED FOR ANESTHESIA RR 0.25 (laser better). No difference in marginal integrity or restoration durability at 6 mo.\n\nPer Sae-Ferrández 2025 SR: Er:YAG/Er,Cr:YSGG achieve effective caries removal with selective ablation of infected dentin; favorable histology (open tubules, no smear layer). LONGER TIME than rotary.\n\nSETTINGS:\n• Carious dentin: 200–300 mJ, 2–10 Hz, water spray REQUIRED\n• Sound dentin: 300–400 mJ, 2–10 Hz\n• Enamel: 350–500 mJ, 3–10 Hz\n\nBEST FOR: pediatric patients (less anxiety/pain), needle-phobic adults, conservative preparations. LIMITATION: slower than bur; not practical for large restorations.",
+    refs: ["cochrane-2016-laser-caries","sae-2025-erbium-caries-sr"]
+  },
+  {
+    id: "eryag-sweeps-pips", name: "Er:YAG SWEEPS / PIPS — Root Canal Irrigation Activation", cat: "Periodontal — Er:YAG Endodontic (SWEEPS/PIPS)",
+    notes: "SUPERIOR IRRIGANT ACTIVATION vs ultrasonic.\n\nPIPS (Photon-Induced Photoacoustic Streaming): cavitation bubbles generate acoustic streaming.\nSWEEPS (Shock Wave Enhanced Emission Photoacoustic Streaming): dual-pulse technology for enhanced shock waves.\n\nPer Su 2020: SWEEPS max flow 10 m/s vs PIPS 7 m/s vs ultrasonic 0.15 m/s in lateral canals; penetration >1mm vs ultrasonic 300μm. Back-and-forth 'breath mode' flow pattern.\n\nPer Almutairi 2025: PIPS = lowest residual smear layer + highest push-out bond strength (11.27 MPa); SWEEPS comparable; both superior to conventional syringe irrigation.\n\nPer Nagahashi 2022: both intracanal and CORONAL laser activation showed significantly lower bacteria than needle irrigation — fiber doesn't need to enter canal.\n\nPROTOCOL:\n• PIPS: 20 mJ, 15 Hz, tip in pulp chamber (coronal), 2.5–5% NaOCl, 3×30 sec\n• SWEEPS: 15–20 mJ, 15 Hz, tip in pulp chamber, 2.5–5% NaOCl, 3×30 sec\n\nRequires Er:YAG laser with appropriate endodontic tips (e.g., Fotona LightWalker with SWEEPS module).",
+    refs: ["su-2020-sweeps-flow","almutairi-2025-pips-bond"]
+  },
+  {
+    id: "eryag-periimplantitis", name: "Er:YAG — Peri-Implantitis Decontamination", cat: "Periodontal — Er:YAG Peri-Implantitis",
+    notes: "Per Srinivasan 2025 MA (15 RCTs, 540 pts, 658 implants): Er:YAG BOP -35.6%, PD -0.65mm. Er,Cr:YSGG+MD: BOP -47.3%, PD -1.23mm. However: laser therapy did NOT demonstrate significant superiority over mechanical debridement alone (p>0.05).\n\nPer Ravidà 2025 (AAP/AO): Er:YAG, electrolytic cleaning, and air-powder abrasive 'stand out as methods that most closely embody ideal decontamination characteristics' — minimal surface alterations with specific settings.\n\nSETTINGS:\n• Energy: 60–100 mJ/pulse\n• Frequency: 10–20 Hz\n• Tip: chisel or radial firing\n• Water spray: REQUIRED\n• Technique: non-contact; 1–2mm from implant surface\n\n⚠ Do NOT use high energy on implant surface — risk of surface damage. Er:YAG is safer for implant surfaces than Nd:YAG or CO₂.",
+    refs: ["srinivasan-2025-periimplant-ma","ravida-2025-decontamination"]
+  },
+  {
+    id: "ercr-ysgg-comparison", name: "Er,Cr:YSGG (2780nm) — Comparison to Er:YAG", cat: "Periodontal — Er,Cr:YSGG vs Er:YAG",
+    notes: "CLINICALLY EQUIVALENT to Er:YAG — but Er:YAG may be slightly more efficient.\n\nWAVELENGTH: Er:YAG 2940nm (peak water absorption) vs Er,Cr:YSGG 2780nm (slightly lower).\n\nPer Etemadi 2013: Er:YAG SIGNIFICANTLY faster for calculus removal (7.1 vs 15.2 sec); Er,Cr:YSGG produced significantly more surface craters. Neither caused carbonization.\n\nPer Kuščer 2013: NO evidence of 'hydrokinetic effect' for Er,Cr:YSGG (contrary to manufacturer marketing claims). Water spray actually DIMINISHES ablation efficiency. Both wavelengths work via subsurface water expansion mechanism.\n\nPer Apel 2002: Er:YAG ablation threshold in enamel 9–11 J/cm² vs Er,Cr:YSGG 10–14 J/cm² — Er,Cr:YSGG requires higher energy for equivalent ablation.\n\nBOTTOM LINE: both are clinically effective for hard tissue. Er:YAG is slightly more efficient. Choice typically depends on available equipment. Don't believe marketing claims about 'hydrokinetic' superiority.",
+    refs: ["etemadi-2013-erbium-comparison","kuscer-2013-hydrokinetic"]
+  },
+];
+
+// ═══════════════════════════════════════════════
+// 7. EXPANDED PBM APPLICATIONS
+// ═══════════════════════════════════════════════
+export const PBM_EXPANDED = [
+  {
+    id: "pbm-postsurgical", name: "PBM for Post-Surgical Healing (Third Molars, Implants)", cat: "PBM — Post-Surgical Healing",
+    notes: "Per Lacerda-Santos 2023 MA (33 RCTs, 1,347 pts): PBM after 3rd molar surgery — pain SMD -1.09 day 3; edema SMD -0.61 day 2; trismus SMD 0.48 day 7. Low certainty but clinically meaningful.\n\nPer Pérez 2025 RCT (split-mouth): 980nm immediately + 24/48/72h — perceived edema significantly lower at all timepoints (p<0.05).\n\nPer Niedzielska 2026 SR: PBM consistently improved early soft tissue healing; some evidence of accelerated bone maturation in grafted sockets.\n\nPROTOCOL:\n• Wavelength: 810–980nm\n• Power: 100–300mW\n• Energy density: 4–6 J/cm²\n• Application: extraoral + intraoral; 3–5 points around surgical site\n• Sessions: immediately post-op, then 24h, 48h, 72h\n\nBest for: 3rd molar extractions, implant placement, bone grafting, any surgical site where edema/pain reduction is desired. Low risk, no significant adverse effects.",
+    refs: ["lacerda-2023-3rdmolar-pbm-ma"]
+  },
+  {
+    id: "pbm-dentin-hypersensitivity", name: "Laser for Dentin Hypersensitivity", cat: "PBM — Dentin Hypersensitivity",
+    notes: "Per Cochrane 2021 (23 RCTs, 936 pts, 2,296 teeth): laser vs placebo — air blast pain MD -2.24 short-term; -2.60 long-term. Tactile MD -0.67 short-term. Low to very low certainty.\n\nSETTINGS BY WAVELENGTH:\n• 980nm diode (per Meng 2023): 0.8W, 10 sec × 2 applications — highest tubule occlusion while safe intrapulpal temp (<5.5°C).\n• Nd:YAG 1064nm (per Maximiano 2025): 100 mJ, 1W, 10 Hz, 83.3 J/cm² — pain continued decreasing through 6 months; lowest pain vs calcium sodium phosphosilicate paste.\n• Er,Cr:YSGG 2780nm (per Forouzande 2022): 20 Hz, 0.25W, 44.3 J/cm², 150μs pulse, 30 sec — significant reduction at 1 wk, 1 mo, 6 mo; combination with Gluma showed best results.\n\nMECHANISM: laser energy occludes dentinal tubules (thermal/melting effect at higher power) or modulates pulpal nerve response (PBM effect at lower power).",
+    refs: ["cochrane-2021-dentin-hyper"]
+  },
+];
+
+// ═══════════════════════════════════════════════
+// 8. aPDT (Antimicrobial Photodynamic Therapy)
+// ═══════════════════════════════════════════════
+export const APDT = [
+  {
+    id: "apdt-systems", name: "aPDT Systems (FotoSan, PACT, Helbo)", cat: "Periodontal — aPDT (Antimicrobial Photodynamic Therapy)",
+    notes: "MECHANISM: photosensitizer applied → light activation at specific wavelength → reactive oxygen species (ROS) generated → bacterial membrane damage and death.\n\nPHOTOSENSITIZER AGENTS:\n• Methylene blue 0.005–0.1% → activated by 660–670nm (red)\n• Toluidine blue O 0.01–0.1% → activated by 630–660nm (red)\n• Indocyanine green (ICG) 0.1–1% → activated by 810nm (NIR) — deeper penetration, biofilm\n\nCOMMERCIAL SYSTEMS:\n• FotoSan (CMS Dental): toluidine blue + 630nm LED\n• PACT (Cumdente): toluidine blue + 635nm diode\n• Helbo (Bredent): methylene blue + 660nm diode\n\nPERIODONTAL PROTOCOL:\n1) Complete SRP first\n2) Apply photosensitizer to pocket (MB 0.01% or TBO 0.1%)\n3) Wait 1–3 min for uptake\n4) Activate with appropriate wavelength (60–90 sec/site)\n5) Rinse\n\nENDO PROTOCOL:\n1) Complete chemomechanical preparation\n2) Dry canal\n3) Apply MB 0.01–0.1%\n4) Wait 2–5 min\n5) Activate with fiber tip in canal (60–120 sec)\n6) Irrigate; proceed with obturation\n\nEVIDENCE: aPDT provides significant BACTERIAL REDUCTION in vitro. But clinical superiority over SRP alone for PPD/CAL is NOT consistently demonstrated. Consider for refractory cases or high-risk patients as adjunct.\n\nPer Al-Hallak 2025 RCT: combined aPDT + PBMT significantly better than acyclovir alone for herpes labialis healing.",
+    refs: ["yang-2025-herpes-pbm-ma"]
+  },
+];
+
+// ═══════════════════════════════════════════════
+// ═══════════════════════════════════════════════
+// 9. CO₂ LASER
+// ═══════════════════════════════════════════════
+export const CO2_LASER = [
+  {
+    id: "co2-soft-tissue", name: "CO₂ Laser (10,600nm) — Soft Tissue Surgery", cat: "Soft Tissue Surgery — CO₂ Laser",
+    notes: "SUPERIOR HEMOSTASIS + LESS DEPTH DAMAGE vs diode — preferred for large excisions and vascular lesions.\n\nPer Merigo 2013: CO₂ at 3W = best incision quality with moderate thermal increase. Diode 5W = highest DEPTH thermal increase. Er:YAG = lowest thermal overall.\nPer Cercadillo-Ibarguren 2010: Er,Cr:YSGG (with water) = lowest thermal damage; CO₂ = low-moderate; diode = moderate-high depth damage.\n\nSETTINGS:\n• Small excisions: 1–3W, CW or superpulsed, focused beam\n• Large excisions: 5–10W, superpulsed, defocused for ablation\n• Vascular lesions: 3–5W, CW, defocused painting motion — SUPERIOR hemostasis\n• Gingivectomy: 2–4W, superpulsed, contact\n• Frenectomy: 2–3W, CW or pulsed, contact\n\nCO₂ vs DIODE:\n• CO₂: 0.1–0.5mm penetration (superficial); articulated arm delivery; $15K–50K; BEST for precise excision, vascular lesions, large biopsies\n• Diode: 2–4mm penetration (deep); flexible fiber; $3K–15K; BEST for general soft tissue, sulcular debridement, PBM\n\nCO₂ ADVANTAGES: superior hemostasis (superficial coagulation zone), less depth thermal damage (better biopsy specimens), faster cutting at equivalent power.\n\nCO₂ DISADVANTAGES: articulated arm less maneuverable, higher cost, CANNOT do sulcular debridement (no fiber delivery), larger footprint.",
+    refs: ["merigo-2013-co2-thermal","cercadillo-2010-thermal-damage"]
+  },
+];
+
+// ═══════════════════════════════════════════════
+// 10. Er:YAG BONE SURGERY
+// ═══════════════════════════════════════════════
+export const ERYAG_BONE = [
+  {
+    id: "eryag-bone-surgery", name: "Er:YAG Bone Surgery — Apicoectomy, Ridge Splitting, Grafting", cat: "Periodontal — Er:YAG Bone Surgery",
+    notes: "MINIMAL THERMAL DAMAGE + BACTERICIDAL — slower than bur but less trauma.\n\nAPICOECTOMY:\nPer Grgurević 2005: optimal settings 380mJ / 100μs pulse / 20Hz. Er:YAG is 7–31× slower than mechanical handpiece but provides less vibration, less contamination, and acceptable outcomes.\nPer Komori 1997: 8 apicoectomy cases performed entirely with Er:YAG — no air turbine or bur used. Advantage: absence of discomfort/vibration, less contamination.\n\nRIDGE SPLITTING:\nPer Matys 2016: Er:YAG at 200–400mJ is SAFE — no temperature rise >10°C, no carbonization. All methods (Er:YAG, piezosurgery, surgical saw) comparably safe. Er:YAG 200mJ = lowest temperature rise.\n\nSETTINGS BY PROCEDURE:\n• Apicoectomy window: 300–400 mJ, 15–20 Hz, water spray REQUIRED, perpendicular to bone, sweeping motion\n• Ridge splitting: 200–400 mJ, 10–15 Hz, water spray, linear cuts, multiple passes\n• Block graft harvesting: 300–400 mJ, 15–20 Hz, water spray, outline cuts then chisel for release\n• Implant site prep: 200–300 mJ, 10–15 Hz, water spray, sequential widening\n\nPer Ishikawa 2004: healing equal or faster than conventional bur; bactericidal effect provides additional benefit.\n\n⚠ ALWAYS use water spray (50–80% air/water). Multiple passes preferred over single high-energy pass. Perpendicular angle to bone for efficiency.",
+    refs: ["grgurevic-2005-apicoectomy","matys-2016-ridge-splitting"]
+  },
+];
+
+export const ALL_LASER_PRODUCTS = [
+  ...WAVELENGTH_SELECTION,
+  ...SOFT_TISSUE_PROCEDURES,
+  ...PBM_PROCEDURES,
+  ...PERIO_LASER,
+  ...LASER_SAFETY,
+  ...ERBIUM_LASERS,
+  ...PBM_EXPANDED,
+  ...APDT,
+  ...CO2_LASER,
+  ...ERYAG_BONE,
+];
