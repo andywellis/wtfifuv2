@@ -93,6 +93,17 @@ const SPECIALTIES = [
     subtitle: "DSLR settings, lens selection, flash, mirrors, magnification ratios, shot checklist",
     dataKey: "photo", ready: true,
   },
+  {
+    id: "tx-planning", name: "Treatment Planning", icon: "📋", color: "#e879f9", bg: "#1a0f2e",
+    subtitle: "Philosophies (Kois, Spear, Dawson, DSD), classifications, sequencing, CMOREPOOOPE",
+    filterGroups: ["Treatment Planning Philosophies", "Classification Systems", "Treatment Sequencing & Decisions", "Risk Assessment"],
+    dataKey: "tx-planning", ready: true,
+  },
+  {
+    id: "oral-surgery", name: "Oral Surgery", icon: "🔪", color: "#f97316", bg: "#1a0f0a",
+    subtitle: "Forceps, surgical extraction, coronectomy, piezosurgery, socket preservation, complications",
+    dataKey: "oral-surgery", ready: true,
+  },
 ];
 
 function LandingPage({ onSelect }) {
