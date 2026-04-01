@@ -43,7 +43,7 @@ export const ANTICOAG = [
     refs: ["douketis-2022-accp", "herrick-2021-medical-clearance"]
   },
   {
-    id: "doac-dental", name: "DOACs — Dental Management", mfr: "Multiple (Eliquis, Xarelto, Pradaxa)", cat: "Anticoagulant — Direct Oral",
+    id: "doac-dental", name: "DOACs (Direct Oral Anticoagulants) — Dental Management", mfr: "Multiple (Eliquis, Xarelto, Pradaxa)", cat: "Anticoagulant — Direct Oral",
     framework: "DRUGS:\n• Apixaban (Eliquis) — Factor Xa inhibitor, BID dosing\n• Rivaroxaban (Xarelto) — Factor Xa inhibitor, daily dosing\n• Edoxaban (Savaysa) — Factor Xa inhibitor, daily dosing\n• Dabigatran (Pradaxa) — direct thrombin inhibitor, BID dosing\n\nHALF-LIVES: 8-14 hours (rapid on/off). No routine lab monitoring needed.",
     application: "DENTAL MANAGEMENT:\n\n⚠ CONTINUE or DELAY morning dose — DO NOT HOLD for days\n\nSIMPLE PROCEDURES (extractions, cleanings):\n• Once-daily DOAC: delay morning dose until evening post-procedure\n• Twice-daily DOAC: omit morning dose, take evening dose as scheduled\n• Alternative: continue as usual\n\nCOMPLEX ORAL SURGERY (multiple impactions, extensive bone work):\n• Factor Xa inhibitors: hold 1 day before (24-36h)\n• Dabigatran: hold 1-2 days (adjust for renal function)\n  — CrCl >50: hold 1 day\n  — CrCl 30-50: hold 2 days\n  — CrCl 15-30: hold 3-4 days\n\nRESUME: when hemostasis achieved, typically same day or next morning.",
     evidence: "Per Douketis 2024 JAMA review (988 patients): no increase in major bleeding with DOAC continuation vs interruption for minor dental procedures.\n\nReversal agents available for emergencies: idarucizumab (Praxbind) for dabigatran, andexanet alfa for Xa inhibitors.",
@@ -73,7 +73,7 @@ export const DIABETES_MEDS = [
     refs: ["agarwal-2026-aap-peds"]
   },
   {
-    id: "sglt2-dental", name: "SGLT2 Inhibitors — Euglycemic DKA Risk", mfr: "Multiple (Jardiance, Farxiga, Invokana)", cat: "Diabetes — SGLT2 Inhibitor ⚠",
+    id: "sglt2-dental", name: "SGLT2 Inhibitors (Sodium-Glucose Cotransporter-2) — Euglycemic DKA Risk", mfr: "Multiple (Jardiance, Farxiga, Invokana)", cat: "Diabetes — SGLT2 Inhibitor ⚠",
     framework: "DRUGS: empagliflozin (Jardiance), dapagliflozin (Farxiga), canagliflozin (Invokana), ertugliflozin (Steglatro).\n\nMECHANISM: blocks renal glucose reabsorption — causes glycosuria.\n\n⚠ RISK: euglycemic diabetic ketoacidosis (DKA) — can occur with NORMAL glucose levels.",
     application: "DENTAL MANAGEMENT:\n\nLOCAL ANESTHESIA, NO NPO: may continue (low risk)\n\nIV SEDATION OR GENERAL ANESTHESIA:\n• HOLD 3-4 DAYS BEFORE procedure\n• Canagliflozin, dapagliflozin, empagliflozin: ≥3 days\n• Ertugliflozin: ≥4 days\n\nResume when eating normally post-procedure.\n\n⚠ Euglycemic DKA can occur with glucose <250 mg/dL — check ketones if patient feels unwell, even with normal glucose.",
     evidence: "Per FDA/ADA/AHA Consensus: hold 3-4 days before surgery (Class 1, Level C-LD).\nPer ADA 2026 Standards of Care: perioperative SGLT2i management guidelines.\nPer 2024 AHA/ACC Perioperative Guideline: confirms hold recommendation.",
@@ -96,7 +96,7 @@ export const DIABETES_MEDS = [
 export const MRONJ_MEDS = [
   {
     id: "oral-bisphosphonate", name: "Oral Bisphosphonates — MRONJ Risk & Drug Holiday", mfr: "Multiple (Fosamax, Actonel, Boniva)", cat: "Bisphosphonate/Antiresorptive — Oral",
-    framework: "DRUGS: alendronate (Fosamax, weekly), risedronate (Actonel, weekly/monthly), ibandronate (Boniva, monthly).\nMECHANISM: inhibit osteoclast-mediated bone resorption.\n\nMRONJ RISK:\n• Osteoporosis patients: 0.001-0.21% (very low)\n• After tooth extraction: 0.5%\n• Duration-dependent: higher risk with >4 years of therapy",
+    framework: "DRUGS: alendronate (Fosamax, weekly), risedronate (Actonel, weekly/monthly), ibandronate (Boniva, monthly).\nMECHANISM: inhibit osteoclast-mediated bone resorption.\n\nMRONJ (Medication-Related Osteonecrosis of the Jaw) RISK:\n• Osteoporosis patients: 0.001-0.21% (very low)\n• After tooth extraction: 0.5%\n• Duration-dependent: higher risk with >4 years of therapy",
     application: "DRUG HOLIDAY DECISION:\n\n<4 YEARS WITHOUT risk factors: CONTINUE — proceed with dental surgery\n\n<4 YEARS WITH risk factors (diabetes, steroids, smoking, RA): consider 2-month holiday\n\n>4 YEARS WITHOUT risk factors: CONTINUE or consider 2-month holiday\n\n>4 YEARS WITH risk factors: CONSIDER 2-MONTH DRUG HOLIDAY\n• Hold 2 months before procedure\n• Resume 3 months after healing complete\n• COORDINATE WITH PRESCRIBING PHYSICIAN\n\nRISK FACTORS: duration >4yr, diabetes, chronic corticosteroids, smoking, RA, poor oral hygiene, invasive procedures\n\nPer Park 2025: risk substantially lower when paused >90 days, lowest when >1 year.",
     evidence: "Per AAOMS 2014: consider 2-month holiday for >4 years + risk factors.\nPer ADA 2011: <4 years = no alteration needed.\nPer Endocrine Society 2019: conflicting guidelines (ADA vs AAOMS).\nPer FDA 2011: no substantial data to guide drug holiday decisions.\nPer Park 2025 (152,299 patients): risk lower when paused >90 days.\n\n⚠ Optimize oral health BEFORE starting bisphosphonates. Atraumatic extraction when possible.",
     notes: "The drug holiday decision is CONTROVERSIAL. Default to continuing for <4 years. For >4 years + risk factors, coordinate with prescribing physician — fracture risk vs MRONJ risk is the trade-off.",
@@ -117,7 +117,7 @@ export const MRONJ_MEDS = [
 // ═══════════════════════════════════════════════
 export const PSYCH_MEDS = [
   {
-    id: "ssri-snri-dental", name: "SSRIs & SNRIs — Serotonin Syndrome Risk", mfr: "Multiple (Prozac, Zoloft, Lexapro, Effexor, Cymbalta)", cat: "Psychiatric — SSRI/SNRI",
+    id: "ssri-snri-dental", name: "SSRIs & SNRIs (Serotonin/Norepinephrine Reuptake Inhibitors) — Serotonin Syndrome Risk", mfr: "Multiple (Prozac, Zoloft, Lexapro, Effexor, Cymbalta)", cat: "Psychiatric — SSRI/SNRI",
     framework: "SSRIs: fluoxetine (Prozac), sertraline (Zoloft), escitalopram (Lexapro), paroxetine (Paxil)\nSNRIs: venlafaxine (Effexor), duloxetine (Cymbalta)\n\nMECHANISM: inhibit serotonin (± norepinephrine) reuptake.\nHEMOSTASIS: mild antiplatelet effect (usually clinically insignificant for dental).\nORAL MANIFESTATION: bruxism (SSRIs may worsen).",
     application: "DENTAL MANAGEMENT:\n\n⚠ CONTINUE — DO NOT HOLD (risk of withdrawal/relapse outweighs minimal bleeding risk)\n\n⚠ SEROTONIN SYNDROME — AVOID combining with:\n• Tramadol — CONTRAINDICATED\n• Meperidine (Demerol) — CONTRAINDICATED\n• Linezolid — CONTRAINDICATED\n\nSAFE analgesics with SSRIs/SNRIs:\n• Codeine, oxycodone, hydrocodone, morphine — all safe\n• Ibuprofen + acetaminophen — PREFERRED (no serotonin interaction)\n\nFluoxetine may inhibit benzodiazepine metabolism (CYP2D6/3A4) — reduce sedation doses if patient on fluoxetine.",
     evidence: "Per Sertöz 2025 (Minerva Anestesiol): continue SSRIs/SNRIs perioperatively.\n\nSerotonin syndrome: potentially fatal. Symptoms: hyperthermia, rigidity, myoclonus, agitation, autonomic instability. Onset within hours of drug combination.",
@@ -125,7 +125,7 @@ export const PSYCH_MEDS = [
     refs: ["sertoz-2025-psychotropics"]
   },
   {
-    id: "tca-maoi-dental", name: "TCAs & MAOIs — Epinephrine Limits", mfr: "Multiple", cat: "Psychiatric — TCA/MAOI ⚠",
+    id: "tca-maoi-dental", name: "TCAs & MAOIs (Tricyclic Antidepressants & Monoamine Oxidase Inhibitors) — Epinephrine Limits", mfr: "Multiple", cat: "Psychiatric — TCA/MAOI ⚠",
     framework: "TCAs: amitriptyline, nortriptyline, doxepin, imipramine\n• Mechanism: inhibit serotonin + norepinephrine reuptake; anticholinergic\n• Oral manifestation: XEROSTOMIA (significant)\n\nMAOIs: phenelzine (Nardil), tranylcypromine (Parnate)\n• Mechanism: inhibit monoamine oxidase\n• RARE but important — high drug interaction risk",
     application: "DENTAL MANAGEMENT:\n\n⚠ CONTINUE BOTH — DO NOT HOLD\n\nTCAs — EPINEPHRINE LIMITS:\n• Limit to 1:100,000 concentration\n• Maximum 2 CARPULES (0.036mg epinephrine)\n• Risk: hypertensive crisis, arrhythmias\n• TCAs potentiate pressor response to epinephrine\n\nMAOIs — EVEN STRICTER:\n• Limit to 1:100,000 concentration\n• Maximum 1 CARPULE (0.018mg epinephrine)\n• Risk: hypertensive crisis\n\nMAOI CONTRAINDICATED DRUGS:\n• Meperidine — can cause serotonin syndrome → DEATH\n• Tramadol — serotonin syndrome risk\n• Ephedrine, pseudoephedrine — hypertensive crisis\n\nSafe opioids with MAOIs: morphine, oxycodone, hydrocodone (use cautiously).",
     evidence: "Per Sertöz 2025: continue TCAs/MAOIs perioperatively. Coordinate with psychiatrist for MAOIs.\n\nTCAs: significant sedation — additive with dental sedatives. Reduce sedation doses by 25-50%.\nMAOIs: individualize for procedures requiring sedation/GA — discuss with psychiatry and anesthesia.",
