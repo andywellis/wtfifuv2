@@ -104,6 +104,12 @@ const SPECIALTIES = [
     subtitle: "Forceps, surgical extraction, coronectomy, piezosurgery, socket preservation, complications",
     dataKey: "oral-surgery", ready: true,
   },
+  {
+    id: "pharmacology", name: "Pharmacology", icon: "💊", color: "#f472b6", bg: "#2e0f1a",
+    subtitle: "Perioperative meds, anticoagulation, MRONJ, GLP-1/SGLT2, drug interactions, epi limits",
+    filterGroups: ["Anticoagulants & Antiplatelets", "Antihypertensives", "Diabetes Medications", "Bisphosphonates & MRONJ", "Psychiatric Medications", "Corticosteroids", "Supplements & Cannabinoids", "Other Medication Classes", "Quick Reference"],
+    dataKey: "pharmacology", ready: true,
+  },
 ];
 
 function LandingPage({ onSelect }) {
