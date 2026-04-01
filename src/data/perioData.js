@@ -132,6 +132,8 @@ export const perioGetGroup = c => {
   if (c.includes("Suture")) return "Sutures";
   if (c.includes("Hemostatic")) return "Hemostatic Agents";
   if (c.includes("Surgical")) return "Surgical Instruments & Aids";
+    if (c.includes("Soft Tissue Substitute")) return "Soft Tissue Substitutes";
+  if (c.includes("Post-Op")) return "Post-Operative Products";
   return "Other";
 };
 
@@ -142,7 +144,7 @@ export const PERIO_GROUPS = [
   "Sutures",
   "Hemostatic Agents",
   "Surgical Instruments & Aids",
-];
+, "Soft Tissue Substitutes", "Post-Operative Products"];
 
 // ═══════════════════════════════════════════════════════════════════
 // MEMBRANES — Organized fastest-resorbing → non-resorbable
@@ -543,6 +545,107 @@ export const SURGICAL_AIDS = [
 // ═══════════════════════════════════════════════════════════════════
 // ALL PERIO — combined export
 // ═══════════════════════════════════════════════════════════════════
+
+// ═══════════════════════════════════════════════
+// SOFT TISSUE SUBSTITUTES (NEW — from periodontist consultant)
+// ═══════════════════════════════════════════════
+export const SOFT_TISSUE_SUBSTITUTES = [
+  {
+    id: "mucograft", name: "Mucograft", mfr: "Geistlich Pharma", cat: "Soft Tissue Substitute — Collagen Matrix",
+    composition: "Bilayer porcine type I and III collagen, non-crosslinked. Compact layer (structural stability) + porous layer (cell integration/vascularization). ~4mm thickness. Completely degraded by day 14.",
+    indications: ["Vestibuloplasty / KT augmentation","Recession coverage (CAF adjunct)","Socket soft tissue management","Peri-implant soft tissue augmentation"],
+    steps: ["Designed for SECONDARY INTENTION healing (left exposed)","Trim to extend 2-3mm beyond defect margins","Compact layer facing oral cavity, porous layer facing tissue bed","Suture with resorbable sutures","Allow epithelialization over 2-4 weeks"],
+    special: "VESTIBULOPLASTY: 5-yr trial (n=48) — KT gain comparable to FGG initially but 52.89% loss at 5yr vs FGG 40.65%. Surgery time significantly shorter. Superior esthetics (blends naturally). Per Vallecillo 2021 MA (19 studies): -0.46mm KT width vs CTG. RECESSION COVERAGE: Per Tonetti 2018 multicenter RCT (n=187, 485 recessions): mean coverage 1.7mm CMX vs 2.1mm CTG. CRC odds 4.0x HIGHER for CTG (OR=4.0). Tunnel technique: CRC 71.4% CTG vs 14.3% Mucograft. KEY: use when morbidity reduction prioritized over maximum CRC. Excellent for vestibuloplasty with open healing.",
+    notes: "Designed for secondary intention (open) healing — key advantage over CTG/FGG which require primary closure. Best for vestibuloplasty and KT augmentation when superior esthetics and reduced morbidity outweigh slightly less KT gain.",
+    refs: []
+  },
+  {
+    id: "fibro-gide", name: "Fibro-Gide", mfr: "Geistlich Pharma", cat: "Soft Tissue Substitute — Volume-Stable Collagen",
+    composition: "Porcine type I and III collagen, CROSS-LINKED for enhanced volume stability and degradation resistance. Highest resistance to hydrolytic, trypsin, and collagenase degradation among tested matrices.",
+    indications: ["Peri-implant soft tissue thickening","Soft tissue volume augmentation","Ridge contour improvement"],
+    steps: ["Requires PRIMARY CLOSURE (unlike Mucograft)","Trim to desired dimensions","Place against tissue bed (periosteum)","Achieve tension-free primary closure","Suture with resorbable sutures"],
+    special: "IMPLANT AUGMENTATION: Per Surdiacourt 2025 3-yr multicenter RCT (n=60): CTG +0.83mm vs Fibro-Gide +0.48mm buccal tissue gain (difference 0.35mm, p=0.021). CTG superior. Fibro-Gide also had more marginal bone loss (-0.43mm, p=0.015). BUT 5-yr RCT (Thoma 2023, n=20): median +0.3mm BOTH groups (p=0.752) — comparable at 5 years. Non-inferiority NOT demonstrated for crestal thickness in most multicenter RCTs. HOWEVER: 10 min shorter surgery, significantly less medication intake, better pain perception. BEST WHEN: baseline mucosal thickness ≥2mm (comparable results to CTG in adequate phenotypes per Cairo 2025).",
+    notes: "Cross-linked = volume stable but non-inferiority vs CTG not proven at 3 years. At 5 years outcomes equalize. Best for patients with adequate baseline tissue thickness (≥2mm) where morbidity reduction is prioritized.",
+    refs: []
+  },
+  {
+    id: "alloderm", name: "AlloDerm", mfr: "BioHorizons / LifeCell", cat: "Soft Tissue Substitute — Human Acellular Dermal Matrix",
+    composition: "Human acellular dermal matrix (hADM), freeze-dried. Decellularized to remove cells while preserving basement membrane and dermal collagen architecture. Electron beam sterilized. Requires 15-20 min rehydration.",
+    indications: ["Root coverage (CAF adjunct)","Keratinized tissue augmentation","Phenotype modification","Peri-implant soft tissue augmentation","Dual function: soft tissue graft + barrier membrane"],
+    steps: ["Rehydrate in sterile saline for 15-20 minutes","Trim to desired dimensions","Place basement membrane side facing oral cavity","Requires PRIMARY CLOSURE","Suture with resorbable sutures"],
+    special: "ROOT COVERAGE: Per Wang 2023 MA (24 RCTs): no significant difference in % root coverage vs CTG (p=0.094). HIGHER CAL gain with ADM (+0.250mm, p=0.026). LESS KT width (-0.440mm, p<0.001). LONG-TERM: significantly less KTW gain at 1-5 years (MD -0.86mm, p=0.01) despite comparable 3-6 month results. Cochrane review: most CTG-like substitute available. Mild immune response (macrophages/T-cells month 1, absent by month 3). Use when: CTG-like outcomes desired but harvest contraindicated, multiple quadrants needed (unlimited supply), periodontal-orthodontic phenotype modification.",
+    notes: "The soft tissue substitute MOST SIMILAR to CTG per Cochrane review. Trade-off: comparable % root coverage but less CRC and less long-term KT stability. Unlimited supply is the key advantage for multiple-site cases.",
+    refs: []
+  },
+  {
+    id: "puros-dermis", name: "Puros Dermis", mfr: "Zimmer Biomet", cat: "Soft Tissue Substitute — Human ADM (Solvent-Dehydrated)",
+    composition: "Human acellular dermal matrix (hADM), SOLVENT-DEHYDRATED (vs AlloDerm freeze-dried). Requires only 5-10 min rehydration (vs 15-20 min AlloDerm). Enhanced in vitro growth factor release (TGF-β1, FGF-2, PDGF-BB, VEGF-A) vs dried matrices.",
+    indications: ["Root coverage (equivalent to AlloDerm)","Keratinized tissue augmentation","Phenotype modification","Peri-implant augmentation"],
+    steps: ["Rehydrate in sterile saline for 5-10 minutes (faster than AlloDerm)","Trim to desired dimensions","Requires PRIMARY CLOSURE","Suture with resorbable sutures"],
+    special: "CLINICALLY EQUIVALENT TO ALLODERM: Per Barker 2010 split-mouth RCT (n=14, 52 sites): 81.4% vs 83.4% root coverage (NS). Per Wang 2014 multicenter RCT (n=80): 71% vs 77% coverage (NS). Per Barootchi 2021 9-yr follow-up: KT and thickness stable in both. Choice between Puros and AlloDerm = clinician preference and rehydration time. Puros advantage: 5-10 min rehydration (vs 15-20 min), potentially enhanced biological activity based on in vitro growth factor data.",
+    notes: "Clinically interchangeable with AlloDerm. Faster rehydration is the practical advantage. Choose based on availability and preference.",
+    refs: []
+  },
+  {
+    id: "ossix-volumax", name: "Ossix Volumax", mfr: "Datum Dental / Dentsply Sirona", cat: "Soft Tissue Substitute — Sugar Cross-Linked Collagen",
+    composition: "Bovine type I collagen, enzymatically cross-linked using sugar-based agents. Biocompatible alternative to chemical cross-linking (glutaraldehyde). Only minute superficial biodegradation at 24 weeks — very prolonged barrier function.",
+    indications: ["Ridge preservation (can be left EXPOSED)","GBR barrier membrane","Socket grafting without primary closure","Volume augmentation"],
+    steps: ["No rehydration needed","Trim to extend 2-3mm beyond defect","Can be left EXPOSED — no primary closure required","Place over graft material in socket","Suture edges to surrounding tissue"],
+    special: "RIDGE PRESERVATION: Per Casarez-Quintana 2022 RCT (n=44): sugar cross-linked group = 39.3% vital bone vs 26.8% for bovine xenograft (p=0.02). SIGNIFICANTLY more vital bone formation. Ridge dimensions similar between groups. PERIODONTAL REGENERATION: Per Wang 2025 multicenter RCT (n=173): non-inferiority vs non-cross-linked membranes demonstrated. PPD 4.16mm vs 4.17mm, CAL 3.60mm vs 3.69mm. Cross-linked favored for 1-wall defects. KEY ADVANTAGE: can be left exposed without flap — critical when primary closure difficult or impossible.",
+    notes: "The primary advantage is NO PRIMARY CLOSURE NEEDED — unique among collagen matrices. Also produces more vital bone than xenografts. Best for socket preservation when flap advancement is not possible.",
+    refs: []
+  },
+];
+
+// ═══════════════════════════════════════════════
+// POST-OPERATIVE PRODUCTS (NEW)
+// ═══════════════════════════════════════════════
+export const POST_OP = [
+  {
+    id: "chx-postop", name: "Chlorhexidine 0.12% Post-Surgical Rinse", mfr: "Multiple (Peridex, Paroex)", cat: "Post-Op — Antimicrobial Rinse",
+    composition: "Chlorhexidine gluconate 0.12% (US) or 0.2% (Europe). Cationic bisbiguanide antiseptic. Available with or without alcohol. Anti-discoloration systems (ADS) in newer formulations reduce staining.",
+    indications: ["Post-periodontal surgery","Post-extraction","Post-implant surgery","Peri-implant mucositis treatment"],
+    steps: ["Rinse with 15mL for 30 seconds, twice daily","Begin 24 hours post-surgery","Duration: 7-14 days (not longer — diminishing returns)","Do not eat/drink for 30 minutes after rinsing","Alcohol-free formulation for mucosal sensitivity or recovering patients"],
+    special: "GOLD STANDARD post-surgical rinse. Per 2025 scoping review (6,763 patients): improved wound healing in >70% of studies. Plaque reduction 29-86% at 1 week. Reduces alveolar osteitis by 51% (RR=0.49, Canullo 2020 MA with TSA). Reduces bacteremia 13% after extractive surgery. ALCOHOL-BASED vs ALCOHOL-FREE: no sig diff in plaque/gingivitis control. BUT alcohol-based showed better wound healing at day 14 (p=0.007, Gkatzonis 2018 RCT). STAINING: most common complaint. ADS formulations help. Counsel patients that staining is reversible with professional cleaning.",
+    notes: "7-14 days is the sweet spot — long enough for benefit, short enough to minimize staining. Alcohol-free is fine for most patients. Pre-extraction CHX rinse also recommended (reduces AO by 51%).",
+    refs: []
+  },
+];
+
+// ═══════════════════════════════════════════════
+// NEW INDIVIDUAL PRODUCTS
+// ═══════════════════════════════════════════════
+export const NEW_PERIO_PRODUCTS = [
+  {
+    id: "glycolon", name: "Glycolon (Glycolide/Caprolactone)", mfr: "Multiple", cat: "Suture — Monofilament Absorbable",
+    composition: "Segmented block copolymer of ε-caprolactone and glycolide. Monofilament. Same material as Monocryl (poliglecaprone 25). Hydrolysis degradation in two stages: strength retention followed by rapid degradation.",
+    indications: ["Periodontal flap closure","Implant surgery closure","Dentoalveolar surgery","Any application requiring monofilament absorbable"],
+    steps: ["Use standard suturing technique","Excellent handling — minimal tissue drag","Knot security is excellent across configurations","Consider additional throw vs braided sutures","Complete absorption: 91-119 days"],
+    special: "STRENGTH RETENTION: 20-30% breaking strength at 2 weeks. Two-stage degradation: adequate strength during healing phase, then rapid absorption to minimize tissue irritation. BACTERIAL COLONIZATION: significantly LOWER than braided/multifilament sutures (Asher 2019, Yaman 2022). Monofilament structure eliminates interstices that harbor bacteria via capillary wicking. Less postoperative slack than multifilament in dentoalveolar surgery. COMPARISON: equivalent to Monocryl in all clinical properties. Superior to Vicryl (braided) for bacterial colonization and tissue drag.",
+    notes: "Glycolon = Monocryl = same material. The evidence-based choice over Vicryl when minimizing bacterial colonization matters (regenerative procedures, implant surgery). Vicryl still acceptable for routine closures where handling matters most.",
+    refs: []
+  },
+  {
+    id: "bio-oss-collagen", name: "Bio-Oss Collagen", mfr: "Geistlich Pharma", cat: "Bone Graft — Xenograft + Collagen",
+    composition: "Deproteinized bovine bone mineral (DBBM) granules pre-mixed with 10% porcine collagen (non-crosslinked). Maintains Bio-Oss natural bone architecture with enhanced handling from collagen carrier.",
+    indications: ["Socket preservation","Ridge augmentation","Sinus augmentation","Periapical defects"],
+    steps: ["Hydrate per IFU if needed","Place into defect — collagen carrier improves cohesiveness","Preserves graft at coronal part of socket better than granules alone","Cover with membrane (Bio-Gide or collagen plug) as indicated","Allow 4-6 months healing for socket preservation"],
+    special: "HANDLING ADVANTAGE: collagen carrier provides superior cohesiveness vs granules alone — graft stays in place during surgery. Per Nart 2017 RCT: NO significant differences vs plain Bio-Oss granules in dimensional changes or histology at 5 months. Both show similar new bone (~28-34%), residual graft, and connective tissue. Per Tirone 2019: 29.1% new bone at 4 months. In diseased sockets: significantly better vertical preservation (1.80mm vs 2.22mm) with collagen membrane. RESORPTION: very slow — particles present and integrated with bone 18 months to 4 years post-grafting. Osteoclastic resorption occurs but is gradual.",
+    notes: "Bio-Oss Collagen = Bio-Oss with better handling. No clinical outcome difference vs granules. Choose when handling matters (e.g., tight sockets, anterior sites). The collagen is the carrier, not the therapeutic agent.",
+    refs: []
+  },
+  {
+    id: "amicar-perio", name: "Aminocaproic Acid (Amicar)", mfr: "Multiple", cat: "Hemostatic Agent — Antifibrinolytic",
+    composition: "Antifibrinolytic agent. Inhibits plasminogen activators (primary) + antiplasmin activity (secondary). Enhances hemostasis when fibrinolysis contributes to bleeding.",
+    indications: ["Post-extraction hemostasis in anticoagulated patients","Hemophilia patients undergoing dental procedures","Adjunct to local hemostatic measures"],
+    steps: ["Oral dosing: 50-60 mg/kg every 4 hours until sockets healed","Intra-alveolar: place directly in extraction socket","Mouthwash: can be used as topical rinse","Continue until dental sockets completely healed","⚠ CONTRAINDICATED in active intravascular clotting / DIC"],
+    special: "Per da Silva 2018 RCT: intra-alveolar EACA with mouthwash showed one immediate bleeding episode vs multiple in controls for anticoagulated patients. Cochrane review (hemophilia): risk difference -0.50 (95% CI -0.77 to -0.22) for postoperative bleeding. LESS POTENT than tranexamic acid: TXA 20-25 mg/kg q8h vs EACA 50-60 mg/kg q4h. TXA mouthwash (1g q6h): RR 0.13 for postop bleeding in anticoagulated patients (MA). EXTRACT-NOAC RCT: TXA reduced delayed bleeding (RR 0.32) and multi-extraction bleeding (RR 0.40). For most dental applications: TXA is preferred due to higher potency at lower doses.",
+    notes: "Amicar is effective but tranexamic acid is generally preferred (more potent, lower doses). Reserve Amicar for when TXA is unavailable. Both are antifibrinolytics — contraindicated in DIC.",
+    refs: []
+  },
+];
+
+
 export const ALL_PERIO = [
   ...MEMBRANES,
   ...BONE_GRAFTS,
@@ -550,4 +653,7 @@ export const ALL_PERIO = [
   ...SUTURES,
   ...HEMOSTATICS,
   ...SURGICAL_AIDS,
+  ...SOFT_TISSUE_SUBSTITUTES,
+  ...POST_OP,
+  ...NEW_PERIO_PRODUCTS,
 ];

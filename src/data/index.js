@@ -83,3 +83,18 @@ export {
 export {
   ORALMED_CIT, oralmedGetGroup, ORALMED_GROUPS, ALL_ORALMED_PRODUCTS
 } from "./oralMedData.js";
+
+// Treatment Planning
+export {
+  TP_CIT, tpGetGroup, TP_GROUPS, ALL_TP_PRODUCTS
+} from "./treatmentPlanningData.js";
+
+// Oral Surgery
+export {
+  ORALSURG_CIT, oralSurgGetGroup, ORALSURG_GROUPS, ALL_ORALSURG_PRODUCTS
+} from "./oralSurgData.js";
+
+// Pharmacology
+export {
+  PHARM_CIT, pharmGetGroup, PHARM_GROUPS, ALL_PHARM_PRODUCTS
+} from "./pharmacologyData.js";

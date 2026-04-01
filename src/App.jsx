@@ -10,7 +10,7 @@ const SPECIALTIES = [
   {
     id: "restorative", name: "Restorative", icon: "🦷", color: "#22d3ee", bg: "#0c2d3e",
     subtitle: "CAD/CAM blocks, composites, bonding agents, cements, surface treatments, staining, polishing",
-    filterGroups: ["Restorative Blocks", "Glass-Ceramics", "Composites", "Post & Core", "Bonding Agents", "Cements", "Surface Treatments", "Stain / Glaze Systems", "Polishing Systems"],
+    filterGroups: ["Restorative Blocks", "Glass-Ceramics", "Zirconia", "Composites", "Post & Core", "Bonding Agents", "Cements", "Surface Treatments", "Stain / Glaze Systems", "Polishing Systems"],
     dataKey: "restprosth", ready: true,
   },
   {
@@ -104,9 +104,8 @@ function LandingPage({ onSelect }) {
           WTF<span style={{ color: "#22d3ee" }}>IFU</span>
         </h1>
         <p style={{ color: "#64748b", fontSize: 14, maxWidth: 540, margin: "0 auto", lineHeight: 1.6 }}>
-          Where to Find Instructions for Use <br />
           Dental materials &amp; clinical protocols organized by specialty.<br />
-          {SPECIALTIES.filter(s => s.ready).length} specialties · 529+ products · 750+ citations
+          {SPECIALTIES.filter(s => s.ready).length} specialties · 590+ products · 750+ citations
         </p>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 48 }}>
@@ -155,4 +154,22 @@ export default function App() {
       }
     </div>
   );
-}
+}  {
+    id: "tx-planning", name: "Treatment Planning", icon: "📋", color: "#e879f9", bg: "#1a0f2e",
+    subtitle: "Philosophies (Kois, Spear, Dawson, DSD), classifications, sequencing, CMOREPOOOPE",
+    filterGroups: ["Treatment Planning Philosophies", "Classification Systems", "Treatment Sequencing & Decisions", "Risk Assessment"],
+    dataKey: "tx-planning", ready: true,
+  },
+  {
+    id: "oral-surgery", name: "Oral Surgery", icon: "🔪", color: "#f97316", bg: "#1a0f0a",
+    subtitle: "Forceps, surgical extraction, coronectomy, piezosurgery, socket preservation, complications",
+    filterGroups: ["Forceps & Elevators", "Surgical Extraction Techniques", "Third Molar Management", "Socket Preservation", "Hemostatic Protocols", "Pharmacology — Exodontia", "Complications & Management", "Protocols & Decision Frameworks"],
+    dataKey: "oral-surgery", ready: true,
+  },
+  {
+    id: "pharmacology", name: "Pharmacology", icon: "💊", color: "#f472b6", bg: "#2e0f1a",
+    subtitle: "Perioperative meds, anticoagulation, MRONJ, GLP-1/SGLT2, drug interactions, epi limits",
+    filterGroups: ["Anticoagulants & Antiplatelets", "Antihypertensives", "Diabetes Medications", "Bisphosphonates & MRONJ", "Psychiatric Medications", "Corticosteroids", "Supplements & Cannabinoids", "Other Medication Classes", "Quick Reference"],
+    dataKey: "pharmacology", ready: true,
+  },
+

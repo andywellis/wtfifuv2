@@ -20,6 +20,9 @@ import { ALL_PEDS_PRODUCTS, pedsGetGroup, PEDS_GROUPS, PEDS_CIT } from "./data/p
 import { ALL_TRAUMA_PRODUCTS, traumaGetGroup, TRAUMA_GROUPS, TRAUMA_CIT } from "./data/traumaData.js";
 import { ALL_PHOTO_PRODUCTS, photoGetGroup, PHOTO_GROUPS, PHOTO_CIT } from "./data/photographyData.js";
 import { ALL_ORALMED_PRODUCTS, oralmedGetGroup, ORALMED_GROUPS, ORALMED_CIT } from "./data/oralMedData.js";
+import { ALL_TP_PRODUCTS, tpGetGroup, TP_GROUPS, TP_CIT } from "./data/treatmentPlanningData.js";
+import { ALL_ORALSURG_PRODUCTS, oralSurgGetGroup, ORALSURG_GROUPS, ORALSURG_CIT } from "./data/oralSurgData.js";
+import { ALL_PHARM_PRODUCTS, pharmGetGroup, PHARM_GROUPS, PHARM_CIT } from "./data/pharmacologyData.js";
 import PubMedSearch from "./components/PubMedSearch.jsx";
 
 // ── Combine materials from both specialties ──
@@ -685,6 +688,24 @@ const TAB_CONFIG = {
     { id: "protocol", label: "Protocol & Technique", field: "protocol" },
     { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
   ],
+  // Treatment Planning
+  "tx-planning": [
+    { id: "framework", label: "Framework & Classification", field: "framework" },
+    { id: "application", label: "Clinical Application", field: "application" },
+    { id: "evidence", label: "Evidence & Comparison", field: "evidence" },
+  ],
+  // Oral Surgery
+  "oral-surgery": [
+    { id: "framework", label: "Description & Indications", field: "framework" },
+    { id: "application", label: "Technique & Protocol", field: "application" },
+    { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
+  ],
+  // Pharmacology
+  pharmacology: [
+    { id: "framework", label: "Drug & Mechanism", field: "framework" },
+    { id: "application", label: "Dental Protocol", field: "application" },
+    { id: "evidence", label: "Evidence & Guidelines", field: "evidence" },
+  ],
   // Photography — single view, no tabs
   photo: null,
 };
@@ -795,6 +816,9 @@ const SPECIALTY_REGISTRY = {
   trauma:     { products: ALL_TRAUMA_PRODUCTS, groupFn: traumaGetGroup, groups: TRAUMA_GROUPS, cit: TRAUMA_CIT },
   photo:      { products: ALL_PHOTO_PRODUCTS, groupFn: photoGetGroup, groups: PHOTO_GROUPS, cit: PHOTO_CIT },
   oralmed:    { products: ALL_ORALMED_PRODUCTS, groupFn: oralmedGetGroup, groups: ORALMED_GROUPS, cit: ORALMED_CIT },
+  "tx-planning": { products: ALL_TP_PRODUCTS, groupFn: tpGetGroup, groups: TP_GROUPS, cit: TP_CIT },
+  "oral-surgery": { products: ALL_ORALSURG_PRODUCTS, groupFn: oralSurgGetGroup, groups: ORALSURG_GROUPS, cit: ORALSURG_CIT },
+  pharmacology: { products: ALL_PHARM_PRODUCTS, groupFn: pharmGetGroup, groups: PHARM_GROUPS, cit: PHARM_CIT },
 };
 
 // ═══════════════════════════════════════════════
