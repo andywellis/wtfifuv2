@@ -154,7 +154,7 @@ export default function App() {
       }
     </div>
   );
-}  {
+},  {
     id: "tx-planning", name: "Treatment Planning", icon: "📋", color: "#e879f9", bg: "#1a0f2e",
     subtitle: "Philosophies (Kois, Spear, Dawson, DSD), classifications, sequencing, CMOREPOOOPE",
     filterGroups: ["Treatment Planning Philosophies", "Classification Systems", "Treatment Sequencing & Decisions", "Risk Assessment"],
