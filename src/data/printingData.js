@@ -40,7 +40,7 @@ export const PRINT_GROUPS = ["Printers & Technology", "Surgical Guide Resins", "
 // ═══════════════════════════════════════════════
 export const PRINTERS = [
   {
-    id: "tech-comparison", name: "SLA vs DLP vs LCD — Technology Selection", mfr: "N/A — Reference", cat: "Printer Technology — Comparison",
+    id: "tech-comparison", lastReviewed: "2026-03", name: "SLA vs DLP vs LCD — Technology Selection", mfr: "N/A — Reference", cat: "Printer Technology — Comparison",
     composition_detail: "THREE PRINT TECHNOLOGIES:\n\nSLA (Stereolithography):\n• UV laser traces each layer point-by-point\n• Highest resolution (25μm XY) but SLOWEST\n• Best for: surgical guides, models requiring extreme accuracy\n• Example: Formlabs Form 3B+\n\nDLP (Digital Light Processing):\n• UV projector flashes ENTIRE layer simultaneously\n• Fast + accurate; limited by projector resolution\n• Best for: balance of speed + quality\n• Example: SprintRay Pro 95S, Asiga MAX UV\n\nLCD (Masked SLA / mSLA):\n• LCD screen masks UV LEDs; entire layer at once\n• Fastest + most affordable; LCD degrades over time\n• Best for: high-volume production, splints, models\n• Example: Phrozen, Elegoo (consumer); SprintRay Pro 55S (dental)",
     technique: "PRINTER SELECTION CRITERIA:\n• Accuracy needed: SLA > DLP > LCD\n• Speed needed: LCD ≈ DLP >> SLA\n• Budget: LCD < DLP < SLA\n• Volume: LCD/DLP for production; SLA for precision\n• Material compatibility: check manufacturer-validated resin list\n• Resolution: 25–50μm XY typical for dental",
     evidence: "Per García Gil 2025: SLA (Formlabs Form 3B) showed BEST accuracy for full-arch models; DLP comparable for single-unit work.\nPer Tatlicioglu 2025: DLP produced significantly more accurate denture bases than LCD (p<0.05); DLP also had lower residual material and better surface quality.\n\nAll three technologies produce clinically acceptable results for most dental applications. SLA preferred when accuracy is paramount (surgical guides, implant models). DLP/LCD preferred for production speed.",
@@ -48,7 +48,7 @@ export const PRINTERS = [
     refs: ["garcia-gil-2025-3dp-accuracy","tatlicioglu-2025-dlp-lcd"]
   },
   {
-    id: "sprintray-pro", name: "SprintRay Pro 95S / Pro 55S", mfr: "SprintRay", cat: "Printer Technology — DLP/LCD",
+    id: "sprintray-pro", lastReviewed: "2026-03", name: "SprintRay Pro 95S / Pro 55S", mfr: "SprintRay", cat: "Printer Technology — DLP/LCD",
     composition_detail: "Pro 95S: DLP, 4K resolution, open material system, build volume 192×120×200mm.\nPro 55S: LCD, faster print speed, more affordable, same build volume.\n\nSprintRay ecosystem: Pro Wash (automated washing), Pro Cure (post-curing), RayWare (slicing software), SprintRay Cloud (design service).",
     technique: "Validated for: surgical guides, temporary crowns, denture bases, splints, models, IBTs.\nLayner thickness: 50μm (guides/crowns) to 100μm (models/splints).\nOpen material system accepts third-party resins with custom profiles.",
     evidence: "SprintRay is the most widely adopted dental 3D printer in North America. Closed-loop ecosystem (print → wash → cure) simplifies workflow. FDA-cleared materials available for each indication.",
@@ -56,7 +56,7 @@ export const PRINTERS = [
     refs: []
   },
   {
-    id: "formlabs-form", name: "Formlabs Form 3B+ / Form 4B", mfr: "Formlabs", cat: "Printer Technology — SLA/DLP",
+    id: "formlabs-form", lastReviewed: "2026-03", name: "Formlabs Form 3B+ / Form 4B", mfr: "Formlabs", cat: "Printer Technology — SLA/DLP",
     composition_detail: "Form 3B+: Low Force Stereolithography (LFS) — inverted SLA with flexible tank reduces peel forces. Build volume 145×145×185mm.\nForm 4B: next-gen, faster print engine, larger build volume.\n\nFormlabs ecosystem: Form Wash, Form Cure, PreForm software, dental material library.",
     technique: "Validated for: surgical guides, temporary crowns, permanent crowns, denture bases, splints, models, IBTs, custom trays.\nHighest material library of any dental printer.\nLayer thickness: 25–50μm (dental applications).",
     evidence: "Per García Gil 2025: Form 3B showed BEST accuracy for full-arch models among tested printers.\nFormlabs Permanent Crown resin is one of few FDA-cleared permanent crown print resins. Broadest validated material range in dental 3D printing.",
@@ -64,7 +64,7 @@ export const PRINTERS = [
     refs: ["garcia-gil-2025-3dp-accuracy"]
   },
   {
-    id: "asiga-pro4k", name: "Asiga MAX UV / Pro 4K", mfr: "Asiga", cat: "Printer Technology — DLP",
+    id: "asiga-pro4k", lastReviewed: "2026-03", name: "Asiga MAX UV / Pro 4K", mfr: "Asiga", cat: "Printer Technology — DLP",
     composition_detail: "DLP with 385nm UV LED. MAX UV: 4K resolution (51μm pixel), build volume 119×67×75mm.\nPro 4K: larger build volume for full-arch models.\n\nTrue open material platform — any 385nm-compatible resin. No proprietary lockout.",
     technique: "Validated for: all dental indications with compatible resins.\nTrue open platform = maximum material flexibility.\nSmaller build volume limits full-arch production runs.",
     evidence: "Popular in labs requiring material flexibility. Highest resolution DLP pixel size among dental printers. Open platform means lower material costs but requires operator validation of resin profiles.",
@@ -78,7 +78,7 @@ export const PRINTERS = [
 // ═══════════════════════════════════════════════
 export const GUIDE_RESINS = [
   {
-    id: "sprintray-sg3", name: "SprintRay Surgical Guide 3", mfr: "SprintRay", cat: "Resin — Surgical Guide",
+    id: "sprintray-sg3", lastReviewed: "2026-03", name: "SprintRay Surgical Guide 3", mfr: "SprintRay", cat: "Resin — Surgical Guide",
     composition_detail: "Biocompatible Class I photopolymer resin. Clear/translucent. 510(k) FDA cleared for surgical guides.\nCompatible with SprintRay Pro 95S/55S printers.",
     technique: "PRINT: 50μm layer thickness, horizontal orientation for full-arch (highest accuracy).\nWASH: IPA or TPM, 5–10 min.\nPOST-CURE: UV + heat, 20–30 min at 60°C, 385–405nm.\nSTORAGE: use within 6 months; store dark, dry, room temp.",
     evidence: "Per Henprasert 2020: no significant differences in accuracy between 3D-printed and milled surgical guides (angular 0.77–0.78°; apical 0.80–0.84mm).\nPer Sium-Abel 2024: all manufacturing methods within accepted safety deviation envelope (1.5–2.0mm).\n\nINDICATIONS: implant placement guides, bone reduction guides, endodontic access guides.",
@@ -86,7 +86,7 @@ export const GUIDE_RESINS = [
     refs: ["henprasert-2020-guide-accuracy","sium-abel-2024-guide-deviation"]
   },
   {
-    id: "formlabs-sg", name: "Formlabs Surgical Guide Resin", mfr: "Formlabs", cat: "Resin — Surgical Guide",
+    id: "formlabs-sg", lastReviewed: "2026-03", name: "Formlabs Surgical Guide Resin", mfr: "Formlabs", cat: "Resin — Surgical Guide",
     composition_detail: "Biocompatible Class I methacrylate-based photopolymer. Clear. 510(k) FDA cleared.\nOptimized for Form 3B+/Form 4B printers.",
     technique: "PRINT: 50μm layer thickness on Form 3B+.\nWASH: Form Wash, IPA 5 min.\nPOST-CURE: Form Cure, 60°C for 30 min.\nAutoclavable after post-curing for sterile surgical field.",
     evidence: "Per García Gil 2025: Formlabs SLA showed best full-arch accuracy. Autoclavability is key advantage — allows sterile surgical field without guide bags.\n\nINDICATIONS: implant placement guides, bone reduction guides, endodontic access guides.",
@@ -94,7 +94,7 @@ export const GUIDE_RESINS = [
     refs: ["garcia-gil-2025-3dp-accuracy"]
   },
   {
-    id: "bego-varseo-sg", name: "BEGO VarseoWax Surgical Guide", mfr: "BEGO", cat: "Resin — Surgical Guide",
+    id: "bego-varseo-sg", lastReviewed: "2026-03", name: "BEGO VarseoWax Surgical Guide", mfr: "BEGO", cat: "Resin — Surgical Guide",
     composition_detail: "Biocompatible photopolymer for DLP printers. Transparent. CE marked, 510(k) clearance.\nDesigned for BEGO Varseo S and compatible DLP printers.",
     technique: "PRINT: 50μm layer thickness.\nWASH: IPA 3–5 min.\nPOST-CURE: per BEGO Otoflash protocol.\nCompatible with open-material DLP printers (Asiga, etc.).",
     evidence: "BEGO is established in European dental lab market. VarseoWax system covers guides, temporaries, and models in a single printer ecosystem.\n\nINDICATIONS: implant placement guides.",
@@ -108,7 +108,7 @@ export const GUIDE_RESINS = [
 // ═══════════════════════════════════════════════
 export const PROVISIONAL_RESINS = [
   {
-    id: "nextdent-cb-mfh", name: "NextDent C&B MFH", mfr: "NextDent (3D Systems)", cat: "Resin — Provisional C&B",
+    id: "nextdent-cb-mfh", lastReviewed: "2026-03", name: "NextDent C&B MFH", mfr: "NextDent (3D Systems)", cat: "Resin — Provisional C&B",
     composition_detail: "Methacrylic oligomer + phosphine oxide photoinitiator. Micro-filled hybrid (MFH). Available in A1, A2, A3, A3.5, B1 VITA shades.\n510(k) FDA cleared for temporary crowns/bridges.",
     technique: "PRINT: 50μm layer thickness.\nWASH: IPA 3 min (ultrasonic) or TPM.\nPOST-CURE: minimum 10 min (adequate strength); optimal 60–90 min (max mechanical properties per Kim 2020).\nTEMP: 80°C produces highest flexural strength (147.48 MPa per Bayarsaikhan 2021).\n\n⚠ UNDER-CURED RESINS ARE CYTOTOXIC — do not shortcut post-curing.",
     evidence: "Most widely studied provisional print resin. Per Soto-Montero 2022: 5–10 min post-cure = adequate strength without unacceptable color change. Per Kim 2020: 60–90 min significantly improves flexural strength, hardness, and biocompatibility.\n\nFlexural strength after full post-cure approaches milled PMMA.\n\nINDICATIONS: single crowns, bridges, inlays, onlays (temporary, <12 months).",
@@ -116,7 +116,7 @@ export const PROVISIONAL_RESINS = [
     refs: ["soto-montero-2022-postcure","kim-2020-postcure-properties"]
   },
   {
-    id: "formlabs-temp-cb", name: "Formlabs Temporary CB Resin", mfr: "Formlabs", cat: "Resin — Provisional C&B",
+    id: "formlabs-temp-cb", lastReviewed: "2026-03", name: "Formlabs Temporary CB Resin", mfr: "Formlabs", cat: "Resin — Provisional C&B",
     composition_detail: "Methacrylate-based photopolymer. Available in A1, A2, A3 shades.\n510(k) FDA cleared. Optimized for Form 3B+/Form 4B.",
     technique: "PRINT: 50μm on Form 3B+.\nWASH: Form Wash, IPA 5 min.\nPOST-CURE: Form Cure, 80°C for 60 min.\nFormlabs recommends their full wash → cure workflow for consistent results.",
     evidence: "Formlabs ecosystem advantage: PreForm software has validated print profiles for this resin = consistent results with minimal operator tuning.\n\nINDICATIONS: single crowns, bridges, inlays, onlays (temporary).",
@@ -124,7 +124,7 @@ export const PROVISIONAL_RESINS = [
     refs: []
   },
   {
-    id: "sprintray-crown-temp", name: "SprintRay Crown Temp", mfr: "SprintRay", cat: "Resin — Provisional C&B",
+    id: "sprintray-crown-temp", lastReviewed: "2026-03", name: "SprintRay Crown Temp", mfr: "SprintRay", cat: "Resin — Provisional C&B",
     composition_detail: "Methacrylate-based photopolymer. Multiple VITA shades.\n510(k) FDA cleared for temporary restorations.",
     technique: "PRINT: 50μm layer thickness on SprintRay Pro.\nWASH: SprintRay Pro Wash, 5–10 min.\nPOST-CURE: SprintRay Pro Cure, per material profile.\nSprintRay Cloud design service available for chairside workflow.",
     evidence: "Part of SprintRay's closed-loop ecosystem. SprintRay Cloud allows chairside design without CAD expertise.\n\nINDICATIONS: single crowns, bridges (temporary, <12 months).",
@@ -132,7 +132,7 @@ export const PROVISIONAL_RESINS = [
     refs: []
   },
   {
-    id: "varseosmile-temp", name: "BEGO VarseoSmile Temp", mfr: "BEGO", cat: "Resin — Provisional C&B",
+    id: "varseosmile-temp", lastReviewed: "2026-03", name: "BEGO VarseoSmile Temp", mfr: "BEGO", cat: "Resin — Provisional C&B",
     composition_detail: "Methacrylate-based photopolymer for DLP printers. Multiple shades.\nCE marked. Available for open-material DLP systems.",
     technique: "PRINT: 50μm layer thickness on BEGO Varseo or compatible DLP.\nWASH: IPA.\nPOST-CURE: BEGO Otoflash protocol.",
     evidence: "BEGO's provisional resin in the VarseoSmile ecosystem. European market established.\n\nINDICATIONS: single crowns, bridges (temporary).",
@@ -146,7 +146,7 @@ export const PROVISIONAL_RESINS = [
 // ═══════════════════════════════════════════════
 export const PERMANENT_RESINS = [
   {
-    id: "crowntec-permanent", name: "Saremco Crowntec", mfr: "Saremco Dental", cat: "Resin — Permanent C&B",
+    id: "crowntec-permanent", lastReviewed: "2026-03", name: "Saremco Crowntec", mfr: "Saremco Dental", cat: "Resin — Permanent C&B",
     composition_detail: "Ceramic-filled hybrid composite resin. Highest mechanical properties among 3D-printed permanent resins per Flottes 2025.\n510(k) FDA cleared for permanent crowns.",
     technique: "PRINT: 50μm layer thickness.\nWASH: per manufacturer protocol.\nPOST-CURE: extended cure cycle critical for permanent indication.\n\n⚠ ADHESIVE CEMENTATION MANDATORY — print resins are weaker than milled blocks.",
     evidence: "Per Flottes 2025 SR: Crowntec generally showed HIGHEST mechanical properties among 3D-printed permanent resins. But ALL 3D-printed resins remain mechanically INFERIOR to CAD-CAM milled composite blocks.\nPer Benalcázar-Jalkh 2026: milled composite survived extended fatigue testing while ALL 3D-printed samples failed.\nPer Mandurino 2025 SR: milling significantly higher flexural strength than 3D printing (Hedge g -3.88, p=0.02).\n\n⚠ LIMITED CLINICAL EVIDENCE — use with caution for permanent restorations.\nINDICATIONS: single crowns (permanent, with informed consent about limited long-term data).",
@@ -154,7 +154,7 @@ export const PERMANENT_RESINS = [
     refs: ["flottes-2025-permanent-sr","mandurino-2025-milled-vs-printed","benalcazar-2026-fatigue"]
   },
   {
-    id: "varseosmile-crown-plus", name: "BEGO VarseoSmile Crown Plus", mfr: "BEGO", cat: "Resin — Permanent C&B",
+    id: "varseosmile-crown-plus", lastReviewed: "2026-03", name: "BEGO VarseoSmile Crown Plus", mfr: "BEGO", cat: "Resin — Permanent C&B",
     composition_detail: "Ceramic-filled hybrid composite for permanent restorations. CE marked. For DLP printers.\n510(k) FDA cleared for permanent single crowns.",
     technique: "PRINT: 50μm layer thickness on BEGO Varseo or compatible DLP.\nWASH: IPA.\nPOST-CURE: extended BEGO Otoflash protocol.\n\n⚠ ADHESIVE CEMENTATION MANDATORY.",
     evidence: "Per Flottes 2025 SR: included in permanent resin comparison — mechanical properties below Crowntec but clinically acceptable in short-term.\nPer Ribeiro 2025: 'insufficient clinical evidence to support use of 3D-printed resins for indirect definitive restorations.'\n\n⚠ LIMITED LONG-TERM DATA.\nINDICATIONS: single crowns (permanent, with caution).",
@@ -162,7 +162,7 @@ export const PERMANENT_RESINS = [
     refs: ["flottes-2025-permanent-sr","ribeiro-2025-insufficient-evidence"]
   },
   {
-    id: "formlabs-permanent", name: "Formlabs Permanent Crown Resin", mfr: "Formlabs", cat: "Resin — Permanent C&B",
+    id: "formlabs-permanent", lastReviewed: "2026-03", name: "Formlabs Permanent Crown Resin", mfr: "Formlabs", cat: "Resin — Permanent C&B",
     composition_detail: "Ceramic-filled hybrid composite. Available in A1, A2, A3 shades.\n510(k) FDA cleared for permanent single crowns. Formlabs Form 3B+/Form 4B.",
     technique: "PRINT: 50μm on Form 3B+.\nWASH: Form Wash, IPA.\nPOST-CURE: Form Cure, extended protocol per Formlabs dental library.\n\n⚠ ADHESIVE CEMENTATION MANDATORY.",
     evidence: "One of few FDA-cleared permanent crown print resins. Formlabs ecosystem integration with validated profiles.\nPer Ribeiro 2025: evidence insufficient for definitive long-term recommendations.\n\n⚠ Use for single crowns only — NO FPDs.\nINDICATIONS: single crowns (permanent, with caution and informed consent).",
@@ -170,7 +170,7 @@ export const PERMANENT_RESINS = [
     refs: ["ribeiro-2025-insufficient-evidence"]
   },
   {
-    id: "sprintray-crown-perm", name: "SprintRay Crown", mfr: "SprintRay", cat: "Resin — Permanent C&B",
+    id: "sprintray-crown-perm", lastReviewed: "2026-03", name: "SprintRay Crown", mfr: "SprintRay", cat: "Resin — Permanent C&B",
     composition_detail: "Ceramic-filled hybrid composite for permanent restorations.\n510(k) FDA cleared for permanent single crowns.",
     technique: "PRINT: 50μm on SprintRay Pro.\nWASH: SprintRay Pro Wash.\nPOST-CURE: SprintRay Pro Cure, extended protocol.\n\n⚠ ADHESIVE CEMENTATION MANDATORY.",
     evidence: "SprintRay's permanent crown resin. Same evidence limitations as other printed permanent materials.\nPer Flottes 2025 SR: ALL 3D-printed permanent resins mechanically inferior to milled.\n\n⚠ LIMITED LONG-TERM DATA.\nINDICATIONS: single crowns (permanent, with caution).",
@@ -184,7 +184,7 @@ export const PERMANENT_RESINS = [
 // ═══════════════════════════════════════════════
 export const DENTURE_RESINS = [
   {
-    id: "sprintray-idb", name: "SprintRay IDB (Integrated Denture Base)", mfr: "SprintRay", cat: "Resin — Denture Base",
+    id: "sprintray-idb", lastReviewed: "2026-03", name: "SprintRay IDB (Integrated Denture Base)", mfr: "SprintRay", cat: "Resin — Denture Base",
     composition_detail: "PMMA-based photopolymer for denture bases. Available in pink shades.\n510(k) FDA cleared for denture bases.",
     technique: "PRINT: 100μm layer thickness (adequate for denture base).\nWASH: SprintRay Pro Wash.\nPOST-CURE: SprintRay Pro Cure, full protocol.\nTeeth bonded with denture base bonding agent or printed monolithically.",
     evidence: "Per Sivaswamy 2026 MA: conventional dentures showed BETTER RETENTION than 3D-printed (p=0.04); NO significant difference in patient satisfaction.\nPer Altalla 2025 SR: no sig. diff in water sorption, solubility, or surface roughness vs conventional PMMA. But conventional has higher elastic modulus (p=0.04).\nMilled denture bases show higher strength than printed (El Samahy 2023).\n\nINDICATIONS: complete dentures, partial denture bases, interim prostheses.",
@@ -192,7 +192,7 @@ export const DENTURE_RESINS = [
     refs: ["sivaswamy-2026-printed-denture","altalla-2025-denture-properties"]
   },
   {
-    id: "formlabs-denture-base", name: "Formlabs Denture Base Resin", mfr: "Formlabs", cat: "Resin — Denture Base",
+    id: "formlabs-denture-base", lastReviewed: "2026-03", name: "Formlabs Denture Base Resin", mfr: "Formlabs", cat: "Resin — Denture Base",
     composition_detail: "PMMA-based photopolymer. Available in pink shades (light, medium, dark).\n510(k) FDA cleared. Formlabs Form 3B+/Form 4B.",
     technique: "PRINT: 100μm on Form 3B+.\nWASH: Form Wash, IPA.\nPOST-CURE: Form Cure, extended protocol.\nFormlabs offers complete denture workflow: base + teeth in one print session.",
     evidence: "Same evidence class as all printed denture bases — clinically acceptable but mechanically inferior to milled.\nFormlabs offers the most complete printed denture workflow (base + teeth + try-in).\n\nINDICATIONS: complete dentures, partial denture bases.",
@@ -200,7 +200,7 @@ export const DENTURE_RESINS = [
     refs: ["sivaswamy-2026-printed-denture"]
   },
   {
-    id: "nextdent-denture-3d", name: "NextDent Denture 3D+", mfr: "NextDent (3D Systems)", cat: "Resin — Denture Base",
+    id: "nextdent-denture-3d", lastReviewed: "2026-03", name: "NextDent Denture 3D+", mfr: "NextDent (3D Systems)", cat: "Resin — Denture Base",
     composition_detail: "PMMA-based photopolymer. Multiple pink shades.\n510(k) FDA cleared for denture bases.",
     technique: "PRINT: 100μm layer thickness.\nWASH: IPA 3 min ultrasonic.\nPOST-CURE: UV chamber per NextDent protocol.",
     evidence: "Per Zeidan 2023: 3D-printed denture bases (NextDent) showed moderate flexural strength — ranked below milled (AvaDent, Polident) and conventional heat-cured (Vertex), above polyamide.\n\nINDICATIONS: complete dentures, partial denture bases.",
@@ -214,7 +214,7 @@ export const DENTURE_RESINS = [
 // ═══════════════════════════════════════════════
 export const SPLINT_RESINS = [
   {
-    id: "keysplint-hard", name: "KeySplint Hard", mfr: "Keystone Industries", cat: "Resin — Splint / Night Guard",
+    id: "keysplint-hard", lastReviewed: "2026-03", name: "KeySplint Hard", mfr: "Keystone Industries", cat: "Resin — Splint / Night Guard",
     composition_detail: "Rigid methacrylate-based photopolymer. Clear. 510(k) FDA cleared for occlusal splints.\nDesigned for rigid stabilization splints.",
     technique: "PRINT: 50–100μm layer thickness.\nWASH: IPA or TPM.\nPOST-CURE: UV + heat, 30–60 min.\nAdjust occlusion chairside with acrylic burs + polish.",
     evidence: "Per Qin 2025 RCT: 3D-printed splints comparable efficacy and satisfaction to conventional; significantly reduced production time.\nPer Tangpothitham 2022: autoclave post-processing (132°C × 4 min) reduces monomer elution and improves hardness WITHOUT deteriorating flexural modulus.\n\nINDICATIONS: stabilization splints, Michigan splints, flat-plane splints.",
@@ -222,7 +222,7 @@ export const SPLINT_RESINS = [
     refs: ["qin-2025-splint-rct","tangpothitham-2022-autoclave"]
   },
   {
-    id: "keysplint-soft", name: "KeySplint Soft", mfr: "Keystone Industries", cat: "Resin — Splint / Night Guard",
+    id: "keysplint-soft", lastReviewed: "2026-03", name: "KeySplint Soft", mfr: "Keystone Industries", cat: "Resin — Splint / Night Guard",
     composition_detail: "Flexible methacrylate-based photopolymer. Clear. 510(k) FDA cleared.\nDesigned for flexible night guards and soft splints.",
     technique: "PRINT: 50–100μm layer thickness.\nWASH: IPA or TPM.\nPOST-CURE: UV + heat, 30–60 min.\nFlexible — does not require occlusal adjustment like rigid splints.",
     evidence: "Flexible alternative for patients who break rigid splints or cannot tolerate hard acrylic.\n\n⚠ Not appropriate for TMD stabilization (lacks rigidity for centric stop control).\nINDICATIONS: night guards (bruxism protection), athletic mouthguards, soft splints.",
@@ -230,7 +230,7 @@ export const SPLINT_RESINS = [
     refs: []
   },
   {
-    id: "dental-lt-clear", name: "Formlabs Dental LT Clear Resin", mfr: "Formlabs", cat: "Resin — Splint / Night Guard",
+    id: "dental-lt-clear", lastReviewed: "2026-03", name: "Formlabs Dental LT Clear Resin", mfr: "Formlabs", cat: "Resin — Splint / Night Guard",
     composition_detail: "Biocompatible long-term (LT) clear methacrylate photopolymer. 510(k) FDA cleared.\nFormlabs Form 3B+/Form 4B.",
     technique: "PRINT: 100μm on Form 3B+.\nWASH: Form Wash, IPA.\nPOST-CURE: Form Cure, per Formlabs dental protocol.\nLong-term biocompatibility rating = can be worn >24hr.",
     evidence: "Formlabs' long-term biocompatible resin. Validated for extended intraoral wear (>24 hours continuous).\n\nINDICATIONS: occlusal splints, night guards, retainers, sleep apnea devices.",
@@ -238,7 +238,7 @@ export const SPLINT_RESINS = [
     refs: []
   },
   {
-    id: "vprint-splint", name: "V-Print Splint", mfr: "VOCO", cat: "Resin — Splint / Night Guard",
+    id: "vprint-splint", lastReviewed: "2026-03", name: "V-Print Splint", mfr: "VOCO", cat: "Resin — Splint / Night Guard",
     composition_detail: "Methacrylate-based photopolymer. Clear. CE marked, 510(k) cleared.\nCompatible with open-material DLP/LCD printers.",
     technique: "PRINT: 50–100μm on compatible DLP/LCD printers.\nWASH: IPA.\nPOST-CURE: UV chamber per VOCO protocol.",
     evidence: "VOCO's entry in the dental splint resin market. Open-material compatibility is the key advantage — works with Asiga, SprintRay, and other open platforms.\n\nINDICATIONS: occlusal splints, night guards.",
@@ -252,42 +252,42 @@ export const SPLINT_RESINS = [
 // ═══════════════════════════════════════════════
 export const PRINT_PROTOCOLS = [
   {
-    id: "postcure-protocol", name: "Post-Curing Protocol — Quick Reference", mfr: "N/A — Protocol", cat: "Protocol — Post-Processing",
+    id: "postcure-protocol", lastReviewed: "2026-03", name: "Post-Curing Protocol — Quick Reference", mfr: "N/A — Protocol", cat: "Protocol — Post-Processing",
     technique: "POST-CURE IS MANDATORY — uncured resins are cytotoxic and mechanically weak.\n\nBY APPLICATION:\n• Surgical guides: UV + heat, 20–30 min at 60°C\n• Provisional C&B: minimum 10 min (adequate); optimal 60–90 min at 80°C (max properties)\n• Permanent C&B: extended cure per manufacturer (longest)\n• Denture base: full cure cycle per manufacturer\n• Splints: UV + heat, 30–60 min; autoclave 132°C × 4 min optional (improves biocompatibility)",
     evidence: "Per Soto-Montero 2022: 5–10 min post-cure = adequate strength without color change.\nPer Kim 2020: 60–90 min significantly improves flexural strength, hardness, degree of conversion, and biocompatibility.\nPer Bayarsaikhan 2021: 80°C produces highest flexural strength (147.48 MPa) and cell viability (89.51%).\nPer Aati 2021: nitrogen atmosphere during curing increases surface hardness.\n\n⚠ UNDER-CURED = CYTOTOXIC. Material selection, washing thoroughness, and post-cure duration ALL affect biocompatibility.",
     notes: "Post-curing is the single most important step for biocompatibility and mechanical properties. Never shortcut.",
     refs: ["soto-montero-2022-postcure","kim-2020-postcure-properties"]
   },
   {
-    id: "washing-protocol", name: "Washing Protocol — IPA vs TPM", mfr: "N/A — Protocol", cat: "Protocol — Post-Processing",
+    id: "washing-protocol", lastReviewed: "2026-03", name: "Washing Protocol — IPA vs TPM", mfr: "N/A — Protocol", cat: "Protocol — Post-Processing",
     technique: "WASHING removes uncured resin. Two main solvents:\n\nIPA (Isopropyl Alcohol 99%):\n• 2–5 min in agitated bath or automated washer\n• Most widely used; effective\n• ⚠ Flammable — ventilate and store properly\n• Replace when contaminated (cloudy appearance)\n\nTPM (Tripropylene Glycol Monomethyl Ether):\n• Less aggressive solvent; better for some resins\n• Longer wash time needed (5–10 min)\n• Less flammable than IPA\n• SprintRay Pro Wash uses TPM\n\nAFTER WASHING: air dry completely before post-curing. Residual solvent = compromised cure.",
     evidence: "Both IPA and TPM produce clinically acceptable results. IPA is more effective per wash cycle but more hazardous. TPM is gentler on resins with sensitive surface finish.\n\n⚠ Insufficient washing leaves uncured monomer → cytotoxicity. Over-washing (>10 min IPA) can damage surface detail on thin restorations.",
     notes: "Wash thoroughly but don't over-wash. Dry completely before post-cure.",
     refs: []
   },
   {
-    id: "orientation-layer-guide", name: "Print Orientation & Layer Thickness", mfr: "N/A — Protocol", cat: "Protocol — Print Settings",
+    id: "orientation-layer-guide", lastReviewed: "2026-03", name: "Print Orientation & Layer Thickness", mfr: "N/A — Protocol", cat: "Protocol — Print Settings",
     technique: "ORIENTATION AFFECTS ACCURACY AND STRENGTH:\n\n• Surgical guides (full-arch): HORIZONTAL (0°) = highest accuracy\n• Surgical guides (short-span): VERTICAL (90°) may be superior (40–110μm improvement)\n• Crowns: 45° angled for best balance of accuracy + support placement\n• Denture bases: parallel to build platform\n• Splints: 30–45° angle\n\nLAYER THICKNESS:\n• 25μm: highest detail (surgical guides, margins)\n• 50μm: standard dental (crowns, guides, splints)\n• 100μm: acceptable for models, denture bases, study casts\n\nSUPPORT PLACEMENT: avoid placing supports on margins, intaglio surfaces, or occlusal contacts. Orient to place supports on least critical surface.",
     evidence: "Per García Gil 2025: shell thickness and orientation significantly affect accuracy. 50μm layer reduces deviations vs 100μm for surgical guides.\nPer general consensus: thinner layers = better marginal accuracy but longer print time. Balance based on clinical requirements.",
     notes: "Orient to minimize supports on critical surfaces. Thinner layers for precision work.",
     refs: ["garcia-gil-2025-3dp-accuracy"]
   },
   {
-    id: "fda-clearance-guide", name: "FDA Clearance Status — Quick Reference", mfr: "N/A — Reference", cat: "Protocol — Regulatory",
+    id: "fda-clearance-guide", lastReviewed: "2026-03", name: "FDA Clearance Status — Quick Reference", mfr: "N/A — Reference", cat: "Protocol — Regulatory",
     technique: "FDA 510(k) STATUS BY APPLICATION (as of 2026):\n\n✅ CLEARED — routine clinical use:\n• Surgical guides (most major brands)\n• Provisional crowns/bridges (NextDent, Formlabs, SprintRay, BEGO)\n• Denture bases (SprintRay, Formlabs, NextDent)\n• Splints/night guards (KeySplint, Formlabs, VOCO)\n• Models and dies\n• Custom trays\n\n⚠ CLEARED WITH CAUTION — limited long-term evidence:\n• Permanent crowns (Crowntec, Formlabs Permanent Crown, VarseoSmile Crown Plus, SprintRay Crown)\n• Permanent inlays/onlays\n\n❌ NOT CLEARED / NOT RECOMMENDED:\n• Permanent FPDs (multi-unit bridges)\n• Direct-printed clear aligners for PERMANENT use (only interim/in-house refinement)",
     evidence: "Per Ribeiro 2025: 'insufficient clinical evidence to support use of 3D-printed resins for indirect definitive restorations.'\nPer Mandurino 2025: milling significantly higher flexural strength than 3D printing.\n\nFDA clearance ≠ long-term clinical evidence. Printed permanent crowns are cleared but lack the 5–10 year survival data that milled restorations have. Use with informed consent.",
     notes: "FDA clearance does not equal clinical evidence. Provisional/guide resins have strong evidence. Permanent resins have clearance but limited long-term data.",
     refs: ["ribeiro-2025-insufficient-evidence","mandurino-2025-milled-vs-printed"]
   },
   {
-    id: "printed-veneers", name: "3D-Printed No-Prep Veneers — Emerging", mfr: "N/A — Emerging Technology", cat: "Protocol — Emerging Applications",
+    id: "printed-veneers", lastReviewed: "2026-03", name: "3D-Printed No-Prep Veneers — Emerging", mfr: "N/A — Emerging Technology", cat: "Protocol — Emerging Applications",
     technique: "LITHOGRAPHY-BASED CERAMIC MANUFACTURING (LCM):\n• Prints in ceramic slurry → debinding → sintering\n• Achieves 0.1–0.2mm veneer thickness (thinner than conventional 0.3–0.5mm)\n• Still largely experimental — no widespread FDA-cleared dental product\n\nPRINTED COMPOSITE VENEERS:\n• Possible with permanent crown resins at thin dimensions\n• Limited evidence on long-term wear and bonding",
     evidence: "Per in vitro studies: printed zirconia veneers showed better incisal fit than milled.\nLCM technology is promising but not yet commercially available for routine dental use.\n\n⚠ EXPERIMENTAL — not recommended for routine clinical use yet.\nINDICATIONS (future): ultra-thin veneers, no-prep veneers, complex geometries impossible to mill.",
     notes: "Emerging technology. LCM ceramic printing and ultra-thin printed veneers are promising but not yet routine clinical.",
     refs: []
   },
   {
-    id: "workflow-times", name: "Digital Workflow Times & Troubleshooting", mfr: "N/A — Protocol", cat: "Protocol — Workflow",
+    id: "workflow-times", lastReviewed: "2026-03", name: "Digital Workflow Times & Troubleshooting", mfr: "N/A — Protocol", cat: "Protocol — Workflow",
     technique: "TYPICAL WORKFLOW TIMES:\n• Design (CAD): 10–30 min depending on complexity\n• Print: 30–90 min (varies by size, layer thickness, printer)\n• Wash: 5–10 min\n• Dry: 10–15 min\n• Post-cure: 10–90 min (application-dependent)\n• Finish/polish: 5–15 min\n\nTOTAL: 1.5–3 hours for a single crown from scan to seat\n\nTROUBLESHOOTING:\n• Failed prints → check resin temperature, tank condition, build platform leveling\n• Warping → insufficient support, wrong orientation, resin too cold\n• Poor fit → check printer calibration, layer thickness, resin expiration\n• Surface roughness → insufficient post-cure, old resin, contaminated tank\n• Color mismatch → wrong shade selection, over-curing (yellowing), insufficient wash",
     evidence: "3D printing enables same-day delivery for provisionals, guides, and splints. Permanent restorations may require additional try-in appointments given the limited evidence base.\n\nPrint failure rates decrease significantly with operator experience and proper maintenance protocols.",
     notes: "Same-day workflow is the key value proposition. Operator experience and maintenance are critical to consistent results.",

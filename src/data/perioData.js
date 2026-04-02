@@ -551,7 +551,7 @@ export const SURGICAL_AIDS = [
 // ═══════════════════════════════════════════════
 export const SOFT_TISSUE_SUBSTITUTES = [
   {
-    id: "mucograft", name: "Mucograft", mfr: "Geistlich Pharma", cat: "Soft Tissue Substitute — Collagen Matrix",
+    id: "mucograft", lastReviewed: "2026-03", name: "Mucograft", mfr: "Geistlich Pharma", cat: "Soft Tissue Substitute — Collagen Matrix",
     composition: "Bilayer porcine type I and III collagen, non-crosslinked. Compact layer (structural stability) + porous layer (cell integration/vascularization). ~4mm thickness. Completely degraded by day 14.",
     indications: ["Vestibuloplasty / KT augmentation","Recession coverage (CAF adjunct)","Socket soft tissue management","Peri-implant soft tissue augmentation"],
     steps: ["Designed for SECONDARY INTENTION healing (left exposed)","Trim to extend 2-3mm beyond defect margins","Compact layer facing oral cavity, porous layer facing tissue bed","Suture with resorbable sutures","Allow epithelialization over 2-4 weeks"],
@@ -560,7 +560,7 @@ export const SOFT_TISSUE_SUBSTITUTES = [
     refs: []
   },
   {
-    id: "fibro-gide", name: "Fibro-Gide", mfr: "Geistlich Pharma", cat: "Soft Tissue Substitute — Volume-Stable Collagen",
+    id: "fibro-gide", lastReviewed: "2026-03", name: "Fibro-Gide", mfr: "Geistlich Pharma", cat: "Soft Tissue Substitute — Volume-Stable Collagen",
     composition: "Porcine type I and III collagen, CROSS-LINKED for enhanced volume stability and degradation resistance. Highest resistance to hydrolytic, trypsin, and collagenase degradation among tested matrices.",
     indications: ["Peri-implant soft tissue thickening","Soft tissue volume augmentation","Ridge contour improvement"],
     steps: ["Requires PRIMARY CLOSURE (unlike Mucograft)","Trim to desired dimensions","Place against tissue bed (periosteum)","Achieve tension-free primary closure","Suture with resorbable sutures"],
@@ -569,7 +569,7 @@ export const SOFT_TISSUE_SUBSTITUTES = [
     refs: []
   },
   {
-    id: "alloderm", name: "AlloDerm", mfr: "BioHorizons / LifeCell", cat: "Soft Tissue Substitute — Human Acellular Dermal Matrix",
+    id: "alloderm", lastReviewed: "2026-03", name: "AlloDerm", mfr: "BioHorizons / LifeCell", cat: "Soft Tissue Substitute — Human Acellular Dermal Matrix",
     composition: "Human acellular dermal matrix (hADM), freeze-dried. Decellularized to remove cells while preserving basement membrane and dermal collagen architecture. Electron beam sterilized. Requires 15-20 min rehydration.",
     indications: ["Root coverage (CAF adjunct)","Keratinized tissue augmentation","Phenotype modification","Peri-implant soft tissue augmentation","Dual function: soft tissue graft + barrier membrane"],
     steps: ["Rehydrate in sterile saline for 15-20 minutes","Trim to desired dimensions","Place basement membrane side facing oral cavity","Requires PRIMARY CLOSURE","Suture with resorbable sutures"],
@@ -578,7 +578,7 @@ export const SOFT_TISSUE_SUBSTITUTES = [
     refs: []
   },
   {
-    id: "puros-dermis", name: "Puros Dermis", mfr: "Zimmer Biomet", cat: "Soft Tissue Substitute — Human ADM (Solvent-Dehydrated)",
+    id: "puros-dermis", lastReviewed: "2026-03", name: "Puros Dermis", mfr: "Zimmer Biomet", cat: "Soft Tissue Substitute — Human ADM (Solvent-Dehydrated)",
     composition: "Human acellular dermal matrix (hADM), SOLVENT-DEHYDRATED (vs AlloDerm freeze-dried). Requires only 5-10 min rehydration (vs 15-20 min AlloDerm). Enhanced in vitro growth factor release (TGF-β1, FGF-2, PDGF-BB, VEGF-A) vs dried matrices.",
     indications: ["Root coverage (equivalent to AlloDerm)","Keratinized tissue augmentation","Phenotype modification","Peri-implant augmentation"],
     steps: ["Rehydrate in sterile saline for 5-10 minutes (faster than AlloDerm)","Trim to desired dimensions","Requires PRIMARY CLOSURE","Suture with resorbable sutures"],
@@ -587,7 +587,7 @@ export const SOFT_TISSUE_SUBSTITUTES = [
     refs: []
   },
   {
-    id: "ossix-volumax", name: "Ossix Volumax", mfr: "Datum Dental / Dentsply Sirona", cat: "Soft Tissue Substitute — Sugar Cross-Linked Collagen",
+    id: "ossix-volumax", lastReviewed: "2026-03", name: "Ossix Volumax", mfr: "Datum Dental / Dentsply Sirona", cat: "Soft Tissue Substitute — Sugar Cross-Linked Collagen",
     composition: "Bovine type I collagen, enzymatically cross-linked using sugar-based agents. Biocompatible alternative to chemical cross-linking (glutaraldehyde). Only minute superficial biodegradation at 24 weeks — very prolonged barrier function.",
     indications: ["Ridge preservation (can be left EXPOSED)","GBR barrier membrane","Socket grafting without primary closure","Volume augmentation"],
     steps: ["No rehydration needed","Trim to extend 2-3mm beyond defect","Can be left EXPOSED — no primary closure required","Place over graft material in socket","Suture edges to surrounding tissue"],
@@ -602,7 +602,7 @@ export const SOFT_TISSUE_SUBSTITUTES = [
 // ═══════════════════════════════════════════════
 export const POST_OP = [
   {
-    id: "chx-postop", name: "Chlorhexidine 0.12% Post-Surgical Rinse", mfr: "Multiple (Peridex, Paroex)", cat: "Post-Op — Antimicrobial Rinse",
+    id: "chx-postop", lastReviewed: "2026-03", name: "Chlorhexidine 0.12% Post-Surgical Rinse", mfr: "Multiple (Peridex, Paroex)", cat: "Post-Op — Antimicrobial Rinse",
     composition: "Chlorhexidine gluconate 0.12% (US) or 0.2% (Europe). Cationic bisbiguanide antiseptic. Available with or without alcohol. Anti-discoloration systems (ADS) in newer formulations reduce staining.",
     indications: ["Post-periodontal surgery","Post-extraction","Post-implant surgery","Peri-implant mucositis treatment"],
     steps: ["Rinse with 15mL for 30 seconds, twice daily","Begin 24 hours post-surgery","Duration: 7-14 days (not longer — diminishing returns)","Do not eat/drink for 30 minutes after rinsing","Alcohol-free formulation for mucosal sensitivity or recovering patients"],
@@ -617,7 +617,7 @@ export const POST_OP = [
 // ═══════════════════════════════════════════════
 export const NEW_PERIO_PRODUCTS = [
   {
-    id: "glycolon", name: "Glycolon (Glycolide/Caprolactone)", mfr: "Multiple", cat: "Suture — Monofilament Absorbable",
+    id: "glycolon", lastReviewed: "2026-03", name: "Glycolon (Glycolide/Caprolactone)", mfr: "Multiple", cat: "Suture — Monofilament Absorbable",
     composition: "Segmented block copolymer of ε-caprolactone and glycolide. Monofilament. Same material as Monocryl (poliglecaprone 25). Hydrolysis degradation in two stages: strength retention followed by rapid degradation.",
     indications: ["Periodontal flap closure","Implant surgery closure","Dentoalveolar surgery","Any application requiring monofilament absorbable"],
     steps: ["Use standard suturing technique","Excellent handling — minimal tissue drag","Knot security is excellent across configurations","Consider additional throw vs braided sutures","Complete absorption: 91-119 days"],
@@ -626,7 +626,7 @@ export const NEW_PERIO_PRODUCTS = [
     refs: []
   },
   {
-    id: "bio-oss-collagen", name: "Bio-Oss Collagen", mfr: "Geistlich Pharma", cat: "Bone Graft — Xenograft + Collagen",
+    id: "bio-oss-collagen", lastReviewed: "2026-03", name: "Bio-Oss Collagen", mfr: "Geistlich Pharma", cat: "Bone Graft — Xenograft + Collagen",
     composition: "Deproteinized bovine bone mineral (DBBM) granules pre-mixed with 10% porcine collagen (non-crosslinked). Maintains Bio-Oss natural bone architecture with enhanced handling from collagen carrier.",
     indications: ["Socket preservation","Ridge augmentation","Sinus augmentation","Periapical defects"],
     steps: ["Hydrate per IFU if needed","Place into defect — collagen carrier improves cohesiveness","Preserves graft at coronal part of socket better than granules alone","Cover with membrane (Bio-Gide or collagen plug) as indicated","Allow 4-6 months healing for socket preservation"],
@@ -635,7 +635,7 @@ export const NEW_PERIO_PRODUCTS = [
     refs: []
   },
   {
-    id: "amicar-perio", name: "Aminocaproic Acid (Amicar)", mfr: "Multiple", cat: "Hemostatic Agent — Antifibrinolytic",
+    id: "amicar-perio", lastReviewed: "2026-03", name: "Aminocaproic Acid (Amicar)", mfr: "Multiple", cat: "Hemostatic Agent — Antifibrinolytic",
     composition: "Antifibrinolytic agent. Inhibits plasminogen activators (primary) + antiplasmin activity (secondary). Enhances hemostasis when fibrinolysis contributes to bleeding.",
     indications: ["Post-extraction hemostasis in anticoagulated patients","Hemophilia patients undergoing dental procedures","Adjunct to local hemostatic measures"],
     steps: ["Oral dosing: 50-60 mg/kg every 4 hours until sockets healed","Intra-alveolar: place directly in extraction socket","Mouthwash: can be used as topical rinse","Continue until dental sockets completely healed","⚠ CONTRAINDICATED in active intravascular clotting / DIC"],

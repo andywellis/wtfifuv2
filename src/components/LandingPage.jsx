@@ -16,6 +16,9 @@ export default function LandingPage({ onSelectSpecialty }) {
         <p style={{ color: "#64748b", fontSize: 14, maxWidth: 520, margin: "0 auto", lineHeight: 1.5 }}>
           Dental materials protocols organized by specialty. Surface treatments, cementation, bonding — evidence over IFU where they conflict.
         </p>
+        <p style={{ color: "#475569", fontSize: 11, marginTop: 10 }}>
+          Evidence current as of April 2026
+        </p>
       </div>
 
       {/* Specialty Grid */}
