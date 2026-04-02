@@ -634,6 +634,7 @@ const TAB_CONFIG = {
     { id: "design", label: "Design & Specs", field: "design" },
     { id: "protocol", label: "Protocol", field: "protocol" },
     { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
+    { id: "guided", label: "Guided Surgery", field: "guided_surgery" },
   ],
   // Preventive
   preventive: [
