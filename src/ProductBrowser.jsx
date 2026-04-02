@@ -635,12 +635,6 @@ const TAB_CONFIG = {
     { id: "protocol", label: "Protocol", field: "protocol" },
     { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
   ],
-  // Periodontics
-  perio: [
-    { id: "material", label: "Material & Composition", field: "material" },
-    { id: "technique", label: "Technique", field: "technique" },
-    { id: "evidence", label: "Evidence & Outcomes", field: "evidence" },
-  ],
   // Preventive
   preventive: [
     { id: "product", label: "Product & Composition", field: "product_detail" },
