@@ -800,6 +800,20 @@ function TabbedDetail({ item, onBack, color, citMap, specialtyId }) {
 }
 
 // ═══════════════════════════════════════════════
+// PERIO SUBCATEGORY COLORS
+// ═══════════════════════════════════════════════
+const PERIO_SUBCATEGORY_COLORS = {
+  "Membranes": { a: "#38bdf8", b: "#0c2d3e" },
+  "Bone Grafts": { a: "#a78bfa", b: "#1a0f2e" },
+  "Biologics & Growth Factors": { a: "#34d399", b: "#0a2e1a" },
+  "Sutures": { a: "#fb923c", b: "#2e1a0a" },
+  "Hemostatic Agents": { a: "#f87171", b: "#2e0a0a" },
+  "Surgical Instruments & Aids": { a: "#94a3b8", b: "#1a1a2e" },
+  "Soft Tissue Substitutes": { a: "#c084fc", b: "#1a0f2e" },
+  "Post-Operative Products": { a: "#2dd4bf", b: "#0a2e2a" },
+};
+
+// ═══════════════════════════════════════════════
 // SPECIALTY DATA REGISTRY — maps dataKey → products, groupFn, groups, citations
 // ═══════════════════════════════════════════════
 const SPECIALTY_REGISTRY = {
@@ -900,8 +914,12 @@ export default function ProductBrowser({ specialty, onGoHome }) {
   const goBack = () => { setSel(null); setSelType(null); };
 
   // ── Detail view routing ──
+  // Perio subcategory color override
+  const detailColor = specialty?.id === "perio" && sel
+    ? (PERIO_SUBCATEGORY_COLORS[reg?.groupFn?.(sel.cat)]?.a || specialty?.color)
+    : specialty?.color;
   // New specialties → TabbedDetail (handles both tabbed + notes-only fallback)
-  if (sel && selType === "notes") return <TabbedDetail item={sel} onBack={goBack} color={specialty?.color} citMap={reg?.cit} specialtyId={specialty?.id} />;
+  if (sel && selType === "notes") return <TabbedDetail item={sel} onBack={goBack} color={detailColor} citMap={reg?.cit} specialtyId={specialty?.id} />;
   // Legacy prosth items that are notes-only (impressions, removables, etc.)
   if (sel && selType === "material" && !sel.surface) return <TabbedDetail item={sel} onBack={goBack} color={specialty?.color} citMap={null} specialtyId={specialty?.id} />;
   if (sel && selType === "prosth_design") return <TabbedDetail item={sel} onBack={goBack} color={specialty?.color} citMap={null} specialtyId={specialty?.id} />;
@@ -952,8 +970,11 @@ export default function ProductBrowser({ specialty, onGoHome }) {
             <h2 style={{ fontFamily: "'Outfit'", fontSize: 10, fontWeight: 900, color: "#334155", letterSpacing: 2.5, textTransform: "uppercase", marginBottom: 8, paddingLeft: 4 }}>{gn}</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))", gap: 8 }}>
               {groups[gn].map(item => {
+                const perioCol = specialty?.id === "perio" && PERIO_SUBCATEGORY_COLORS[gn];
                 const c = item._type === "notes"
-                  ? { a: specialty?.color || "#94a3b8", bg: "#0f172a", t: `${specialty?.color || "#94a3b8"}15` }
+                  ? perioCol
+                    ? { a: perioCol.a, bg: perioCol.b, t: `${perioCol.a}15` }
+                    : { a: specialty?.color || "#94a3b8", bg: "#0f172a", t: `${specialty?.color || "#94a3b8"}15` }
                   : gc(item.cat);
                 const isMat = item._type === "material";
                 const isCem = item._type === "cement";
