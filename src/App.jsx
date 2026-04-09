@@ -10,13 +10,13 @@ const SPECIALTIES = [
   {
     id: "restorative", name: "Restorative", icon: "🦷", color: "#22d3ee", bg: "#0c2d3e",
     subtitle: "CAD/CAM blocks, composites, bonding agents, cements, surface treatments, staining, polishing",
-    filterGroups: ["Restorative Blocks", "Glass-Ceramics", "Zirconia", "Composites", "Post & Core", "Bonding Agents", "Cements", "Surface Treatments", "Stain / Glaze Systems", "Polishing Systems"],
+    filterGroups: ["Restorative Blocks", "Glass-Ceramics", "Zirconia", "Composites", "Post & Core", "Bonding Agents", "Cements", "Surface Treatments", "Substrate Protocols", "Stain / Glaze Systems", "Polishing Systems"],
     dataKey: "restprosth", ready: true,
   },
   {
     id: "prostho", name: "Prosthodontics", icon: "👑", color: "#60a5fa", bg: "#0a1a2e",
     subtitle: "Crown & bridge, provisionals, impressions, removables, tissue management, shade matching, full-arch design",
-    filterGroups: ["Zirconia", "Gold / Metal", "Ti-Base", "Cements", "Provisional Materials", "Surface Treatments", "Stain / Glaze Systems", "Polishing Systems", "Prosthesis Design", "Impression Materials", "Tissue Management", "Removable Prosthetics", "Shade Matching"],
+    filterGroups: ["Zirconia", "Gold / Metal", "Ti-Base", "Cements", "Provisional Materials", "Surface Treatments", "Substrate Protocols", "Stain / Glaze Systems", "Polishing Systems", "Prosthesis Design", "Impression Materials", "Tissue Management", "Removable Prosthetics", "Shade Matching"],
     dataKey: "restprosth", ready: true,
   },
   {

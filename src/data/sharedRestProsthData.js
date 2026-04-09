@@ -293,6 +293,39 @@ export const CIT = {
   "bayindir-2020-cement-shade": { pmid: null, title: "Cement shade and thickness effects on high-translucency zirconia color", authors: "Bayindir F et al.", journal: "J Prosthet Dent", year: 2020, grade: "MODERATE" },
   "koko-2022-mdp-salt": { pmid: null, title: "MDP salts — new bonding strategy for zirconia with highest tensile bond", authors: "Koko M et al.", journal: "J Dent Res", year: 2022, grade: "MODERATE" },
   "fronza-2022-mdp-longterm": { pmid: null, title: "MDP primer long-term bond to zirconia — Clearfil 35.3 MPa after 50k cycles", authors: "Fronza BM et al.", journal: "J Adhes Dent", year: 2022, grade: "MODERATE" },
+  // ── Substrate protocol + decontamination citations ──
+  "tian-2022-zirconia-cleaning": { pmid: null, title: "Ivoclean and Katana Cleaner effective for saliva+blood on zirconia; ZirClean fails for blood", authors: "Tian F et al.", journal: "J Dent", year: 2022, grade: "STRONG" },
+  "awad-2022-mdp-cleaner": { pmid: null, title: "MDP-containing cleaner improves bond to contaminated zirconia", authors: "Awad MM et al.", journal: "Materials", year: 2022, grade: "MODERATE" },
+  "tian-2021-dentin-cleaning": { pmid: null, title: "Katana Cleaner restores bond to root canal sealer-contaminated dentin", authors: "Tian F et al.", journal: "J Dent", year: 2021, grade: "MODERATE" },
+  "celiksoz-2024-sa-contamination": { pmid: null, title: "Katana Cleaner improves SA cement bond to contaminated dentin", authors: "Çeliksöz O et al.", journal: "Am J Dent", year: 2024, grade: "MODERATE" },
+  "muduroglu-2026-mdp-cleaner": { pmid: null, title: "MDP salt cleaner on contaminated dentin exceeds uncontaminated control bond", authors: "Müdüroğlu Adıgüzel R et al.", journal: "J Adhes Dent", year: 2026, grade: "MODERATE" },
+  "fagan-2022-ls2-blood": { pmid: null, title: "Only Ivoclean restores bond after blood contamination on lithium disilicate", authors: "Fagan J et al.", journal: "Oper Dent", year: 2022, grade: "STRONG" },
+  "hajjaj-2022-zirconia-cleaning": { pmid: null, title: "ZirClean inferior to Ivoclean after aging for contaminated zirconia", authors: "Hajjaj MS et al.", journal: "Materials", year: 2022, grade: "MODERATE" },
+  "feiz-2022-cleaning-sr": { pmid: null, title: "SR: APA effective 100%, Ivoclean 75%, phosphoric acid/water/alcohol ineffective", authors: "Feiz A et al.", journal: "J Prosthodont", year: 2022, grade: "STRONG" },
+  "genc-2025-zirconia-cleaning": { pmid: null, title: "APA + Ivoclean synergistic — highest bond to contaminated zirconia", authors: "Genç O et al.", journal: "J Adhes Dent", year: 2025, grade: "MODERATE" },
+  "sukcheep-2024-protective-mdp": { pmid: null, title: "MDP primer before+after contamination maintains bond after 10k thermocycles", authors: "Sukcheep C et al.", journal: "J Prosthodont", year: 2024, grade: "MODERATE" },
+  "toledano-2023-dentin-nanomech": { pmid: null, title: "Katana Cleaner restores dentin nanomechanical properties after contamination", authors: "Toledano M et al.", journal: "J Dent", year: 2023, grade: "MODERATE" },
+  // ── IDS + antibacterial adhesive citations ──
+  "kocaaga-2026-ids-cleaning": { pmid: null, title: "AquaCare waterborne abrasion produces highest IDS refresh bond", authors: "Kocaağa S et al.", journal: "Oper Dent", year: 2026, grade: "MODERATE" },
+  "pheerarangsikul-2022-monomer-matching": { pmid: null, title: "GPDM+GPDM increases IDS-cement bond; mixed monomers provide no benefit", authors: "Pheerarangsikul N et al.", journal: "Oper Dent", year: 2022, grade: "MODERATE" },
+  "aung-2019-abrz": { pmid: null, title: "Panavia V5 most stable ABRZ; self-etch mode creates ABRZ, etch-rinse does not", authors: "Aung SSMP et al.", journal: "Dent Mater", year: 2019, grade: "STRONG" },
+  "andre-2015-mdpb": { pmid: null, title: "MDPB adhesive fastest bactericidal activity — 30 min kill time", authors: "André CB et al.", journal: "J Dent", year: 2015, grade: "MODERATE" },
+  "hollanders-2023-mdpb-clinical": { pmid: null, title: "Practice-based trial 10,151 restorations 6yr: no difference in caries with MDPB", authors: "Hollanders ACC et al.", journal: "Dent Mater", year: 2023, grade: "STRONG" },
+  "shinohara-2009-fluoride-bond": { pmid: null, title: "Fluoride adhesive bond INCREASES after 3mo water storage (50.3→61.0 MPa)", authors: "Shinohara MS et al.", journal: "Dent Mater", year: 2009, grade: "MODERATE" },
+  // ── 3D printed resin citations ──
+  "dascanio-2026-3dp-umbrella": { pmid: null, title: "Umbrella review: 3D printed resin cementation protocols not fully validated", authors: "Dascanio R et al.", journal: "J Dent", year: 2026, grade: "STRONG" },
+  "dederichs-2025-3dp-conditioning": { pmid: null, title: "APA >2 bar causes cohesive failure in 3D printed resins", authors: "Dederichs M et al.", journal: "J Dent", year: 2025, grade: "MODERATE" },
+  "lankes-2023-3dp-cleaning": { pmid: null, title: "Universal adhesive outperforms silane-only for 3D printed resin bonding", authors: "Lankes V et al.", journal: "Materials", year: 2023, grade: "MODERATE" },
+  "hammamy-2025-3dp-primers": { pmid: null, title: "APA + universal adhesive optimal for 3D printed crown materials", authors: "Hammamy M et al.", journal: "Materials", year: 2025, grade: "MODERATE" },
+  "palomeque-2026-3dp-bond": { pmid: null, title: "HF not recommended for printed resins; APA + adhesive preferred", authors: "Palomeque S et al.", journal: "J Prosthet Dent", year: 2026, grade: "MODERATE" },
+  // ── Feldspathic/leucite citations ──
+  "azevedo-2021-hf": { pmid: null, title: "5% HF maintains bond at 16 months — 10% offers no improvement", authors: "Azevedo VL et al.", journal: "J Prosthet Dent", year: 2021, grade: "MODERATE" },
+  "colombo-2019-etch": { pmid: null, title: "HF etching time optimization for feldspathic/leucite ceramics", authors: "Colombo LA et al.", journal: "J Adhes Dent", year: 2019, grade: "MODERATE" },
+  "turunç-2023-mep": { pmid: null, title: "Monobond Etch & Prime viable HF alternative for glass-ceramics", authors: "Turunç Oğuzman R et al.", journal: "Dent Mater J", year: 2023, grade: "MODERATE" },
+  "braga-2024-polywave": { pmid: null, title: "LC cement + Ivocerin: best color stability, polywave LED not required", authors: "Braga SRM et al.", journal: "J Esthet Restor Dent", year: 2024, grade: "MODERATE" },
+  "zhang-2025-veneer-bond": { pmid: null, title: "Variolink LC 61% μTBS decrease at 6mo — LC bond degradation concern", authors: "Zhang Y et al.", journal: "Dent Mater", year: 2025, grade: "MODERATE" },
+  // ── Bond durability citation ──
+  "maassen-2021-bond-durability": { pmid: null, title: "Panavia V5 + Tooth Primer: 45 MPa at 24h, 36.6 MPa at 1yr on zirconia — highest and most stable", authors: "Maaßen LK et al.", journal: "Dent Mater", year: 2021, grade: "MODERATE" },
 };
 
 export const SILANE_2B = {
