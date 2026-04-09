@@ -10,9 +10,12 @@ export default function LandingPage({ onSelectSpecialty }) {
         <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: 5, color: "#475569", textTransform: "uppercase", marginBottom: 10 }}>
           Evidence-Based Clinical Quick Reference
         </div>
-        <h1 style={{ fontFamily: "'Newsreader',Georgia,serif", fontSize: 44, fontWeight: 800, color: "#f1f5f9", margin: "0 0 12px", lineHeight: 1.05 }}>
+        <h1 style={{ fontFamily: "'Newsreader',Georgia,serif", fontSize: 44, fontWeight: 800, color: "#f1f5f9", margin: "0 0 6px", lineHeight: 1.05 }}>
           WTF<span style={{ color: "#22d3ee" }}>IFU</span>
         </h1>
+        <div style={{ fontFamily: "'Outfit',sans-serif", fontSize: 18, fontWeight: 300, color: "#ffffff", letterSpacing: 1.5, margin: "0 0 10px" }}>
+          Where To Find Instructions for Use
+        </div>
         <p style={{ color: "#64748b", fontSize: 14, maxWidth: 520, margin: "0 auto", lineHeight: 1.5 }}>
           Dental materials protocols organized by specialty. Surface treatments, cementation, bonding — evidence over IFU where they conflict.
         </p>
