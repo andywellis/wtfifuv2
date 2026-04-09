@@ -324,7 +324,7 @@ function CemDetail({ cem, onBack }) {
           <Card border={cem.dcNote.includes("⚠") || cem.dcNote.includes("MANDATORY") ? "#ef4444" : "#fbbf24"}>
             <p style={{ color: cem.dcNote.includes("⚠") ? "#fca5a5" : "#fde68a", fontSize: 11.5, lineHeight: 1.5, margin: 0, fontWeight: 500 }}>{cem.dcNote}</p>
           </Card>
-          {cem.special && <><S color="#c084fc">Clinical Pearls</S><p style={{ color: "#d8b4fe", fontSize: 11.5, lineHeight: 1.5, margin: 0 }}>{cem.special}</p></>}
+          {cem.special && <><S color="#c084fc">Clinical Pearls</S><SmartText text={cem.special} color="#c084fc" /></>}
         </div>}
       </div>
 
@@ -362,7 +362,7 @@ function CompDetail({ comp, onBack }) {
           {comp.apa && <><S color="#fbbf24">Intraoral APA</S><p style={{ color: "#fde68a", fontSize: 11.5, lineHeight: 1.5, margin: 0 }}>{comp.apa}</p></>}
         </div>}
         {tab === "clinical" && <div>
-          {comp.special && <><S color="#c084fc">Clinical Pearls</S><p style={{ color: "#d8b4fe", fontSize: 11.5, lineHeight: 1.5, margin: 0 }}>{comp.special}</p></>}
+          {comp.special && <><S color="#c084fc">Clinical Pearls</S><SmartText text={comp.special} color="#c084fc" /></>}
         </div>}
       </div>
 
@@ -406,7 +406,7 @@ function BondDetail({ bond, onBack }) {
           </Card>
         </div>}
         {tab === "clinical" && <div>
-          {bond.special && <><S color="#c084fc">Clinical Pearls</S><p style={{ color: "#d8b4fe", fontSize: 11.5, lineHeight: 1.5, margin: "0 0 10px" }}>{bond.special}</p></>}
+          {bond.special && <><S color="#c084fc">Clinical Pearls</S><SmartText text={bond.special} color="#c084fc" /></>}
           {bond.antibacterial && <><S color="#10b981">Antibacterial</S><p style={{ color: "#a7f3d0", fontSize: 11.5, lineHeight: 1.5, margin: 0 }}>MDPB polymerizes INTO adhesive = permanent contact-kill. Not leaching. Lasts life of restoration. Also useful as decontaminant after try-in.</p></>}
         </div>}
       </div>
@@ -433,7 +433,7 @@ function SurfaceDetail({ item, onBack }) {
           <OL items={item.steps} c={col.a} />
         </div>}
         {tab === "clinical" && <div>
-          {item.special && <><S color="#c084fc">Clinical Pearls / Evidence</S><p style={{ color: "#d8b4fe", fontSize: 11.5, lineHeight: 1.5, margin: 0 }}>{item.special}</p></>}
+          {item.special && <><S color="#c084fc">Clinical Pearls / Evidence</S><SmartText text={item.special} color="#c084fc" /></>}
           <ReadMore color={col.a}>{item.notes}</ReadMore>
         </div>}
       </div>
@@ -460,7 +460,7 @@ function PostCoreDetail({ item, onBack }) {
           <OL items={item.steps} c={col.a} />
         </div>}
         {tab === "clinical" && <div>
-          {item.special && <><S color="#c084fc">Clinical Pearls / Evidence</S><p style={{ color: "#d8b4fe", fontSize: 11.5, lineHeight: 1.5, margin: 0 }}>{item.special}</p></>}
+          {item.special && <><S color="#c084fc">Clinical Pearls / Evidence</S><SmartText text={item.special} color="#c084fc" /></>}
         </div>}
       </div>
 
@@ -514,7 +514,7 @@ function FinishDetail({ item, onBack }) {
           </div>}
         </div>}
         {tab === "clinical" && <div>
-          {item.special && <><S color="#c084fc">Clinical Pearls</S><p style={{ color: "#d8b4fe", fontSize: 11.5, lineHeight: 1.5, margin: 0 }}>{item.special}</p></>}
+          {item.special && <><S color="#c084fc">Clinical Pearls</S><SmartText text={item.special} color="#c084fc" /></>}
         </div>}
       </div>
 
@@ -557,7 +557,7 @@ function ProvDetail({ item, onBack }) {
           {item.duration && <><S color="#fbbf24">Recommended Duration</S><p style={{ color: "#fde68a", fontSize: 11.5, lineHeight: 1.6, margin: 0 }}>{item.duration}</p></>}
         </div>}
         {tab === "clinical" && <div>
-          {item.special && <><S color="#c084fc">Clinical Pearls</S><p style={{ color: "#d8b4fe", fontSize: 11.5, lineHeight: 1.6, margin: "0 0 10px" }}>{item.special}</p></>}
+          {item.special && <><S color="#c084fc">Clinical Pearls</S><SmartText text={item.special} color="#c084fc" /></>}
           {isTempCement && item.advantages && <><S color="#10b981">Advantages</S><p style={{ color: "#a7f3d0", fontSize: 11.5, lineHeight: 1.6, margin: "0 0 10px" }}>{item.advantages}</p></>}
           {isTempCement && item.disadvantages && <><S color="#ef4444">Disadvantages</S><p style={{ color: "#fca5a5", fontSize: 11.5, lineHeight: 1.6, margin: 0 }}>{item.disadvantages}</p></>}
         </div>}
