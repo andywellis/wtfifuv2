@@ -354,6 +354,8 @@ export const CC = {
   "Gold / Noble Alloy": { bg: "#2a2008", a: "#eab308", t: "#3d3010" },
   "Self-Adhesive Resin Cement": { bg: "#1a2210", a: "#84cc16", t: "#2e3d14" },
   "Dual-Cure Adhesive Resin Cement": { bg: "#1a2210", a: "#84cc16", t: "#2e3d14" },
+  "Self-Adhesive / Adhesive-Assisted Resin Cement": { bg: "#1a2210", a: "#84cc16", t: "#2e3d14" },
+  "Cementation Protocol — Metal": { bg: "#2a2008", a: "#eab308", t: "#3d3010" },
   "Light-Cure Resin Cement": { bg: "#22160a", a: "#f97316", t: "#3d2510" },
   "Hybrid Abutment Resin Cement": { bg: "#1a1a14", a: "#a8a29e", t: "#2e2e22" },
   "Resin-Modified Glass Ionomer (RMGI)": { bg: "#0f1a22", a: "#38bdf8", t: "#142a3d" },
@@ -393,6 +395,14 @@ export const CC = {
   "Surface Treatment — 2-Bottle Silane Coupling": { bg: "#0e1a1e", a: "#5eead4", t: "#134e4a" },
   "Surface Treatment — Warm Composite Cementation": { bg: "#0e1a1e", a: "#5eead4", t: "#134e4a" },
   "Surface Treatment — Zirconia Primer (Emerging)": { bg: "#0e1a1e", a: "#5eead4", t: "#134e4a" },
+  // Substrate Protocols
+  "Substrate Protocol — Zirconia": { bg: "#0a1a2e", a: "#60a5fa", t: "#0f2a4a" },
+  "Substrate Protocol — Glassy Ceramic": { bg: "#2d0f1e", a: "#fb7185", t: "#4a1530" },
+  "Substrate Protocol — Resin-Ceramic Hybrid": { bg: "#1f1535", a: "#c084fc", t: "#2e1a5e" },
+  "Substrate Protocol — Metal": { bg: "#2a2008", a: "#eab308", t: "#3d3010" },
+  "Substrate Protocol — 3D Printed Resin": { bg: "#22160a", a: "#f97316", t: "#3d2510" },
+  "Substrate Protocol — Tooth Surface": { bg: "#0a1a1a", a: "#2dd4bf", t: "#0f2e2e" },
+  "Substrate Protocol — Decontamination": { bg: "#1a2210", a: "#84cc16", t: "#2e3d14" },
   // Post & Core
   "Post/Core — Cast Metal": { bg: "#1a1510", a: "#d4a574", t: "#2e2214" },
   "Post/Core — Fiber Reinforced": { bg: "#1a1510", a: "#d4a574", t: "#2e2214" },

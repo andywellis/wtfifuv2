@@ -421,16 +421,26 @@ function BondDetail({ bond, onBack }) {
 // ── Surface Treatment Detail ──
 function SurfaceDetail({ item, onBack }) {
   const col = gc(item.cat);
-  const [tab, setTab] = useState("protocol");
-  const tabs = [{ id: "protocol", label: "Protocol" },{ id: "clinical", label: "Clinical" }];
+  const isSubstrate = (item.cat || "").includes("Substrate Protocol");
+  const [tab, setTab] = useState(isSubstrate ? "overview" : "protocol");
+  const tabs = isSubstrate
+    ? [{ id: "overview", label: "Overview" },{ id: "protocol", label: "Protocol" },{ id: "evidence", label: "Evidence" }]
+    : [{ id: "protocol", label: "Protocol" },{ id: "clinical", label: "Clinical" }];
   return (
     <div style={{ maxWidth: 820, margin: "0 auto" }}>
       <DetailHeader item={item} onBack={onBack} />
       <TabBar tabs={tabs} active={tab} setActive={setTab} color={col.a} />
       <div style={{ background: "#080d19", borderRadius: 11, padding: "16px 20px", border: "1px solid #1e293b", minHeight: 280 }}>
+        {tab === "overview" && <div>
+          <S color={col.a}>Mechanism & Key Principles</S>
+          <SmartText text={item.notes} color={col.a} />
+        </div>}
         {tab === "protocol" && <div>
           <S color={col.a} refs={item.refs}>Step-by-Step</S>
           <OL items={item.steps} c={col.a} />
+        </div>}
+        {tab === "evidence" && <div>
+          {item.special && <><S color={col.a}>Evidence & IFU Divergences</S><SmartText text={item.special} color={col.a} /></>}
         </div>}
         {tab === "clinical" && <div>
           {item.special && <><S color="#c084fc">Clinical Pearls / Evidence</S><SmartText text={item.special} color="#c084fc" /></>}
