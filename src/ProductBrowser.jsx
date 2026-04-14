@@ -972,7 +972,7 @@ export default function ProductBrowser({ specialty, onGoHome }) {
 
       {availableGroups.filter(g => groups[g]).map(gn => (
           <div key={gn} style={{ marginBottom: 20 }}>
-            <h2 style={{ fontFamily: "'Outfit'", fontSize: 10, fontWeight: 900, color: "#334155", letterSpacing: 2.5, textTransform: "uppercase", marginBottom: 8, paddingLeft: 4 }}>{gn}</h2>
+            <h2 style={{ fontFamily: "'Outfit'", fontSize: 10, fontWeight: 900, color: (specialty?.id === "perio" && PERIO_SUBCATEGORY_COLORS[gn]?.a) || specialty?.color || "#94a3b8", letterSpacing: 2.5, textTransform: "uppercase", marginBottom: 8, paddingLeft: 4 }}>{gn}</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))", gap: 8 }}>
               {groups[gn].map(item => {
                 const perioCol = specialty?.id === "perio" && PERIO_SUBCATEGORY_COLORS[gn];
