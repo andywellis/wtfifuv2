@@ -819,20 +819,157 @@ const PERIO_SUBCATEGORY_COLORS = {
 };
 
 // ═══════════════════════════════════════════════
-// RESTORATIVE SUBCATEGORY COLORS
+// SUBCATEGORY HEADING COLORS — all specialties
 // ═══════════════════════════════════════════════
-const RESTORATIVE_SUBCATEGORY_COLORS = {
-  "Hybrid Ceramic/Composite Blocks": { a: "#22d3ee", b: "#0c2d3e" },
-  "Glass-Ceramics": { a: "#fb7185", b: "#2d0f1e" },
-  "Zirconia": { a: "#60a5fa", b: "#0a1a2e" },
-  "Cements": { a: "#84cc16", b: "#1a2210" },
-  "Composites": { a: "#e879f9", b: "#1a1022" },
-  "Post & Core": { a: "#d4a574", b: "#1a150e" },
-  "Bonding Agents": { a: "#2dd4bf", b: "#0a1a1a" },
-  "Surface Treatments": { a: "#5eead4", b: "#0e1a1e" },
-  "Substrate Protocols": { a: "#a78bfa", b: "#1a1520" },
-  "Polishing Systems": { a: "#f59e0b", b: "#1a150e" },
-  "Stain / Glaze Systems": { a: "#c4b5fd", b: "#1e1028" },
+const HEADING_COLORS = {
+  // ── Restorative / Prosthodontics (legacy) ──
+  "Hybrid Ceramic/Composite Blocks": "#22d3ee",
+  "Glass-Ceramics": "#fb7185",
+  "Zirconia": "#60a5fa",
+  "Cements": "#84cc16",
+  "Composites": "#e879f9",
+  "Post & Core": "#d4a574",
+  "Bonding Agents": "#2dd4bf",
+  "Surface Treatments": "#5eead4",
+  "Substrate Protocols": "#a78bfa",
+  "Polishing Systems": "#f59e0b",
+  "Stain / Glaze Systems": "#c4b5fd",
+  "Ti-Base": "#a8a29e",
+  "Gold / Metal": "#eab308",
+  "Provisional Materials": "#86efac",
+  "Prosthesis Design": "#a78bfa",
+  "Impression Materials": "#38bdf8",
+  "Tissue Management": "#f472b6",
+  "Removable Prosthetics": "#fb923c",
+  "Shade Matching": "#fbbf24",
+  // ── Implants ──
+  "Implant Systems": "#a8a29e",
+  "Abutment Systems": "#60a5fa",
+  "Overdenture Attachments": "#fbbf24",
+  "Protocols & Decision Frameworks": "#34d399",
+  // ── Preventive ──
+  "Fluoride Varnishes": "#10b981",
+  "Prescription Fluorides": "#34d399",
+  "Silver Diamine Fluoride": "#94a3b8",
+  "Pit & Fissure Sealants": "#38bdf8",
+  "Remineralization Agents": "#a78bfa",
+  "Adjunctive Agents": "#f59e0b",
+  "Xerostomia Management": "#fb923c",
+  "Protocols & Home Care": "#5eead4",
+  // ── Sedation & Anesthesia ──
+  "Local Anesthetics": "#06b6d4",
+  "Topical Anesthetics": "#22d3ee",
+  "Nitrous Oxide": "#60a5fa",
+  "Oral Anxiolysis": "#a78bfa",
+  "IV Sedation": "#e879f9",
+  "Emergency Drugs": "#f87171",
+  "Injection Techniques": "#fb923c",
+  "Delivery Systems": "#fbbf24",
+  "Adjuncts & Reversal": "#34d399",
+  "Protocols & Dose Calculations": "#5eead4",
+  // ── Orofacial Pain / TMD ──
+  "Splints & Appliances": "#f43f5e",
+  "Acupuncture & BFA": "#fb923c",
+  "Physical Modalities": "#fbbf24",
+  // "Injection Techniques" shared with Sedation (orange #fb923c above)
+  "Pharmacology": "#e879f9",
+  "Protocols": "#5eead4",
+  // ── Sleep Dentistry ──
+  "Mandibular Advancement Devices": "#818cf8",
+  "Screening Tools": "#60a5fa",
+  "Protocols & Workflow": "#34d399",
+  "Adjunctive Therapies": "#c084fc",
+  // ── Orthodontics ──
+  "Brackets": "#fbbf24",
+  "Bonding": "#fb923c",
+  "Archwires": "#f59e0b",
+  "Interproximal Reduction": "#94a3b8",
+  "Retention": "#60a5fa",
+  "Clear Aligners": "#22d3ee",
+  "Surgical Adjuncts": "#f87171",
+  "Temporary Anchorage Devices": "#a78bfa",
+  "Protocols & Space Analysis": "#34d399",
+  // ── Dental Trauma ──
+  "Avulsion": "#ef4444",
+  "Luxation Injuries": "#fb923c",
+  "Crown Fractures": "#fbbf24",
+  "Root Fractures": "#f87171",
+  "Protocols & Follow-Up": "#60a5fa",
+  // ── Lasers ──
+  "Wavelength Selection": "#f59e0b",
+  "Soft Tissue Surgery": "#f87171",
+  "Photobiomodulation (PBM)": "#a78bfa",
+  "Periodontal Applications": "#34d399",
+  "Safety & Protocols": "#60a5fa",
+  // ── 3D Printing ──
+  "Printers & Technology": "#f97316",
+  "Surgical Guide Resins": "#f87171",
+  "Provisional C&B Resins": "#fbbf24",
+  "Permanent C&B Resins": "#22d3ee",
+  "Denture Resins": "#e879f9",
+  "Splint & Retainer Resins": "#60a5fa",
+  "Model Resins": "#94a3b8",
+  "Protocols & Regulatory": "#34d399",
+  // ── Oral Medicine ──
+  "Oral Mucosal Diseases": "#e879f9",
+  "Vesiculobullous Diseases": "#f87171",
+  "Ulcerative Conditions": "#fb923c",
+  "Salivary Gland Disorders": "#60a5fa",
+  "Infections & MRONJ": "#f43f5e",
+  "Medical Clearance & Prophylaxis": "#34d399",
+  "Procedure Timing After Medical Events": "#fbbf24",
+  "Procedure Classification": "#a78bfa",
+  // ── Clinical Photography ──
+  "Camera Settings": "#c084fc",
+  "Lens Selection": "#a78bfa",
+  "Flash & Lighting": "#fbbf24",
+  "Photographic Mirrors": "#60a5fa",
+  // ── Treatment Planning ──
+  "Treatment Planning Philosophies": "#e879f9",
+  "Classification Systems": "#a78bfa",
+  "Treatment Sequencing & Decisions": "#60a5fa",
+  "Risk Assessment": "#f87171",
+  // ── Oral Surgery ──
+  "Forceps & Elevators": "#f97316",
+  "Surgical Extraction Techniques": "#fb923c",
+  "Third Molar Management": "#fbbf24",
+  "Socket Preservation": "#34d399",
+  "Hemostatic Protocols": "#f87171",
+  "Pharmacology — Exodontia": "#e879f9",
+  "Complications & Management": "#f43f5e",
+  // ── Pharmacology ──
+  "Anticoagulants & Antiplatelets": "#f472b6",
+  "Antihypertensives": "#f87171",
+  "Diabetes Medications": "#fbbf24",
+  "Bisphosphonates & MRONJ": "#f43f5e",
+  "Corticosteroids": "#fb923c",
+  "Psychiatric Medications": "#a78bfa",
+  "Anticonvulsants": "#e879f9",
+  "Thyroid Medications": "#60a5fa",
+  "Immunosuppressants & Biologics": "#34d399",
+  "Chemotherapy & Radiation": "#f87171",
+  "Hormonal Medications": "#c084fc",
+  "GI Medications": "#22d3ee",
+  "Muscle Relaxants": "#94a3b8",
+  "Chronic Opioids & MAT": "#fb923c",
+  "Supplements & Cannabinoids": "#84cc16",
+  "Other Medication Classes": "#5eead4",
+  "Quick Reference": "#fbbf24",
+  // ── Pediatric Dentistry ──
+  "Crowns for Primary Teeth": "#a3e635",
+  "Direct Restorations": "#fbbf24",
+  "Pulp Therapy": "#f87171",
+  "Behavior & Space Management": "#60a5fa",
+  "Pediatric Preventive": "#34d399",
+  // ── Endodontics (handled by EndoBrowser, included for completeness) ──
+  "Access Burs": "#fb7185",
+  "Hand Files": "#f87171",
+  "Glide Path & Orifice Openers": "#fb923c",
+  "Rotary & Reciprocating Systems": "#22d3ee",
+  "Irrigants & Solvents": "#34d399",
+  "Bioceramics & VPT": "#a78bfa",
+  "Obturation Materials": "#fbbf24",
+  "Sealers": "#60a5fa",
 };
 
 // ═══════════════════════════════════════════════
@@ -936,9 +1073,9 @@ export default function ProductBrowser({ specialty, onGoHome }) {
   const goBack = () => { setSel(null); setSelType(null); };
 
   // ── Detail view routing ──
-  // Perio subcategory color override
-  const detailColor = specialty?.id === "perio" && sel
-    ? (PERIO_SUBCATEGORY_COLORS[reg?.groupFn?.(sel.cat)]?.a || specialty?.color)
+  // Subcategory color override for detail views
+  const detailColor = sel
+    ? (HEADING_COLORS[reg?.groupFn?.(sel.cat) || groupFn(sel.cat)] || PERIO_SUBCATEGORY_COLORS[reg?.groupFn?.(sel.cat)]?.a || specialty?.color)
     : specialty?.color;
   // New specialties → TabbedDetail (handles both tabbed + notes-only fallback)
   if (sel && selType === "notes") return <TabbedDetail item={sel} onBack={goBack} color={detailColor} citMap={reg?.cit} specialtyId={specialty?.id} />;
@@ -989,7 +1126,7 @@ export default function ProductBrowser({ specialty, onGoHome }) {
 
       {availableGroups.filter(g => groups[g]).map(gn => (
           <div key={gn} style={{ marginBottom: 20 }}>
-            <h2 style={{ fontFamily: "'Outfit'", fontSize: 10, fontWeight: 900, color: (specialty?.id === "perio" && PERIO_SUBCATEGORY_COLORS[gn]?.a) || RESTORATIVE_SUBCATEGORY_COLORS[gn]?.a || specialty?.color || "#94a3b8", letterSpacing: 2.5, textTransform: "uppercase", marginBottom: 8, paddingLeft: 4 }}>{gn}</h2>
+            <h2 style={{ fontFamily: "'Outfit'", fontSize: 10, fontWeight: 900, color: HEADING_COLORS[gn] || (specialty?.id === "perio" && PERIO_SUBCATEGORY_COLORS[gn]?.a) || specialty?.color || "#94a3b8", letterSpacing: 2.5, textTransform: "uppercase", marginBottom: 8, paddingLeft: 4 }}>{gn}</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))", gap: 8 }}>
               {groups[gn].map(item => {
                 const perioCol = specialty?.id === "perio" && PERIO_SUBCATEGORY_COLORS[gn];

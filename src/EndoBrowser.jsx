@@ -2,6 +2,18 @@ import { useState, useMemo } from "react";
 import { ALL_ENDO, ENDO_GROUPS, ENDO_CIT, endoGetGroup } from "./data/endoData.js";
 import PubMedSearch from "./components/PubMedSearch.jsx";
 
+// ── Subcategory heading colors ──
+const ENDO_HEADING_COLORS = {
+  "Access Burs": "#fb7185",
+  "Hand Files": "#f87171",
+  "Glide Path & Orifice Openers": "#fb923c",
+  "Rotary & Reciprocating Systems": "#22d3ee",
+  "Irrigants & Solvents": "#34d399",
+  "Bioceramics & VPT": "#a78bfa",
+  "Obturation Materials": "#fbbf24",
+  "Sealers": "#60a5fa",
+};
+
 // ── Evidence Grading (shared) ──
 const EG = {
   IFU: { label: "IFU", color: "#3b82f6", bg: "#1e3a5f" },
@@ -296,7 +308,7 @@ export default function EndoBrowser({ specialty, onGoHome }) {
       {/* Product grid */}
       {ENDO_GROUPS.filter(g => groups[g]).map(g => (
         <div key={g} style={{ marginBottom: 20 }}>
-          <h3 style={{ fontSize: 14, fontWeight: 700, color: "#64748b", marginBottom: 8, textTransform: "uppercase", letterSpacing: 1 }}>{g}</h3>
+          <h3 style={{ fontSize: 14, fontWeight: 700, color: ENDO_HEADING_COLORS[g] || "#64748b", marginBottom: 8, textTransform: "uppercase", letterSpacing: 1 }}>{g}</h3>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 10 }}>
             {groups[g].map(item => {
               const isRotary = item.motor;
