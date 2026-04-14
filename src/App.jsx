@@ -10,7 +10,7 @@ const SPECIALTIES = [
   {
     id: "restorative", name: "Restorative", icon: "🦷", color: "#22d3ee", bg: "#0c2d3e",
     subtitle: "CAD/CAM blocks, composites, bonding agents, cements, surface treatments, staining, polishing",
-    filterGroups: ["Restorative Blocks", "Glass-Ceramics", "Zirconia", "Composites", "Post & Core", "Bonding Agents", "Cements", "Surface Treatments", "Substrate Protocols", "Stain / Glaze Systems", "Polishing Systems"],
+    filterGroups: ["Hybrid Ceramic/Composite Blocks", "Glass-Ceramics", "Zirconia", "Composites", "Post & Core", "Bonding Agents", "Cements", "Surface Treatments", "Substrate Protocols", "Stain / Glaze Systems", "Polishing Systems"],
     dataKey: "restprosth", ready: true,
   },
   {

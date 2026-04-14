@@ -431,7 +431,7 @@ export const getGroup = c => {
   if (c.includes("Tissue Management")) return "Tissue Management";
   if (c.includes("Removable")) return "Removable Prosthetics";
   if (c.includes("Shade Matching")) return "Shade Matching";
-  if (c.includes("RNC") || c.includes("PICN") || (c.includes("Hybrid") && !c.includes("Abutment"))) return "Restorative Blocks";
+  if (c.includes("RNC") || c.includes("PICN") || (c.includes("Hybrid") && !c.includes("Abutment"))) return "Hybrid Ceramic/Composite Blocks";
   if (c.includes("Lithium") || c.includes("ZLS") || c.includes("Leucite") || c.includes("Glass-Ceramic Surface")) return "Glass-Ceramics";
   if (c.includes("Zirconia") || c.includes("TZP") || c.includes("Fusion") || c.includes("Zirconia Surface")) return "Zirconia";
   if (c.includes("Titanium")) return "Ti-Base";
@@ -450,7 +450,7 @@ export const getGroup = c => {
   return "Other";
 };
 
-export const GROUPS = ["Restorative Blocks", "Glass-Ceramics", "Zirconia", "Ti-Base", "Gold / Metal", "Cements", "Composites", "Post & Core", "Bonding Agents", "Surface Treatments", "Substrate Protocols", "Polishing Systems", "Stain / Glaze Systems", "Provisional Materials", "Prosthesis Design", "Impression Materials", "Tissue Management", "Removable Prosthetics", "Shade Matching"];
+export const GROUPS = ["Hybrid Ceramic/Composite Blocks", "Glass-Ceramics", "Zirconia", "Ti-Base", "Gold / Metal", "Cements", "Composites", "Post & Core", "Bonding Agents", "Surface Treatments", "Substrate Protocols", "Polishing Systems", "Stain / Glaze Systems", "Provisional Materials", "Prosthesis Design", "Impression Materials", "Tissue Management", "Removable Prosthetics", "Shade Matching"];
 
 // ═══ SHARED PRODUCT ARRAYS (used by both Restorative and Prosth) ═══
 

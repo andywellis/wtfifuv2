@@ -819,6 +819,23 @@ const PERIO_SUBCATEGORY_COLORS = {
 };
 
 // ═══════════════════════════════════════════════
+// RESTORATIVE SUBCATEGORY COLORS
+// ═══════════════════════════════════════════════
+const RESTORATIVE_SUBCATEGORY_COLORS = {
+  "Hybrid Ceramic/Composite Blocks": { a: "#22d3ee", b: "#0c2d3e" },
+  "Glass-Ceramics": { a: "#fb7185", b: "#2d0f1e" },
+  "Zirconia": { a: "#60a5fa", b: "#0a1a2e" },
+  "Cements": { a: "#84cc16", b: "#1a2210" },
+  "Composites": { a: "#e879f9", b: "#1a1022" },
+  "Post & Core": { a: "#d4a574", b: "#1a150e" },
+  "Bonding Agents": { a: "#2dd4bf", b: "#0a1a1a" },
+  "Surface Treatments": { a: "#5eead4", b: "#0e1a1e" },
+  "Substrate Protocols": { a: "#a78bfa", b: "#1a1520" },
+  "Polishing Systems": { a: "#f59e0b", b: "#1a150e" },
+  "Stain / Glaze Systems": { a: "#c4b5fd", b: "#1e1028" },
+};
+
+// ═══════════════════════════════════════════════
 // SPECIALTY DATA REGISTRY — maps dataKey → products, groupFn, groups, citations
 // ═══════════════════════════════════════════════
 const SPECIALTY_REGISTRY = {
@@ -976,11 +993,14 @@ export default function ProductBrowser({ specialty, onGoHome }) {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))", gap: 8 }}>
               {groups[gn].map(item => {
                 const perioCol = specialty?.id === "perio" && PERIO_SUBCATEGORY_COLORS[gn];
+                const restCol = (specialty?.id === "restorative" || specialty?.id === "prostho") && RESTORATIVE_SUBCATEGORY_COLORS[gn];
                 const c = item._type === "notes"
                   ? perioCol
                     ? { a: perioCol.a, bg: perioCol.b, t: `${perioCol.a}15` }
                     : { a: specialty?.color || "#94a3b8", bg: "#0f172a", t: `${specialty?.color || "#94a3b8"}15` }
-                  : gc(item.cat);
+                  : restCol
+                    ? { a: restCol.a, bg: restCol.b, t: `${restCol.a}15` }
+                    : gc(item.cat);
                 const isMat = item._type === "material";
                 const isCem = item._type === "cement";
                 const isComp = item._type === "composite";
