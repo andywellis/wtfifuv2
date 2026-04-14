@@ -1130,10 +1130,11 @@ export default function ProductBrowser({ specialty, onGoHome }) {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))", gap: 8 }}>
               {groups[gn].map(item => {
                 const perioCol = specialty?.id === "perio" && PERIO_SUBCATEGORY_COLORS[gn];
+                const groupAccent = HEADING_COLORS[gn] || specialty?.color || "#94a3b8";
                 const c = item._type === "notes"
                   ? perioCol
                     ? { a: perioCol.a, bg: perioCol.b, t: `${perioCol.a}15` }
-                    : { a: specialty?.color || "#94a3b8", bg: "#0f172a", t: `${specialty?.color || "#94a3b8"}15` }
+                    : { a: groupAccent, bg: "#0f172a", t: `${groupAccent}15` }
                   : gc(item.cat);
                 const isMat = item._type === "material";
                 const isCem = item._type === "cement";
