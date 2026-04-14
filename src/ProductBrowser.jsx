@@ -989,18 +989,15 @@ export default function ProductBrowser({ specialty, onGoHome }) {
 
       {availableGroups.filter(g => groups[g]).map(gn => (
           <div key={gn} style={{ marginBottom: 20 }}>
-            <h2 style={{ fontFamily: "'Outfit'", fontSize: 10, fontWeight: 900, color: (specialty?.id === "perio" && PERIO_SUBCATEGORY_COLORS[gn]?.a) || specialty?.color || "#94a3b8", letterSpacing: 2.5, textTransform: "uppercase", marginBottom: 8, paddingLeft: 4 }}>{gn}</h2>
+            <h2 style={{ fontFamily: "'Outfit'", fontSize: 10, fontWeight: 900, color: (specialty?.id === "perio" && PERIO_SUBCATEGORY_COLORS[gn]?.a) || RESTORATIVE_SUBCATEGORY_COLORS[gn]?.a || specialty?.color || "#94a3b8", letterSpacing: 2.5, textTransform: "uppercase", marginBottom: 8, paddingLeft: 4 }}>{gn}</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))", gap: 8 }}>
               {groups[gn].map(item => {
                 const perioCol = specialty?.id === "perio" && PERIO_SUBCATEGORY_COLORS[gn];
-                const restCol = (specialty?.id === "restorative" || specialty?.id === "prostho") && RESTORATIVE_SUBCATEGORY_COLORS[gn];
                 const c = item._type === "notes"
                   ? perioCol
                     ? { a: perioCol.a, bg: perioCol.b, t: `${perioCol.a}15` }
                     : { a: specialty?.color || "#94a3b8", bg: "#0f172a", t: `${specialty?.color || "#94a3b8"}15` }
-                  : restCol
-                    ? { a: restCol.a, bg: restCol.b, t: `${restCol.a}15` }
-                    : gc(item.cat);
+                  : gc(item.cat);
                 const isMat = item._type === "material";
                 const isCem = item._type === "cement";
                 const isComp = item._type === "composite";
