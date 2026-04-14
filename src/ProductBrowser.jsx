@@ -1082,7 +1082,7 @@ export default function ProductBrowser({ specialty, onGoHome }) {
   // Legacy prosth items that are notes-only (impressions, removables, etc.)
   if (sel && selType === "material" && !sel.surface) return <TabbedDetail item={sel} onBack={goBack} color={specialty?.color} citMap={null} specialtyId={specialty?.id} />;
   if (sel && selType === "prosth_design") return <TabbedDetail item={sel} onBack={goBack} color={specialty?.color} citMap={null} specialtyId={specialty?.id} />;
-  if (sel && selType === "implant" && !sel.connection) return <TabbedDetail item={sel} onBack={goBack} color={specialty?.color} citMap={reg?.cit} specialtyId={specialty?.id} />;
+  if (sel && selType === "implant") return <TabbedDetail item={sel} onBack={goBack} color={specialty?.color} citMap={reg?.cit} specialtyId={specialty?.id} />;
   // Rich detail views for legacy materials
   if (sel && selType === "material") return <MatDetail mat={sel} onBack={goBack} />;
   if (sel && selType === "cement") return <CemDetail cem={sel} onBack={goBack} />;
