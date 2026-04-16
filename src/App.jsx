@@ -111,7 +111,7 @@ const SPECIALTIES = [
     filterGroups: ["Anticoagulants & Antiplatelets", "Antihypertensives", "Diabetes Medications", "Bisphosphonates & MRONJ", "Psychiatric Medications", "Corticosteroids", "Supplements & Cannabinoids", "Other Medication Classes", "Quick Reference"],
     dataKey: "pharmacology", ready: true,
   },
-  { id: "learn", name: "Learn", icon: "🎓", color: "#f59e0b", bg: "#1a1708", description: "Curated podcasts, videos & lectures from vetted educators" },
+  { id: "learn", name: "Learn", icon: "🎓", color: "#f59e0b", bg: "#1a1708", subtitle: "Curated podcasts, videos & lectures from vetted educators", ready: true },
 ];
 
 function LandingPage({ onSelect }) {
