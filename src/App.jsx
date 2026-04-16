@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ProductBrowser from "./ProductBrowser.jsx";
 import EndoBrowser from "./EndoBrowser.jsx";
+import MediaBrowser from "./MediaBrowser";
 
 // ═══════════════════════════════════════════════
 // SPECIALTY REGISTRY — all tiles, all wired
@@ -110,6 +111,7 @@ const SPECIALTIES = [
     filterGroups: ["Anticoagulants & Antiplatelets", "Antihypertensives", "Diabetes Medications", "Bisphosphonates & MRONJ", "Psychiatric Medications", "Corticosteroids", "Supplements & Cannabinoids", "Other Medication Classes", "Quick Reference"],
     dataKey: "pharmacology", ready: true,
   },
+  { id: "learn", name: "Learn", icon: "🎓", color: "#f59e0b", bg: "#1a1708", description: "Curated podcasts, videos & lectures from vetted educators" },
 ];
 
 function LandingPage({ onSelect }) {
@@ -168,7 +170,9 @@ export default function App() {
   return (
     <div style={{ fontFamily: "'Outfit',system-ui", background: "#060a14", minHeight: "100vh", color: "#e2e8f0" }}>
       {fl}
-      {specialty.id === "endo"
+      {specialty.id === "learn"
+        ? <MediaBrowser onBack={() => setSpecialty(null)} />
+        : specialty.id === "endo"
         ? <EndoBrowser specialty={specialty} onGoHome={() => setSpecialty(null)} />
         : <ProductBrowser specialty={specialty} onGoHome={() => setSpecialty(null)} />
       }

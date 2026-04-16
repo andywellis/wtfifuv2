@@ -98,3 +98,6 @@ export {
 export {
   PHARM_CIT, pharmGetGroup, PHARM_GROUPS, ALL_PHARM_PRODUCTS
 } from "./pharmacologyData.js";
+
+// Curated Educational Media
+export { ALL_MEDIA, MEDIA_GROUPS, MEDIA_CIT, mediaGetGroup, RESTORATIVE_MEDIA } from "./mediaData";
