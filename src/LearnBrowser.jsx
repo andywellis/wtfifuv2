@@ -122,16 +122,6 @@ function formatDuration(min) {
 // COMING SOON + SUGGESTION FORM
 // ============================================================
 function ComingSoonView({ specialty, onBack }) {
-  const [submitted, setSubmitted] = useState(false);
-  const [suggestion, setSuggestion] = useState("");
-  const [presenter, setPresenter] = useState("");
-  const [url, setUrl] = useState("");
-
-  function handleSubmit() {
-    console.log("Suggestion submitted:", { specialty: specialty.id, suggestion, presenter, url });
-    setSubmitted(true);
-  }
-
   return (
     <div style={{ maxWidth: 640, margin: "0 auto", padding: "0 16px", fontFamily: "'Outfit',sans-serif" }}>
       <button
@@ -179,88 +169,47 @@ function ComingSoonView({ specialty, onBack }) {
         </p>
       </div>
 
-      {!submitted ? (
-        <div style={{
-          background: "#0f172a",
-          border: "1px solid #1e293b",
-          borderRadius: 12, padding: 22
+      <div style={{
+        background: "#0f172a",
+        border: "1px solid #1e293b",
+        borderRadius: 12, padding: 22, textAlign: "center"
+      }}>
+        <h3 style={{
+          fontFamily: "'Outfit',sans-serif",
+          fontSize: 15, color: "#f1f5f9", margin: "0 0 10px 0",
+          fontWeight: 700, letterSpacing: 0.3
         }}>
-          <h3 style={{
-            fontFamily: "'Outfit',sans-serif",
-            fontSize: 15, color: "#f1f5f9", margin: "0 0 16px 0",
-            fontWeight: 700, letterSpacing: 0.3
-          }}>
-            Suggest Content
-          </h3>
-
-          {[
-            { label: "Title of episode / video / lecture", value: suggestion, setter: setSuggestion, placeholder: "e.g. Revascularization Protocols with Dr. Smith" },
-            { label: "Presenter / Author (credentials if known)", value: presenter, setter: setPresenter, placeholder: "e.g. Dr. Jane Smith, DDS, PhD — NYU College of Dentistry" },
-            { label: "Direct URL (must be free, no paywall)", value: url, setter: setUrl, placeholder: "https://..." }
-          ].map((field, i) => (
-            <label key={i} style={{ display: "block", marginBottom: 12 }}>
-              <div style={{ fontSize: 11, color: "#64748b", marginBottom: 4, fontWeight: 500, letterSpacing: 0.3 }}>
-                {field.label}
-              </div>
-              <input
-                type={field.label.includes("URL") ? "url" : "text"}
-                value={field.value}
-                onChange={e => field.setter(e.target.value)}
-                placeholder={field.placeholder}
-                style={{
-                  width: "100%", padding: "9px 12px",
-                  background: "#060a14",
-                  border: "1px solid #1e293b",
-                  borderRadius: 6, color: "#f1f5f9",
-                  fontSize: 13, outline: "none",
-                  boxSizing: "border-box",
-                  fontFamily: "'Outfit',sans-serif"
-                }}
-              />
-            </label>
-          ))}
-
-          <button
-            onClick={handleSubmit}
-            disabled={!suggestion || !url}
-            style={{
-              padding: "10px 18px", borderRadius: 6,
-              background: (!suggestion || !url) ? "#1e293b" : "#22d3ee",
-              color: (!suggestion || !url) ? "#475569" : "#060a14",
-              fontSize: 13, fontWeight: 700, letterSpacing: 0.3,
-              border: "none",
-              cursor: (!suggestion || !url) ? "not-allowed" : "pointer",
-              transition: "all 0.15s",
-              fontFamily: "'Outfit',sans-serif"
-            }}
-          >
-            Submit Suggestion
-          </button>
-
-          <p style={{
-            fontSize: 11, color: "#475569", marginTop: 14,
-            lineHeight: 1.5
-          }}>
-            Suggestions are reviewed against vetting criteria: presenter must have
-            peer-reviewed publications, faculty appointment, or documented clinical
-            expertise. Content must be freely accessible.
-          </p>
-        </div>
-      ) : (
-        <div style={{
-          background: "#064e3b",
-          border: "1px solid #10b981",
-          borderRadius: 12, padding: 22, textAlign: "center"
+          Suggest Content
+        </h3>
+        <p style={{
+          fontSize: 12.5, color: "#94a3b8", lineHeight: 1.6,
+          margin: "0 auto 16px", maxWidth: 420
         }}>
-          <div style={{ fontSize: 30, marginBottom: 8 }}>✓</div>
-          <div style={{ fontSize: 15, color: "#6ee7b7", fontWeight: 700, marginBottom: 4 }}>
-            Thanks for the suggestion
-          </div>
-          <div style={{ fontSize: 13, color: "#d1fae5" }}>
-            It will be reviewed against vetting criteria.
-          </div>
-        </div>
-      )}
+          Know a free, evidence-aligned episode, video, or lecture that belongs
+          in {specialty.name}? DM the title, presenter, and link.
+        </p>
+        <a
+          href="https://ig.me/m/wtfifudotcom"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            padding: "10px 18px", borderRadius: 6,
+            background: "#22d3ee", color: "#060a14",
+            fontSize: 13, fontWeight: 700, letterSpacing: 0.3,
+            textDecoration: "none", fontFamily: "'Outfit',sans-serif",
+            display: "inline-block"
+          }}
+        >
+          📩 Suggest via Instagram DM
+        </a>
+        <p style={{
+          fontSize: 11, color: "#475569", marginTop: 14,
+          lineHeight: 1.5
+        }}>
+          Suggestions reviewed against vetting criteria: peer-reviewed publications,
+          faculty appointment, or documented clinical expertise. Free access only.
+        </p>
+      </div>
     </div>
   );
 }
