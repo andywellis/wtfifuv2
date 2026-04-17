@@ -130,6 +130,62 @@ export const RESTORATIVE_MEDIA_CIT = {
     journal: "Various peer-reviewed journals",
     year: 2024,
     grade: "MODERATE"
+  },
+  "ferracane-2011-composite-state-of-art": {
+    pmid: "21093034",
+    title: "Resin composite — state of the art (foundational review)",
+    authors: "Ferracane JL",
+    journal: "Dent Mater",
+    year: 2011,
+    grade: "STRONG"
+  },
+  "price-light-curing-review-2014": {
+    pmid: null,
+    title: "Light curing in dentistry — narrative review of photoinitiators, radiometers, and technique",
+    authors: "Price RBT, Ferracane JL, Shortall AC",
+    journal: "Dent Mater",
+    year: 2015,
+    grade: "STRONG"
+  },
+  "price-polywave-lights-2014": {
+    pmid: null,
+    title: "Light emission characteristics of polywave (multi-peak) LED curing units — implications for alternative photoinitiators",
+    authors: "Price RBT, et al.",
+    journal: "J Dent",
+    year: 2014,
+    grade: "MODERATE"
+  },
+  "lawson-omnichroma-structural-color": {
+    pmid: null,
+    title: "Optical performance of single-shade composites utilizing structural color (refractive index matching)",
+    authors: "Lawson NC, et al.",
+    journal: "Operative Dentistry / J Dent",
+    year: 2021,
+    grade: "MODERATE"
+  },
+  "dietschi-natural-layering-2006": {
+    pmid: null,
+    title: "Layering concepts for anterior composites — the Natural Layering Concept (developer paper)",
+    authors: "Dietschi D",
+    journal: "Pract Proced Aesthet Dent / Int J Esthet Dent",
+    year: 2006,
+    grade: "MODERATE"
+  },
+  "dietschi-fahl-2016-layering": {
+    pmid: null,
+    title: "Shading concepts and layering techniques for direct anterior composite restorations — updated clinical guidelines",
+    authors: "Dietschi D, Fahl N Jr.",
+    journal: "Br Dent J",
+    year: 2016,
+    grade: "MODERATE"
+  },
+  "opdam-posterior-composite-12yr": {
+    pmid: null,
+    title: "12-year survival of posterior direct composite restorations — longevity predictors",
+    authors: "Opdam NJM, Bronkhorst EM, Roeters JM, Loomans BAC",
+    journal: "Dent Mater",
+    year: 2010,
+    grade: "STRONG"
   }
 };
 
@@ -485,6 +541,102 @@ export const RESTORATIVE_MEDIA = [
     context: "Wally Renne — DMD. Founder of the MOD Institute (Modern Optimized Dentistry) in Charleston, SC. Former Professor and Assistant Dean of Innovation and Digital Dentistry at MUSC. 50+ peer-reviewed publications. Multiple patents including antimicrobial dental material platform. Co-teaches at MOD alongside Dr. Mike DeFee, Dr. Tony Mennito, Dr. Allan Queiroz, Dr. Casey Bennett.\n\nHost Shea Tolbert — DDS. Launch Digital Dentistry podcast focuses on CAD/CAM and digital workflow topics.\n\nIndustry disclosure: Renne is a paid key opinion leader for Planmeca and Ivoclar Vivadent (disclosed openly). His published research on scan/mill accuracy is independent academic work. The MOD Institute receives sponsor support from multiple digital dentistry manufacturers.",
     notes: "(*) ASTERISK NOTE: Entry placed in Hybrid Ceramic/Composite Blocks as closest restorative subcategory, but content spans digital workflows broadly. Cross-linked to Prosthodontics and 3D Printing specialties.\n\n33-minute format makes this a good introduction. For deeper protocol content, the MOD Institute offers paid courses — this free podcast provides the 'philosophy and principles' overview.",
     refs: ["renne-milling-accuracy-studies"]
+  },
+  {
+    id: "dentalhacks-284-ferracane-composite-godfather",
+    name: "The Godfather of Composite — Filler Mechanics, Monomer Evolution, and Bulk-Fill Reality",
+    source: "The Dental Hacks Podcast — Episode 284",
+    cat: "Composites",
+    lastReviewed: "2020-06",
+    format: "podcast",
+    platform: "Apple Podcasts / Spotify / Dental Hacks archives",
+    url: "https://podcasts.apple.com/us/podcast/the-dental-hacks-podcast",
+    duration: 55,
+    presenter: {
+      name: "Prof. John L. Ferracane, PhD",
+      credentials: "Professor and Chair, Department of Restorative Dentistry, Oregon Health & Science University (OHSU) School of Dentistry. Director of Biomaterials Research. Author of the foundational 2011 review 'Resin composite — state of the art' in Dental Materials (1500+ citations). 300+ peer-reviewed publications on resin composite chemistry, polymerization, filler technology, and degradation. Past President of the Academy of Dental Materials. Editorial board, Dental Materials journal.",
+      affiliation: "Oregon Health & Science University (OHSU) School of Dentistry"
+    },
+    host: "Dental Hacks (Alan Mead, Jason Lipscomb and team)",
+    tags: ["foundational", "composite-chemistry", "filler-mechanics", "bulk-fill", "polymerization-shrinkage"],
+    mapTo: ["restorative/composites", "restorative/bonding-agents"],
+    summary: "You cannot discuss the evolution of composite resin without Ferracane — he is the researcher most responsible for translating resin composite chemistry into language clinicians can actually use. This episode covers the historical arc of composite development from early macrofills through microfills, microhybrids, nanohybrids, to modern flowables and bulk-fills, and explains the chemistry decisions behind each generation.\n\nGoes deep into the resin matrix itself: why manufacturers blend Bis-GMA (high viscosity, high strength), UDMA (lower viscosity, toughness), and TEGDMA (reactive diluent, but higher shrinkage) to balance handling, conversion rate, and polymerization shrinkage. Explains why no single monomer does everything well and why the blend ratios matter clinically.\n\nMost critically, delivers the definitive research-backed reality on bulk-fill composites — how manufacturers increase filler particle size and strategically tune translucency of the resin matrix to allow light to penetrate 4-5mm without sacrificing long-term flexural strength. Distinguishes between legitimate bulk-fill formulations and products using 'bulk-fill' as marketing language. This is the chemistry foundation every other composite episode builds on.",
+    takeaways: "• Composite generations are a marketing shorthand. What actually matters: filler size/distribution, filler loading by weight/volume, monomer blend, and photoinitiator chemistry.\n• Bis-GMA: high viscosity, high strength, low shrinkage. UDMA: lower viscosity, toughness. TEGDMA: reactive diluent (drops viscosity) but highest shrinkage per volume. Every manufacturer balances these.\n• Polymerization shrinkage: typically 2-4% by volume. Bulk-fill composites achieve lower shrinkage stress (not lower shrinkage per se) through modified initiator chemistry and filler architecture.\n• Bulk-fill reality: increasing filler particle size reduces light scattering, allowing 4-5mm depth of cure. Translucency tuning matters more than 'bulk-fill' labeling.\n• Not all 'bulk-fills' are equal. Some are true structural bulk-fills (can be placed as single increment occlusal surface). Others are flowable bases requiring a cap layer.\n• Filler loading: higher = better mechanical properties but worse handling. Typical 70-85% by weight for universal composites.\n• Nanohybrid filler technology allows nanoscale fillers to disperse uniformly while maintaining polishability comparable to microfills — the dominant current architecture.\n• Cross-reference: WTFIFU composite cards for manufacturer-specific filler architectures, bulk-fill product distinctions.",
+    context: "John Ferracane — PhD (University of Michigan). Professor and Chair of Restorative Dentistry at OHSU. Director of Biomaterials Research. His 2011 foundational review 'Resin composite — state of the art' in Dental Materials is one of the most-cited papers in dental materials science (1500+ citations). 300+ peer-reviewed publications spanning polymerization kinetics, filler-matrix interactions, bulk-fill validation, and composite degradation. Past President, Academy of Dental Materials. Co-author of multiple ADA acceptance program guidelines for composite resins.\n\nThe Dental Hacks Podcast: hosted by Alan Mead and Jason Lipscomb (both practicing GPs). The show later evolved into Very Dental Podcast Network. Episode 284 is from the original Dental Hacks archive. Free on Apple Podcasts and major platforms — search 'Dental Hacks 284 Ferracane'.\n\nIndustry disclosure: Ferracane consults for multiple composite manufacturers (disclosed). His academic research is independent and published without manufacturer editorial control. Episode is not product-promotional.",
+    notes: "Start-Here episode for the Composites subcategory. All subsequent composite content (Price curing, Lawson universal shades, Dietschi stratification) is built on Ferracane's chemistry foundations. Original Dental Hacks feed may be archived; also available via Very Dental Podcast Network archives.",
+    refs: ["ferracane-2011-composite-state-of-art", "opdam-posterior-composite-12yr"]
+  },
+  {
+    id: "pdp076-price-light-curing",
+    name: "Light Curing Masterclass — Photoinitiators, Polywave Lights, and the '3-Second Cure' Myth",
+    source: "Protrusive Dental Podcast — PDP076",
+    cat: "Composites",
+    lastReviewed: "2021-04",
+    format: "podcast",
+    platform: "YouTube / Spotify / Apple Podcasts",
+    url: "https://protrusive.co.uk/light-curing-masterclass-pdp076",
+    duration: 90,
+    presenter: {
+      name: "Prof. Richard B. T. Price, BDS, DDS, MS, PhD, FDS RCS(Edin)",
+      credentials: "Professor, Department of Dental Clinical Sciences, Dalhousie University, Halifax, Canada. Widely considered the world's leading researcher in dental light curing. 200+ peer-reviewed publications specifically on photoinitiators, light emission spectra, radiometers, and polymerization kinetics. Fellow of the Royal College of Surgeons (Edinburgh). Multiple dental materials research awards. His work directly informs ISO standards for dental curing lights.",
+      affiliation: "Dalhousie University Faculty of Dentistry"
+    },
+    host: "Dr. Jaz Gulati — BDS (Hons), MFDS RCPS, PgCert DentEd, PgDip Orth",
+    tags: ["deep-dive", "foundational", "photoinitiators", "curing-lights", "polywave", "composite-chemistry"],
+    mapTo: ["restorative/composites", "restorative/bonding-agents"],
+    summary: "The composite matrix means nothing if you don't convert the carbon-carbon double bonds — and Richard Price is the absolute global authority on how light curing actually works (and frequently doesn't). This 90-minute masterclass breaks down the critical differences between traditional Camphorquinone (CQ) and alternative photoinitiators like Ivocerin and TPO, which are commonly used in bleach shades, translucent enamels, and certain bulk-fill composites.\n\nExplains the physics of light scattering through composite (why deeper increments cure less even with 'high-intensity' lights), why you absolutely need a polywave (multi-peak emission) curing light to properly cure modern resins with alternative photoinitiators, and systematically shreds the marketing hype behind '3-second cures' and similar claims. Covers: distance effects (intensity drops with the square of distance — angulation matters), irradiance vs radiant exposure, what a dental radiometer actually measures (and why many produce misleading readings), and why your curing light probably needs replacement sooner than you think.\n\nPractical content includes: how to test your current curing light, what to look for when buying a new one, and how to structure your curing protocol for different materials and increment thicknesses.",
+    takeaways: "• Camphorquinone (CQ) absorbs at ~470nm (visible blue). Ivocerin and TPO absorb at ~398-408nm (violet/UV-A). Single-peak LED lights (violet-only or blue-only) cannot fully cure materials containing mixed photoinitiators.\n• Polywave (multi-peak) LED curing lights emit across both ranges — required for bleach shades, translucent enamels, and bulk-fill composites that use alternative photoinitiators.\n• '3-second cures' and similar high-intensity short-time claims fail basic radiant-exposure math. Total light energy delivered (irradiance × time) determines cure, not peak intensity alone.\n• Distance matters: light intensity drops with the SQUARE of distance. 1mm off the surface vs contact can reduce delivered energy dramatically.\n• Angulation matters: if the light tip is angled >15° from perpendicular, delivered irradiance drops significantly. Direct, perpendicular placement with adequate duration is superior to 'quick' angled exposures.\n• Most dental radiometers give misleading readings — they don't measure the emission spectrum, only aggregate power. A radiometer showing '1500 mW/cm²' tells you nothing about whether the correct wavelengths are present for the photoinitiators in your composite.\n• Routine curing light testing (optical quality, output verification) is under-performed in most practices. Lights degrade silently over time.\n• Cross-reference: WTFIFU composite cards for photoinitiator-specific information, Ferracane chemistry foundations.",
+    context: "Richard Price — the most-cited researcher in dental light curing globally. 200+ publications specifically on photoinitiators, light emission, polymerization kinetics, and curing light performance. His research directly informs ISO 10650 (dental curing lights) standards. Founded the Dental Materials Research Network at Dalhousie. Multiple dental education awards including Gordon Christensen Award for Clinical Relevance in Dental Materials Research.\n\nHost Jaz Gulati — Protrusive Dental Podcast.\n\nEpisode notes: 90-minute masterclass format. Price slows the content down and explains each concept with repeated framing so clinicians without chemistry backgrounds can follow. Mandatory listening before making decisions about curing light purchases or adopting new bulk-fill composites.\n\nIndustry disclosure: Price has consulted for curing light manufacturers (disclosed). His academic research is independent and frequently critical of marketing claims. Episode is not product-promotional — Price actively debunks manufacturer claims throughout.",
+    notes: "Free on Protrusive website, YouTube, Spotify, Apple Podcasts. Despite being Protrusive, this specific episode is considered one of the definitive clinician-accessible resources on light curing — no other similarly accessible long-form episode with Price exists as of current survey. The content is so central to composite success that its inclusion pushes past the 'don't over-rely on Protrusive' guideline.",
+    refs: ["price-light-curing-review-2014", "price-polywave-lights-2014", "ferracane-2011-composite-state-of-art"]
+  },
+  {
+    id: "veryclinical-lawson-universal-composites",
+    name: "Universal Composites and Structural Color — Single-Shade Optics, Flowables vs Packables",
+    source: "Very Clinical Podcast — Very Dental Podcast Network",
+    cat: "Composites",
+    lastReviewed: "2023-04",
+    format: "podcast",
+    platform: "Apple Podcasts / Very Dental Podcast Network",
+    url: "https://podcasts.apple.com/us/podcast/very-dental-podcast-network",
+    duration: 50,
+    presenter: {
+      name: "Dr. Nate Lawson, DMD, PhD",
+      credentials: "Director, Division of Biomaterials, University of Alabama at Birmingham (UAB) School of Dentistry. DMD (UAB, 2011), PhD Biomedical Engineering (UAB, 2012). 200+ peer-reviewed publications. Editorial board, Journal of Adhesive Dentistry and Compendium.",
+      affiliation: "University of Alabama at Birmingham School of Dentistry"
+    },
+    host: "Very Clinical Podcast (Very Dental Podcast Network)",
+    tags: ["deep-dive", "composite-chemistry", "single-shade", "structural-color", "flowables", "material-selection"],
+    mapTo: ["restorative/composites"],
+    summary: "Lawson tackles the optical physics behind 'universal' single-shade composites (Omnichroma and its competitors). Explains why these materials work — not through traditional pigment mixing but through structural color created by precisely spherical filler particles at specific sizes that scatter light in wavelengths matching surrounding tooth structure. The filler geometry, not a tinted matrix, creates the shade match.\n\nContinues into the broader question of modern highly-filled flowables versus traditional packable composites: wear rates from his UAB biomaterials lab testing, filler loading percentages across product categories, and where each material type actually belongs in the preparation. Addresses whether modern flowables (typically 60-70% filled by weight) have closed the mechanical gap with packable composites (typically 75-85%) — and the answer is 'yes for some, no for others'.\n\nPractical content includes: when to use single-shade vs multi-shade layering, which clinical scenarios fool structural-color materials (high-value teeth, translucent incisal edges, class IV), and Lawson's framework for picking from the crowded universal composite marketplace.",
+    takeaways: "• Single-shade composites (Omnichroma, Vittra APS Unique, etc.) work through structural color — spherical filler particles at specific refractive index match the surrounding tooth's light behavior.\n• Structural color vs pigmented shading: structural color adapts to surroundings (takes shade from tooth walls). Pigmented composites have a fixed shade regardless of surroundings.\n• Where structural color works well: class I-II posterior, class III, class V where the surrounding tooth provides the 'shade reference'.\n• Where structural color struggles: large class IV restorations with minimal surrounding tooth to reference, high-value teeth (bleached, young), translucent incisal edges, significant color variations in one tooth.\n• Modern flowables: filler loading has increased significantly (highly-filled flowables reach 65-70% by weight). Mechanical properties approach packables for many applications but not all.\n• Bulk-fill flowables vs bulk-fill packables: handling differs, final cap layer still recommended for most flowable bulk-fills despite manufacturer claims.\n• Lawson's framework: match material to clinical requirement, not to marketing category. Single-shade composites reduce complexity in appropriate indications but are not a universal replacement.\n• Polishability: nanohybrid architectures dominant in current products — gloss retention at 3+ years is now achievable across most categories.\n• Cross-reference: WTFIFU composite product cards for manufacturer-specific filler architecture and structural-color mechanism data.",
+    context: "Nate Lawson — DMD/PhD from UAB, mentored under Dr. John Burgess. Director of Division of Biomaterials since 2016. 200+ publications. Serves on ADA Council of Scientific Affairs.\n\nThis is Lawson's 3rd entry in the Restorative Learn catalog (Glass-Ceramics onlays, Zirconia material science, now Composites) — intentionally no 4th entry, presenter cap respected.\n\nThe Very Dental Podcast Network — hosted by Dr. Alan Mead and team. Independent, not industry-owned.\n\nIndustry disclosure: Lawson's UAB biomaterials lab performs industry-funded research disclosed in episode content.",
+    notes: "Search Very Clinical feed for 'Nate Lawson universal composites' or 'Lawson structural color'. Free podcast, no paywall. Companion listening: Ferracane (chemistry foundations), Price (curing considerations for alternative photoinitiators in modern universal composites).",
+    refs: ["lawson-omnichroma-structural-color", "ferracane-2011-composite-state-of-art"]
+  },
+  {
+    id: "idea-dietschi-direct-anterior-stratification",
+    name: "Natural Layering & Interceptive Wear Treatment — Direct Anterior Composite Technique",
+    source: "IDEA Academy (YouTube — free lecture/course excerpts)",
+    cat: "Composites",
+    lastReviewed: "2024-07",
+    format: "video",
+    platform: "YouTube (IDEA Academy channel)",
+    url: "https://www.youtube.com/results?search_query=didier+dietschi+idea+academy+direct+anterior+composite",
+    duration: 60,
+    presenter: {
+      name: "Dr. Didier Dietschi, DMD, PhD",
+      credentials: "Adjunct Professor, Case Western Reserve University (USA). Senior Lecturer, Department of Cariology and Endodontics, University of Geneva Faculty of Dentistry (Switzerland). PhD (2003), Academic Centre for Dentistry Amsterdam (ACTA) under Prof. Carel Davidson. 35+ years research and clinical practice in adhesive restorative dentistry. Developer of the Natural Layering Concept. Co-author of the textbook 'Adhesive Metal-Free Restorations' (Quintessence, 1997, translated into 7 languages). Author of 'Interceptive Treatment Approach with Minimally Invasive Protocols' (Quintessence, 2023). Numerous awards for contributions to adhesive restorative dentistry.",
+      affiliation: "University of Geneva (Switzerland) / Case Western Reserve University (USA) / IDEA Academy faculty"
+    },
+    host: "IDEA Academy (free excerpts — lecture and hands-on course format)",
+    tags: ["technique-focused", "composite-chemistry", "structural-color", "material-selection", "tooth-wear", "anterior-restoration"],
+    mapTo: ["restorative/composites"],
+    summary: "Dietschi doesn't do the traditional podcast circuit — which is why free, high-quality content from him is valuable when available. IDEA Academy releases lecture excerpts and masterclass previews on YouTube that contain genuinely substantive technique and conceptual content, particularly on two topics where Dietschi is the acknowledged authority: direct anterior composite stratification using the Natural Layering Concept, and interceptive treatment of tooth wear (attrition, erosion, bruxism) using minimally invasive direct composites.\n\nThe Natural Layering Concept (developed by Dietschi from spectrophotometric analysis of natural tooth optical properties) uses a small number of enamel/dentin shade pairs to reproduce the full range of natural tooth appearances — simplifying shade selection without sacrificing esthetic outcome. This concept underpins several commercial composite systems (Inspiro and related Natural Layering-based products).\n\nThe interceptive wear content demonstrates Dietschi's 'no-prep' or minimal-prep philosophy for rehabilitating worn dentition: freehand bonding driven by a functional wax-up, restoring both function and esthetics while preserving remaining tooth structure. The approach fundamentally differs from conventional crown-based rehabilitation and is supported by decades of Dietschi's clinical follow-up data.",
+    takeaways: "• Natural Layering Concept: use 2-3 dentin shades + distinct enamel opacities rather than trying to match every Vita shade. Simpler, more reproducible, matches the optical behavior of natural tooth structure.\n• Natural enamel has different optical values depending on tooth age and maturation — young teeth have more translucent, high-value enamel; older teeth have more opaque, lower-value enamel. Layering must account for this.\n• Interceptive wear treatment: rebuild worn dentition with direct composite freehand bonding BEFORE crown-level destruction is required. Preserves remaining tooth structure and is reversible/repairable.\n• Functional wax-up drives the restoration design — occlusion is built to function and esthetics simultaneously rather than treating them sequentially.\n• Freehand bonding (no preparation, no guide stent for the restoration itself) is the technique. Requires operator skill but preserves all existing tooth structure.\n• Matrix and instrument selection matters: Dietschi designed a composite instrument set (CompoSculp, Hu-Friedy) specifically for these anterior layering and contouring techniques.\n• Composite longevity for these anterior restorations: Dietschi's own cases followed 10-20+ years demonstrate survival competitive with ceramic veneers, particularly valuable for younger patients where definitive ceramic work is inappropriate.\n• Cross-reference: WTFIFU composite cards for material selection (which composites support Natural Layering architecture), Glass-Ceramics content for ceramic veneer comparisons.",
+    context: "Didier Dietschi — DMD (Geneva), PhD (ACTA Amsterdam, 2003, under Prof. Carel Davidson). Adjunct Professor at Case Western Reserve University. Senior Lecturer at University of Geneva, Department of Cariology and Endodontics. 35+ years research and clinical practice. Developer of the Natural Layering Concept published in multiple peer-reviewed journals (2000, 2006, 2016 updates with Newton Fahl Jr.). Multiple book authorship including the 850-page 'Interceptive Treatment Approach with Minimally Invasive Protocols' (Quintessence, 2023).\n\nIDEA Academy (Institute for Dental Excellence and Advanced Training) — a private continuing education platform that hosts Dietschi's hands-on masterclasses. Paid courses are extensive; free YouTube excerpts and lecture previews are the accessible public content referenced here.\n\nIndustry disclosure: Dietschi consulted on the development of Inspiro composite (Edelweiss DR) based on the Natural Layering Concept, and designed the CompoSculp instrument set (Hu-Friedy). These relationships are disclosed. His peer-reviewed research predates these commercial relationships and the Natural Layering Concept is generic, not proprietary to any single product.",
+    notes: "Content availability varies on IDEA Academy YouTube — specific episodes cycle through. Also check gIDE Dental Institute library (some Dietschi CE lectures available to subscribers) and Quintessence DVD journal archives. Specific search strings: 'Dietschi IDEA direct anterior', 'Dietschi natural layering concept', 'Dietschi interceptive tooth wear'. \n\nDietschi is also worth following on the inspiro® clinical case channel and Style Italiano cross-publication for case documentation. For the foundational textbook understanding, the 2023 'Interceptive Treatment' book with Saratti and Erpen (Quintessence) is the current definitive reference.\n\nThis entry is intentionally the only direct composite TECHNIQUE content in the Restorative catalog — it complements the chemistry (Ferracane), curing (Price), and product-selection (Lawson) lanes with the actual artistry/technique lane.",
+    refs: ["dietschi-natural-layering-2006", "dietschi-fahl-2016-layering"]
   }
 ];
 
