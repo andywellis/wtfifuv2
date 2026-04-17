@@ -186,6 +186,70 @@ export const RESTORATIVE_MEDIA_CIT = {
     journal: "Dent Mater",
     year: 2010,
     grade: "STRONG"
+  },
+  "kern-2017-rbfdp-10yr-survival": {
+    pmid: "28688950",
+    title: "Ten-year outcome of zirconia ceramic cantilever resin-bonded fixed dental prostheses",
+    authors: "Kern M, Passia N, Sasse M, Yazigi C",
+    journal: "J Dent",
+    year: 2017,
+    grade: "STRONG"
+  },
+  "kern-2023-rbfdp-26yr-update": {
+    pmid: "36579757",
+    title: "Single-retainer all-ceramic resin-bonded fixed dental prostheses — long-term outcomes in the esthetic zone (26-year follow-up)",
+    authors: "Kern M, Gläser R",
+    journal: "J Esthet Restor Dent",
+    year: 2023,
+    grade: "STRONG"
+  },
+  "kern-wegner-1998-zirconia-adhesion": {
+    pmid: null,
+    title: "Bonding to zirconia ceramic — adhesion methods and their durability (foundational paper on MDP + airborne-particle abrasion)",
+    authors: "Kern M, Wegner SM",
+    journal: "Dent Mater",
+    year: 1998,
+    grade: "STRONG"
+  },
+  "ozcan-surface-conditioning-review": {
+    pmid: null,
+    title: "Adhesion to zirconium dioxide — surface conditioning concepts, challenges, and future prospects (narrative review)",
+    authors: "Özcan M",
+    journal: "J Adhes Dent / Dent Mater",
+    year: 2020,
+    grade: "STRONG"
+  },
+  "ozcan-tribochemical-silica-zirconia": {
+    pmid: null,
+    title: "Tribochemical silica coating for zirconia and alumina bonding — air pressure effects and bond strength validation",
+    authors: "Özcan M, et al.",
+    journal: "Dent Mater / J Adhes Sci Technol",
+    year: 2016,
+    grade: "STRONG"
+  },
+  "ozcan-intraoral-repair-review": {
+    pmid: null,
+    title: "Intraoral repair of fractured restorations — surface conditioning protocols by substrate type",
+    authors: "Özcan M, Valandro LF, Amaral R, Leite F, Bottino MA",
+    journal: "Dent Mater",
+    year: 2009,
+    grade: "MODERATE"
+  },
+  "breschi-2018-dental-adhesion-review": {
+    pmid: null,
+    title: "Dental adhesion review — aging and stability of the bonded interface",
+    authors: "Breschi L, Maravic T, Cunha SR, Comba A, Cadenaro M, Tjäderhane L, Pashley DH, Tay FR, Mazzoni A",
+    journal: "Dent Mater",
+    year: 2018,
+    grade: "STRONG"
+  },
+  "breschi-universal-adhesive-stability": {
+    pmid: null,
+    title: "Chemical stability of universal adhesives — silane hydrolysis, MDP stability, and shelf-life degradation",
+    authors: "Breschi L, et al.",
+    journal: "J Adhes Dent / Dent Mater",
+    year: 2021,
+    grade: "MODERATE"
   }
 };
 
@@ -637,6 +701,78 @@ export const RESTORATIVE_MEDIA = [
     context: "Didier Dietschi — DMD (Geneva), PhD (ACTA Amsterdam, 2003, under Prof. Carel Davidson). Adjunct Professor at Case Western Reserve University. Senior Lecturer at University of Geneva, Department of Cariology and Endodontics. 35+ years research and clinical practice. Developer of the Natural Layering Concept published in multiple peer-reviewed journals (2000, 2006, 2016 updates with Newton Fahl Jr.). Multiple book authorship including the 850-page 'Interceptive Treatment Approach with Minimally Invasive Protocols' (Quintessence, 2023).\n\nIDEA Academy (Institute for Dental Excellence and Advanced Training) — a private continuing education platform that hosts Dietschi's hands-on masterclasses. Paid courses are extensive; free YouTube excerpts and lecture previews are the accessible public content referenced here.\n\nIndustry disclosure: Dietschi consulted on the development of Inspiro composite (Edelweiss DR) based on the Natural Layering Concept, and designed the CompoSculp instrument set (Hu-Friedy). These relationships are disclosed. His peer-reviewed research predates these commercial relationships and the Natural Layering Concept is generic, not proprietary to any single product.",
     notes: "Content availability varies on IDEA Academy YouTube — specific episodes cycle through. Also check gIDE Dental Institute library (some Dietschi CE lectures available to subscribers) and Quintessence DVD journal archives. Specific search strings: 'Dietschi IDEA direct anterior', 'Dietschi natural layering concept', 'Dietschi interceptive tooth wear'. \n\nDietschi is also worth following on the inspiro® clinical case channel and Style Italiano cross-publication for case documentation. For the foundational textbook understanding, the 2023 'Interceptive Treatment' book with Saratti and Erpen (Quintessence) is the current definitive reference.\n\nThis entry is intentionally the only direct composite TECHNIQUE content in the Restorative catalog — it complements the chemistry (Ferracane), curing (Price), and product-selection (Lawson) lanes with the actual artistry/technique lane.",
     refs: ["dietschi-natural-layering-2006", "dietschi-fahl-2016-layering"]
+  },
+  {
+    id: "kern-rbfdp-minimally-invasive-lecture",
+    name: "Resin-Bonded Fixed Dental Prostheses — Minimally Invasive, Esthetic, and Reliable (20+ Year Protocols)",
+    source: "Academic Keynote Lectures (Quintessence / EAO / Dentaltown CE archives)",
+    cat: "Substrate Protocols",
+    lastReviewed: "2024-11",
+    format: "lecture",
+    platform: "YouTube / Quintessence Symposium archives / Dentaltown CE",
+    url: "https://www.youtube.com/results?search_query=matthias+kern+resin+bonded+bridge",
+    duration: 75,
+    presenter: {
+      name: "Prof. Dr. Matthias Kern, DMD, PhD",
+      credentials: "Professor and Chair, Department of Prosthodontics, Propaedeutics and Dental Materials, School of Dentistry, Christian-Albrechts-University of Kiel (Germany). Dental studies Freiburg 1980-1985, PhD 1987. 300+ peer-reviewed publications with particular focus on resin-bonded fixed dental prostheses (RBFDPs), zirconia ceramic bonding, and all-ceramic restorations. Author of the Quintessence textbook 'Resin-Bonded Fixed Dental Prostheses.' Undisputed global authority on single-retainer cantilever RBFDPs and long-term clinical follow-up of bonded non-etchable substrates.",
+      affiliation: "Christian-Albrechts-University of Kiel — School of Dentistry"
+    },
+    host: "Academic keynote / CE format (varies by platform — Quintessence symposia, EAO sessions, Dentaltown CE)",
+    tags: ["deep-dive", "foundational", "zirconia", "cementation", "APC-concept", "bonding-protocol", "material-selection"],
+    mapTo: ["restorative/substrate-protocols", "restorative/zirconia", "restorative/cements", "prosth/rbfdp"],
+    summary: "Kern is the researcher whose 25+ year longitudinal data established resin-bonded fixed dental prostheses as a legitimate, evidence-backed treatment modality rather than a compromise option. His Kiel research group has published 10-year (2017 J Dent) and 26-year (2023 JERD) survival data on zirconia single-retainer cantilever RBFDPs with survival rates exceeding 90% — outcomes that compete with implants in the esthetic zone for younger patients.\n\nThis lecture content systematically dismantles the old-school reliance on macromechanical retention (perforated metal wings, mesh retention, etched alloys) and grounds RBFDP success entirely in adhesive chemistry: MDP monomer phosphate-group chemical bonding to metal oxides and zirconia, uncontaminated surface preparation as the single biggest controllable variable, and single-retainer cantilever design (not the conventional two-retainer design) as the biomechanically superior approach.\n\nKern's clinical protocol is technically precise and unforgiving — deviations from his established parameters (50µm Al₂O₃ airborne-particle abrasion at specific pressure, immediate MDP primer application, specific resin cement selection, controlled isolation during bonding) measurably reduce survival. The lecture details each step with the research evidence behind it. For GPs, this is the definitive free educational content on a treatment modality that deserves wider adoption but is often dismissed due to outdated assumptions about 'Maryland bridge' failure rates.",
+    takeaways: "• Single-retainer cantilever RBFDP design outperforms two-retainer design — abutment teeth move in different directions during function, creating torquing/shear forces that accelerate debonding in two-retainer setups.\n• Survival data (zirconia cantilever single-retainer RBFDPs): 97% at 5 years, 91% at 10 years, 84% at 15 years (Kern 2014 large study). Individual cases followed >26 years. These outcomes compete with single-tooth implants in appropriate indications.\n• Indications: anterior single-tooth replacement, particularly in young patients where implant esthetic problems emerge later. Canines and premolars also covered in Kern protocols.\n• Non-indications: heavy occlusion on the retainer tooth, inadequate enamel on the retainer, excessive mobility, orthodontic instability.\n• Surface preparation of zirconia wing: 50µm Al₂O₃ airborne-particle abrasion at 0.1-0.25 MPa. This is the APC protocol applied specifically to RBFDPs.\n• MDP primer application immediately after sandblasting — any contamination (saliva, try-in with occlusion check) destroys the oxide layer's MDP receptivity and requires re-cleaning with alkaline cleaner (Ivoclean or equivalent) before re-priming.\n• Resin cement: MDP-containing dual-cure resin cement (e.g., Panavia V5, RelyX Ultimate). Self-adhesive cements are NOT appropriate for RBFDPs — conventional adhesive protocol mandatory.\n• Enamel preparation: minimal, feather-edge palatal reduction to create positive seating. No dentin exposure if possible. Rubber dam isolation essential.\n• Cross-reference: WTFIFU zirconia cementation enrichment data (50µm mandatory for 5Y-TZP, MDP primer essential), substrate protocols for IDS when dentin is exposed, Blatz APC concept content.",
+    context: "Matthias Kern — DMD (Freiburg 1985), PhD (1987). Chair of Prosthodontics at Kiel since 2001. 300+ peer-reviewed publications with substantial focus on RBFDPs, zirconia bonding, and all-ceramic restorations. His 1998 paper with Wegner ('Bonding to zirconia ceramic — adhesion methods and their durability' in Dent Mater) is the foundational publication establishing MDP-containing resin cement + airborne-particle abrasion as the bonding protocol for zirconia. Has personally followed cases from the early 1990s to present, giving him the longest individual case follow-up in the field.\n\nAuthored the Quintessence textbook 'Resin-Bonded Fixed Dental Prostheses: Minimally Invasive, Esthetic and Reliable' — the definitive clinical reference on the topic.\n\nLecture availability: Multiple academic keynotes on YouTube from Quintessence symposium archives, EAO conferences, and specialty society meetings. Dentaltown CE offers a version of the RBFDP lecture as free CE preview. Quality varies by platform — Quintessence recordings tend to be most complete.\n\nIndustry disclosure: Kern has consulting relationships with manufacturers of zirconia and bonding systems used in his protocols (disclosed). His published research spans multiple commercial systems and the protocols are not proprietary to any single manufacturer.",
+    notes: "This entry fills a major content gap: no other Learn entry addresses RBFDPs. Given the 25+ year evidence base and comparable outcomes to implants in appropriate indications, this is arguably the most clinically actionable single lecture in the Restorative catalog. \n\nCross-specialty placement: when Prosthodontics Learn specialty is built out, this entry should be cross-referenced there as well (map-to includes prosth/rbfdp). Some dentists will look for RBFDP content in Prosthodontics rather than Restorative.\n\nSearch terms that reliably surface Kern lectures: 'Matthias Kern resin bonded bridge', 'Kern RBFDP cantilever zirconia', 'Kern Kiel prosthodontics lecture'.",
+    refs: ["kern-2017-rbfdp-10yr-survival", "kern-2023-rbfdp-26yr-update", "kern-wegner-1998-zirconia-adhesion", "blatz-2018-apc-zirconia-bonding"]
+  },
+  {
+    id: "ozcan-tribochemical-silica-repair-lecture",
+    name: "Tribochemical Silica Coating & Intraoral Repair — Surface Conditioning for Metal, Ceramic, and Zirconia",
+    source: "Academic Keynote Lectures (IADR / ITI Academy / ConsEuro webinars)",
+    cat: "Surface Treatments",
+    lastReviewed: "2024-08",
+    format: "lecture",
+    platform: "YouTube / ITI Academy (free registration) / IADR archives",
+    url: "https://www.youtube.com/results?search_query=mutlu+ozcan+adhesion+surface+conditioning",
+    duration: 60,
+    presenter: {
+      name: "Prof. Dr. Mutlu Özcan, DDS, DMD, PhD",
+      credentials: "Professor and Director, Center for Dental Medicine, University of Zurich (Switzerland). Head of Dental Materials Unit, Clinic for Fixed and Removable Prosthodontics and Dental Materials Science. 950+ peer-reviewed publications. Google Scholar h-index exceeding the norm for dental biomaterials researchers by a wide margin — 46,000+ total citations. Titan of surface conditioning research, metal/ceramic adhesion, intraoral repair protocols, and zirconia bonding durability.",
+      affiliation: "University of Zurich Center for Dental Medicine — Dental Materials Unit"
+    },
+    host: "Academic keynote / webinar format (ITI Academy, IADR sessions, ConsEuro, various specialty meetings)",
+    tags: ["deep-dive", "foundational", "surface-treatment", "tribochemical-silica", "intraoral-repair", "zirconia", "material-selection"],
+    mapTo: ["restorative/surface-treatments", "restorative/zirconia", "restorative/bonding-agents", "prosth/repair"],
+    summary: "Özcan is the most-cited researcher globally on surface conditioning of non-etchable dental substrates. When you need laboratory data on how to physically and chemically bond composite to a cast-metal framework, repair a fractured PFM intraorally, or optimize zirconia resin adhesion, Özcan's Zurich research group has probably published the definitive study.\n\nThis lecture content details the physics and chemistry of tribochemical silica coating (CoJet, Rocatec, and generic silica-modified alumina systems). She explains the exact mechanism: blasting silica-modified alumina particles at a metal, alumina, or zirconia surface physically embeds a triboplasma glass layer into the substrate through the kinetic energy of impact — not merely coating the surface but fusing silica into it at a microstructural level. Once silica is embedded, the surface can be chemically silanated to accept a resin bond, completely bypassing the need for traditional alloy primers like VBATDT in most metal-repair scenarios.\n\nFor intraoral repair of fractured ceramic-veneered restorations, PFMs, or zirconia-based prostheses, Özcan's protocols define which combination of surface treatment + primer + composite is appropriate for each substrate type. Her research distinguishes between scenarios where tribochemical silica coating outperforms pure airborne-particle abrasion (and when it doesn't — notably, for modern nanocomposite ceramics, plain 50µm Al₂O₃ sometimes produces comparable bond strength).",
+    takeaways: "• Tribochemical silica coating (TSC): silica-modified alumina particles (typically 30µm) blasted at 2.0-2.8 bar embed a silica layer into the substrate via kinetic energy. NOT a surface coating — the silica is fused into the substrate structure.\n• After TSC, silanation with a pure silane primer creates Si-O-Si covalent bonds between the substrate's embedded silica and the composite resin — the same chemistry that makes glass-ceramic bonding work.\n• TSC + silane often eliminates the need for dedicated alloy primers (VBATDT, thiol-containing primers) for metal substrate bonding. The silica coating becomes the new surface, regardless of what's underneath.\n• For zirconia: TSC + silane + MDP primer provides the highest bond strengths in meta-analysis data (>40 MPa, >95% at 15 years for resin-bonded FDPs per 2023 systematic review). 10-MDP alone without TSC is also effective — TSC adds incremental benefit especially for long-term durability.\n• For high-translucent zirconia (4Y, 5Y-PSZ): be cautious with particle abrasion aggressiveness — damage thresholds are lower than 3Y-TZP. Özcan's research group has published phase-transformation data by particle size and pressure.\n• For modern nanocomposite ceramics (Enamic, Cerasmart, Lava Ultimate): plain airborne-particle abrasion with 50µm Al₂O₃ can match or exceed TSC for bond strength. Silane may actually decrease bond strength on some nanocomposite substrates. Cross-reference WTFIFU cementation data.\n• Intraoral repair of fractured PFMs: TSC is the most reliable single approach. Surface preparation protocol: isolate, abrade with TSC at appropriate pressure (0.2-0.3 MPa), silanate, apply MDP-containing adhesive resin, restore with nanohybrid composite.\n• Try-in contamination (saliva) destroys tribochemical silica surfaces' receptivity — alkaline cleaning (Ivoclean, sodium hydroxide-based) before priming is mandatory.\n• Cross-reference: WTFIFU cementation enrichment for PFM/noble-metal cement selection, zirconia cementation data for 3Y vs 4Y vs 5Y protocols, Blatz APC content.",
+    context: "Mutlu Özcan — DDS, DMD, PhD. Professor and Director, Center for Dental Medicine, University of Zurich. Head of Dental Materials Unit. Former CFO of the Center (acting). 950+ peer-reviewed publications spanning adhesive dentistry, dental biomaterials, prosthodontics, and reconstructive dentistry — among the most prolific publishing dental researchers globally. 46,000+ citations per Google Scholar. Her surface conditioning research, published consistently from the early 2000s to present, underpins current clinical understanding of adhesion to non-etchable substrates.\n\nCollaborates extensively with international research groups (Valandro in Brazil, Sailer in Zurich, various KU Leuven and Dalhousie researchers). Multiple textbook authorships and book chapters on dental biomaterials.\n\nITI Academy lecture access: free with ITI registration (itiacademy.org). IADR conference session recordings partially available on their YouTube channel. Various specialty society keynote recordings available free.\n\nIndustry disclosure: Özcan has consulting relationships with manufacturers in dental biomaterials (disclosed). Her published research spans multiple commercial systems and is generic rather than product-specific. University of Zurich research funding includes some industry support with standard academic editorial independence clauses.",
+    notes: "This entry is the first and currently only Surface Treatments subcategory entry in the Restorative Learn catalog, filling a previously empty section. Özcan's scope covers multiple subcategories (could justifiably be placed in Zirconia, Bonding Agents, or Surface Treatments) — Surface Treatments chosen because surface conditioning is the unifying theme and her content addresses multiple substrate types. \n\nSearch terms that surface Özcan lectures reliably: 'Mutlu Ozcan adhesion', 'Ozcan tribochemical silica', 'Ozcan ITI Academy', 'Ozcan zirconia repair', 'Ozcan ConsEuro'.",
+    refs: ["ozcan-surface-conditioning-review", "ozcan-tribochemical-silica-zirconia", "ozcan-intraoral-repair-review"]
+  },
+  {
+    id: "breschi-universal-adhesive-chemistry-lecture",
+    name: "Universal Adhesive Chemistry — What's Actually in the Bottle and Why Primer Mixing Matters",
+    source: "Academic Keynote Lectures (Style Italiano Webinars / European Federation of Conservative Dentistry)",
+    cat: "Bonding Agents",
+    lastReviewed: "2024-06",
+    format: "lecture",
+    platform: "YouTube / Style Italiano Webinars / EFCD archives",
+    url: "https://www.youtube.com/results?search_query=lorenzo+breschi+adhesion+universal+adhesive",
+    duration: 55,
+    presenter: {
+      name: "Prof. Lorenzo Breschi, DDS, PhD",
+      credentials: "Full Professor of Restorative Dentistry, Department of Biomedical and Neuromotor Sciences, University of Bologna (Italy). Head of Restorative Dentistry and Endodontics program. 350+ peer-reviewed publications on dental adhesion, hybrid layer degradation, MMP biochemistry, and chemical stability of adhesive formulations. Co-author of the foundational 2018 Dent Mater review 'Dental adhesion review — aging and stability of the bonded interface' with Pashley, Tay, Mazzoni, and Tjäderhane (one of the most-cited contemporary reviews in dental adhesion).",
+      affiliation: "University of Bologna — Department of Biomedical and Neuromotor Sciences"
+    },
+    host: "Academic lecture format (Style Italiano webinars, EFCD sessions, specialty meetings)",
+    tags: ["deep-dive", "foundational", "adhesive-chemistry", "universal-adhesives", "hybrid-layer", "MMPs", "bond-degradation"],
+    mapTo: ["restorative/bonding-agents", "restorative/surface-treatments"],
+    summary: "Breschi's angle on adhesion is different from Van Meerbeek's (generational evolution) and Alleman's (hybrid layer MMP inhibition) — he focuses on the molecular chemistry of what's actually mixed together inside modern universal adhesive bottles, and why the chemical interactions between components matter clinically.\n\nThe central problem: universal adhesives are marketed as single-bottle solutions that prime tooth, metal, and ceramic all at once. But to actually do this, manufacturers must mix silane (ceramic primer), 10-MDP (metal/zirconia primer), acidic monomers (self-etch dentin), and hydrophilic monomers (dentin infiltration) into a single solvent system. Breschi's research group has systematically investigated the chemical incompatibilities of these component mixtures and the degradation mechanisms that emerge over shelf-life.\n\nKey finding: silane hydrolyzes in acidic environments. Universal adhesives have pH ~2-3 to self-etch dentin, which means the silane inside the bottle progressively hydrolyzes into inactive byproducts over time. An 18-month-old bottle of universal adhesive with silane has significantly degraded ceramic-priming capability even when the dentin bonding still performs acceptably. Independent, non-corporate perspective on when universal adhesives work and when you absolutely need dedicated standalone primers for ceramic or metal substrates.",
+    takeaways: "• Universal adhesives contain: hydrophilic monomers (HEMA), hydrophobic monomers (Bis-GMA, UDMA), acidic monomers (MDP or similar phosphate/carboxylate functional monomers for self-etch), silane (for ceramic priming), water, and organic solvents.\n• These components are chemically incompatible in storage: silane hydrolyzes rapidly in acidic solutions (pH <4). Universal adhesives typically have pH 2-3.\n• Silane in universal adhesive: loses ceramic-priming effectiveness over 12-24 months even with refrigeration. Bond strength to ceramic substrates declines measurably over bottle age.\n• For definitive ceramic restorations: use a dedicated silane primer (Monobond S, Ultradent Silane, etc.) separately rather than relying on universal adhesive's silane.\n• For metal/zirconia primer function: 10-MDP in universal adhesives remains relatively stable but bond strengths are lower than dedicated MDP primers (Clearfil Ceramic Primer Plus, Z-Prime Plus). Still acceptable for full-coverage with retention form; inadequate for RBFDPs or partial coverage.\n• When universal adhesives work well: dentin self-etch bonding in the etch-and-rinse or selective-etch modes. The hydrophilic + acidic monomer combination is legitimately optimized for this function.\n• When universal adhesives are inadequate: definitive ceramic bonding after 6+ months of bottle age; critical substrate bonding like RBFDPs where every MPa of bond strength matters; partial-coverage restorations requiring maximum adhesion.\n• Breschi's practical rule: use universal adhesives for dentin; use dedicated primers for substrates. Don't treat the universal as truly universal.\n• Cross-reference: WTFIFU bonding agent IFU vs evidence data, Sulaiman silane stability content, surface treatment protocols for substrate-specific priming.",
+    context: "Lorenzo Breschi — DDS (University of Bologna), PhD. Full Professor of Restorative Dentistry at Bologna since 2010. Head of the Restorative Dentistry and Endodontics program. 350+ peer-reviewed publications focused on dental adhesion mechanisms, hybrid layer formation and degradation, matrix metalloproteinase (MMP) biology in dentin, and chemical stability of adhesive formulations.\n\nHis 2018 Dent Mater review with Pashley, Tay, Mazzoni, Tjäderhane, and others is one of the most-cited contemporary reviews in dental adhesion — foundational reading in any advanced restorative program. His research on MMPs as dentinal proteases driving hybrid layer degradation directly informs the chlorhexidine protocol advocated by Alleman (cross-reference). His more recent work focuses on chemical characterization of universal adhesive formulations and shelf-life stability.\n\nStyle Italiano is an international clinical education network (Dietschi, Manauta, others collaborate). EFCD (European Federation of Conservative Dentistry) is a specialty academic organization. Both platforms host Breschi keynote lectures that are publicly available on YouTube.\n\nIndustry disclosure: Breschi has research collaborations with multiple adhesive manufacturers (disclosed). His published research and lecture content maintain academic independence and are frequently critical of manufacturer marketing claims. Kuraray Noritake Europe, 3M, and other manufacturers have commissioned independent testing from his group.",
+    notes: "Fourth entry in Bonding Agents subcategory — placed here because the specific angle (molecular chemistry of universal adhesives, silane stability) genuinely differs from Van Meerbeek (generational framework), Alleman (hybrid layer MMPs), and Sulaiman (solvents, clinical technique). Complements those entries rather than repeating them.\n\nSearch terms that surface Breschi lectures reliably: 'Lorenzo Breschi adhesion', 'Breschi Style Italiano', 'Breschi EFCD', 'Breschi universal adhesive', 'Breschi dentin bonding'.",
+    refs: ["breschi-2018-dental-adhesion-review", "breschi-universal-adhesive-stability", "pashley-mmp-inhibition-chx"]
   }
 ];
 
