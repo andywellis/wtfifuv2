@@ -1,7 +1,8 @@
 import { useState } from "react";
 import ProductBrowser from "./ProductBrowser.jsx";
 import EndoBrowser from "./EndoBrowser.jsx";
-import MediaBrowser from "./MediaBrowser";
+import ModeToggle from "./ModeToggle";
+import LearnBrowser from "./LearnBrowser";
 
 // ═══════════════════════════════════════════════
 // SPECIALTY REGISTRY — all tiles, all wired
@@ -111,13 +112,12 @@ const SPECIALTIES = [
     filterGroups: ["Anticoagulants & Antiplatelets", "Antihypertensives", "Diabetes Medications", "Bisphosphonates & MRONJ", "Psychiatric Medications", "Corticosteroids", "Supplements & Cannabinoids", "Other Medication Classes", "Quick Reference"],
     dataKey: "pharmacology", ready: true,
   },
-  { id: "learn", name: "Learn", icon: "🎓", color: "#f59e0b", bg: "#1a1708", subtitle: "Curated podcasts, videos & lectures from vetted educators", ready: true },
 ];
 
-function LandingPage({ onSelect }) {
+function LandingPage({ onSelect, appMode, setAppMode }) {
   return (
     <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 16px" }}>
-      <div style={{ textAlign: "center", padding: "48px 0 40px" }}>
+      <div style={{ textAlign: "center", padding: "48px 0 24px" }}>
         <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: 5, color: "#475569", textTransform: "uppercase", marginBottom: 10 }}>Evidence-Based Clinical Quick Reference</div>
         <h1 style={{ fontFamily: "'Newsreader',Georgia,serif", fontSize: 48, fontWeight: 800, color: "#f1f5f9", margin: "0 0 6px", lineHeight: 1.05 }}>
           WTF<span style={{ color: "#22d3ee" }}>IFU</span>
@@ -130,26 +130,33 @@ function LandingPage({ onSelect }) {
           {SPECIALTIES.filter(s => s.ready).length} specialties · 590+ products · 750+ citations
         </p>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 48 }}>
-        {SPECIALTIES.map(s => (
-          <div key={s.id} onClick={() => s.ready && onSelect(s)} style={{
-            background: `linear-gradient(145deg, ${s.bg}, #060a14)`, borderRadius: 16, padding: "28px 24px",
-            cursor: s.ready ? "pointer" : "default", border: `1px solid ${s.color}${s.ready ? "22" : "08"}`,
-            transition: "all 0.2s", position: "relative", opacity: s.ready ? 1 : 0.4, minHeight: 120,
-            display: "flex", flexDirection: "column", justifyContent: "space-between",
-          }}
-          onMouseEnter={e => { if (s.ready) { e.currentTarget.style.borderColor = s.color + "55"; e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = `0 12px 40px ${s.color}15`; }}}
-          onMouseLeave={e => { e.currentTarget.style.borderColor = s.color + (s.ready ? "22" : "08"); e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}>
-            <div>
-              <div style={{ fontSize: 32, marginBottom: 10 }}>{s.icon}</div>
-              <h2 style={{ fontFamily: "'Outfit'", fontSize: 20, fontWeight: 800, color: "#f1f5f9", margin: "0 0 6px" }}>{s.name}</h2>
-              <p style={{ color: "#64748b", fontSize: 11, lineHeight: 1.4, margin: 0 }}>{s.subtitle}</p>
+      <ModeToggle mode={appMode} onChange={setAppMode} />
+      {appMode === "products" ? (
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 48 }}>
+          {SPECIALTIES.map(s => (
+            <div key={s.id} onClick={() => s.ready && onSelect(s)} style={{
+              background: `linear-gradient(145deg, ${s.bg}, #060a14)`, borderRadius: 16, padding: "28px 24px",
+              cursor: s.ready ? "pointer" : "default", border: `1px solid ${s.color}${s.ready ? "22" : "08"}`,
+              transition: "all 0.2s", position: "relative", opacity: s.ready ? 1 : 0.4, minHeight: 120,
+              display: "flex", flexDirection: "column", justifyContent: "space-between",
+            }}
+            onMouseEnter={e => { if (s.ready) { e.currentTarget.style.borderColor = s.color + "55"; e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = `0 12px 40px ${s.color}15`; }}}
+            onMouseLeave={e => { e.currentTarget.style.borderColor = s.color + (s.ready ? "22" : "08"); e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}>
+              <div>
+                <div style={{ fontSize: 32, marginBottom: 10 }}>{s.icon}</div>
+                <h2 style={{ fontFamily: "'Outfit'", fontSize: 20, fontWeight: 800, color: "#f1f5f9", margin: "0 0 6px" }}>{s.name}</h2>
+                <p style={{ color: "#64748b", fontSize: 11, lineHeight: 1.4, margin: 0 }}>{s.subtitle}</p>
+              </div>
+              {!s.ready && <div style={{ position: "absolute", top: 16, right: 16, background: "#1e293b", color: "#475569", fontSize: 9, fontWeight: 700, padding: "3px 10px", borderRadius: 12, letterSpacing: 1 }}>COMING SOON</div>}
+              {s.ready && <div style={{ position: "absolute", top: 16, right: 16, color: s.color, fontSize: 18, opacity: 0.4 }}>→</div>}
             </div>
-            {!s.ready && <div style={{ position: "absolute", top: 16, right: 16, background: "#1e293b", color: "#475569", fontSize: 9, fontWeight: 700, padding: "3px 10px", borderRadius: 12, letterSpacing: 1 }}>COMING SOON</div>}
-            {s.ready && <div style={{ position: "absolute", top: 16, right: 16, color: s.color, fontSize: 18, opacity: 0.4 }}>→</div>}
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div style={{ marginBottom: 48 }}>
+          <LearnBrowser specialties={SPECIALTIES} />
+        </div>
+      )}
       <div style={{ textAlign: "center", padding: "0 0 32px", color: "#1e293b", fontSize: 10, letterSpacing: 1.5 }}>
         EVIDENCE-BASED · SCOPE DECISIONS LEFT TO PRACTITIONER · UPDATED 2026
       </div>
@@ -159,20 +166,19 @@ function LandingPage({ onSelect }) {
 
 export default function App() {
   const [specialty, setSpecialty] = useState(null);
+  const [appMode, setAppMode] = useState("products");
   const fl = <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700;6..72,800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />;
 
   if (!specialty) return (
     <div style={{ fontFamily: "'Outfit',system-ui", background: "#060a14", minHeight: "100vh", color: "#e2e8f0" }}>
-      {fl}<LandingPage onSelect={setSpecialty} />
+      {fl}<LandingPage onSelect={setSpecialty} appMode={appMode} setAppMode={setAppMode} />
     </div>
   );
 
   return (
     <div style={{ fontFamily: "'Outfit',system-ui", background: "#060a14", minHeight: "100vh", color: "#e2e8f0" }}>
       {fl}
-      {specialty.id === "learn"
-        ? <MediaBrowser onBack={() => setSpecialty(null)} />
-        : specialty.id === "endo"
+      {specialty.id === "endo"
         ? <EndoBrowser specialty={specialty} onGoHome={() => setSpecialty(null)} />
         : <ProductBrowser specialty={specialty} onGoHome={() => setSpecialty(null)} />
       }
